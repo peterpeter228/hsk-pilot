@@ -10,7 +10,7 @@
   "deploymentTransactionHash": null,
   "realTradeTransactionHashes": [],
   "videoUrl": null,
-  "videoArtifact": null,
+  "videoArtifact": "evidence/video/HSK_Pilot_Local_UI_Demo_120s.mp4",
   "submissionId": null,
   "entrantName": null,
   "contact": null,
@@ -19,5 +19,9 @@
   "protectionMode": "BOUNDED_EXECUTION",
   "oracleGuardedEnabled": false,
   "deadlineUtc": "2026-11-01T16:00:00Z",
-  "note": "Initial checkpoint supplied by delivery coordinator, not the final source identity. Nulls are intentional missing facts; update only with verified outcomes. Storyboard is not a video."
+  "note": "Initial checkpoint supplied by delivery coordinator, not the final source identity. Nulls are intentional missing facts; update only with verified outcomes. Storyboard is not a video.",
+  "videoSourceSha": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+  "videoSha256": "c8a5e718117bbab5ed123f817ced0a3f4c293f004cf77225f99d4dac37c10a60",
+  "videoStatus": "ACTUAL_LOCAL_SYNTHETIC_UI_NOT_MAINNET_SUBMISSION_VIDEO",
+  "videoLibraryFileId": "libfile_2fbfae0d0794819186c740811beb4ef9"
 }

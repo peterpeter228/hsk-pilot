@@ -49,3 +49,9 @@
 - Actual core browser clicks passed, SHA256exportintegrity passed; true screenshots saved. Organization deniedDevTools, respected. Ordinarywindowresize achieved measured widths only; test-only normaliframeharness prepared for exactCSSwidths, not yetpassed.
 - Decorative glyph boxes replaced by inlineSVG; fullbuild and112-test regression pass, visualrecheckpending. At09:00 normalCtrl+C stopped ourserver for ordinary service-failure test; restartpendingnewcheckpoint.
 - Browser-blocked/new-cloud-config claims are superseded by docs/BROWSER_RUNTIME.md. No model/mainnet/publication gates changed.
+
+## 2026-10-26 09:44 UTC · browser scope and actual recording
+- Rendered glyph-fix sourceccdbed53 verified. Existing cloud desktop route resolved earlier limitation without newenvironment or policychanges. Coreflows, interruption nofalsePause, freshsandbox afterreload, and threeordinaryiframeviewportpolicyflows passed. No39/39/mobilehardware/networkemulation claim.
+- Actual180second passivebrowserwindow capture completed; final120second clip removes first60seconds idle, retainscontinuousspeed/frames, addsoptionalEnglishcaptions. Full decode exit0; actualframes38/60/95 inspected. Sourceccdb preserved; no realmodel or mainnet.
+- A final combinedCUA call timedout; independent existingDOM confirmedwithdrawal/CLOSED09:31:27.378 andvideoframe95 showswithdrawalhistory. Export/capabilitiesnotclaimedcaptured; no mutationretry.
+- Actualvideo andbrowserartifacts pendingfinalprivatepersistence; nativeLibrarydelivery pending. HSKserver stillrunning localhost3100 inownednativeTerminal35651587. Recordingterminal35653225 finished. RecallLedger QA readytoresume next using sameworkingroute, source11d2af readbackverified.

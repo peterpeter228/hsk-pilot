@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:13,000
+HSK Pilot — local UI acceptance
+Synthetic data. No real funds, wallet, mainnet or model calls.
+
+2
+00:00:13,000 --> 00:00:30,000
+Read-only judge view.
+A separate synthetic sandbox enables editable boundaries.
+
+3
+00:00:30,000 --> 00:00:44,500
+Review and explicitly confirm policy v2:
+20% target, 1 USDT single buy, 300-second cooldown.
+
+4
+00:00:44,500 --> 00:00:57,000
+Rule simulation, not AI: REBALANCE then scheduled HOLD.
+Net results remain unavailable without complete costs.
+
+5
+00:00:57,000 --> 00:01:07,000
+Reduce-only is recorded before the scheduled synthetic exit.
+Selling does not replenish cumulative buy budget.
+
+6
+00:01:07,000 --> 00:01:15,000
+The portfolio returns to 20 synthetic USDT.
+Pause prevents further rule simulation.
+
+7
+00:01:15,000 --> 00:01:31,000
+Close the synthetic session with explicit confirmation.
+Returning allocated capital is not trading profit.
+
+8
+00:01:31,000 --> 00:02:00,000
+CLOSED: zero simulated balances.
+Real model, mainnet, public deployment and submission remain incomplete.

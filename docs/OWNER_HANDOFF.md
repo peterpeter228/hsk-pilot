@@ -45,3 +45,6 @@ The core LocalCoordinator now has an exercised PostgreSQL+Anvil31337 integration
 
 ## Browser handoff correction
 No new coding environment is currently required from the owner for desktop browser acceptance. The built-in cloud terminal/browser path now works and core actual clicks passed. The earlier suggestion to create a saved cloud environment as a browser fix is withdrawn. Responsive/recovery/video checks continue within available supported tools; other model/access/mainnet/publication needs remain separate.
+
+## Browser/video work no longer needs owner environment setup
+Core actual browser acceptance, exact ordinary iframe375/768/1440 policy flows and a genuine120second synthetic UI recording are complete within the built-in cloud computer. See evidence/browser-cua/REPORT.md and evidence/video/verification.json for scope and unasserted cases. No new cloud configuration is required from the owner. Next external inputs remain dedicated product-model configuration, lawful service access, production integration/resources and owner-operated financial actions; public release and formal submission are still separate.

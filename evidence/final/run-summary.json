@@ -19,7 +19,7 @@
   "build": "PASS",
   "doctor": "PASS",
   "compiledHttp": "PASS",
-  "browser": "PASS_CORE_DESKTOP_REMAINDER_IN_PROGRESS",
+  "browser": "PASS_LOCAL_CORE_AND_IFRAME_RESPONSIVE_SCOPE",
   "mainnetDeployment": null,
   "mainnetTransactions": [],
   "argon": "COMPLETED_ONCE_INDEPENDENTLY_ADJUDICATED",
@@ -54,7 +54,13 @@
     "No real product model call",
     "No mainnet/public deployment/submission",
     "External Argon review predates composition/cost/keeper changes",
-    "Full responsive/recovery/video matrix not yet complete"
+    "Browser scope is not all proposed39cases, mobilehardware or livewallet flow"
   ],
-  "browserEvidence": "evidence/browser-cua/REPORT.md"
+  "browserEvidence": "evidence/browser-cua/REPORT.md",
+  "video": {
+    "status": "ACTUAL_RECORDING_VERIFIED",
+    "dataMode": "SIMULATION",
+    "seconds": 120,
+    "evidence": "evidence/video/verification.json"
+  }
 }

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "hsk-real-ui-video/1",
+  "sourceCodeCommit": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+  "dataMode": "SIMULATION",
+  "recordingMethod": "Existing authorized cloud Chromium window, passive FFmpeg x11grab; all UI actions via CUA",
+  "captureStartedUtc": "2026-10-26T09:28:58Z",
+  "captureFinishedUtc": "2026-10-26T09:31:58Z",
+  "rawDurationSeconds": 180,
+  "finalDurationSeconds": 120,
+  "edit": "Removed first60seconds of idle introduction; retained continuous remaining120seconds at originalspeed. OptionalEnglishsubtitletrack added. No generatedframes/audio.",
+  "width": 1278,
+  "height": 848,
+  "framesPerSecond": 15,
+  "audio": false,
+  "fullDecodeExitCode": 0,
+  "inspectedFinalFramesSeconds": [
+    38,
+    60,
+    95
+  ],
+  "verifiedCapturedSequence": [
+    "read-only judge",
+    "sandbox",
+    "policy preview/acknowledgment/confirmation",
+    "synthetic rebalance",
+    "scheduled HOLD",
+    "reduce-only before scheduled exit",
+    "pause",
+    "explicit synthetic withdrawal and CLOSED"
+  ],
+  "notEstablishedInRecording": [
+    "final export action",
+    "capabilities dialog",
+    "mobile hardware",
+    "real AI",
+    "mainnet"
+  ],
+  "knownToolIssue": "Final combined CUA action timed out; recovered existing DOM showed CLOSED withdrawal09:31:27.378, and decoded frame95 confirms withdrawal history. No mutation retry or invented result.",
+  "files": {
+    "hsk-pilot-local-ui-demo.mp4": {
+      "bytes": 1087460,
+      "sha256": "bc1d8fac573c281899ef34d10b7ebaf9783a2d3200f3ad04bf06bc402625f630"
+    },
+    "HSK_Pilot_Local_UI_Demo_120s.mp4": {
+      "bytes": 955537,
+      "sha256": "c8a5e718117bbab5ed123f817ced0a3f4c293f004cf77225f99d4dac37c10a60"
+    },
+    "local-ui-captions.srt": {
+      "bytes": 1052,
+      "sha256": "8a776ff5e0088bd878acee625c0006091c3f22310f303fae34afba32ea3415da"
+    }
+  },
+  "publicDeployment": null,
+  "mainnetTransactions": [],
+  "libraryArtifact": {
+    "library_file_id": "libfile_2fbfae0d0794819186c740811beb4ef9",
+    "version": "0",
+    "filename": "HSK_Pilot_Local_UI_Demo_120s.mp4",
+    "savedAndLocalIdentityVerified": true
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-26T09:00:30Z",
+  "updatedAt": "2026-10-26T09:44:00Z",
   "timezone": "Asia/Shanghai",
   "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
   "currentGate": "G3",
@@ -40,21 +40,21 @@
       "evidence": []
     },
     "G5": {
-      "status": "PASS_CORE_DESKTOP_REMAINDER_IN_PROGRESS",
+      "status": "PASS_LOCAL_DESKTOP_AND_IFRAME_SCOPE_NOT_FULL_LIVE_MATRIX",
       "evidence": [
         "evidence/browser-cua/REPORT.md",
-        "docs/BROWSER_RUNTIME.md"
+        "evidence/video/verification.json"
       ]
     },
     "G6": {
-      "status": "DRAFTS_READY_NOT_SUBMITTED",
+      "status": "PRIVATE_MATERIALS_LOCAL_VIDEO_READY_NOT_SUBMITTED",
       "evidence": []
     }
   },
   "nextActions": [
-    "Finish actual browser responsive/recovery checks and capture video using available supported tools",
-    "Resolve access and dedicated product model configuration",
-    "Finish production integration before owner-operated mainnet handoff"
+    "Persist actual browser/video evidence and verify remote commit",
+    "Resume RecallLedger browser acceptance through the proven built-in route",
+    "Resolve dedicated product model/access and production integration before owner-operated mainnet handoff"
   ],
   "unknownAuthorizations": [
     "mainnet capital/gas envelope",

@@ -11,7 +11,7 @@ A bounded WHSK/USDT rebalancing assistant being developed for HSK Chain Horizon 
 - TypeScript candidate/risk, accounting, indexer and recovery modules; structured-model adapter exists but no real product model has been configured or exercised.
 - PostgreSQL durable job-store substrate has real local database concurrency and restart evidence. **The web demo does not use it:** demo sessions and tokens live in process memory and disappear on restart. No live broadcaster or wallet route exists.
 
-Actual core desktop browser clicks are now verified, with exact remaining scope in [the browser report](evidence/browser-cua/REPORT.md). No public hosted demo, mainnet deployment/trade, finished video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit**; see the completed external review and independent adjudication in review/ARGON_VERIFICATION_2026-10-26.md.
+Actual core desktop browser clicks are now verified, with exact remaining scope in [the browser report](evidence/browser-cua/REPORT.md). No public hosted demo, mainnet deployment/trade, mainnet submission video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit**; see the completed external review and independent adjudication in review/ARGON_VERIFICATION_2026-10-26.md.
 
 ## Run locally
 
@@ -87,3 +87,8 @@ The separate [durable local runner](contracts/script/durable-local-integration.m
 [Signing integration](evidence/G3/pg/SIGNING_RESULTS.md) includes19actual PostgreSQL tests and process-crash/restart probes. The final root suite passes112tests/twelve files, including27independent audit tests, plus25native contract tests. Cost limits now HOLD on unknown/stale/over-cap estimates; the local stop keeper persists confirmed REDUCE_ONLY before attempting an exit. Synthetic zero cost estimates are assumptions, not measured free trades. The actual local gas fee is recorded separately.
 
 This does not change the UI's process-memory sandbox into a deployed production trading service. The full responsive/recovery/video matrix, product LLM, lawful service access, owner-operated mainnet work and publication/submission remain incomplete. New local-composition/cost/keeper work received independent tests and review, not an additional Argon call.
+
+## Actual browser walkthrough
+[Browser report and real screenshots](evidence/browser-cua/REPORT.md) now cover the desktop core, service-interruption handling, fresh-session recovery and375/768/1440 ordinary iframe viewport policy flows. Frame tests are not phone-hardware tests or a claim that all proposed39checks ran.
+
+[Two-minute actual local UI recording](evidence/video/HSK_Pilot_Local_UI_Demo_120s.mp4) · [recording provenance and limitations](evidence/video/README.md). The recording uses synthetic data, not real AI/mainnet activity; it is not a final contest submission video.

@@ -49,3 +49,10 @@ Root final verification:112TypeScript tests/12files/no skips with actualPG,25nat
 
 ## Browser update (09:00 UTC)
 The earlier browser environment blocker was resolved by using the existing built-in cloud desktop's normal terminal and Chromium together; it did not require a new saved coding environment. Actual core desktop interactions and evidence-download integrity passed on source4c4698d. See docs/BROWSER_RUNTIME.md and evidence/browser-cua/REPORT.md. Responsive-frame/restart recovery and video are still in progress, not inferred passes. InlineSVG fixes a visible missing decorative glyph; its post-build visual check is pending. Historical test counts and earlier blocked observations remain dated snapshots.
+
+## Actual browser and video checkpoint (09:44 UTC)
+On rendered codeccdbed53, core desktop flows pass, including error handling on normal owned-server shutdown, truthful old-session-not-found after restart and explicit fresh-sandbox recovery after reload. Direct old-page fresh-button recovery was not conclusively observed before reload and remains unasserted. SVG decorative icons are visually fixed.
+
+Ordinary same-origin iframe viewports measured actual innerWidth375/768/1440, height900, corresponding client/scroll widths360/753/1425: no app horizontal overflow. Each width exercised policy preview, explicit acknowledgment and confirmation;768 also repeated rebalance/HOLD/pause. This is real rendered frame responsiveness, not mobile hardware/device emulation and not the entire39-case proposed matrix. DevTools organization policy was respected. The1440 screenshot is a partial wide frame, not a fabricated full-width capture.
+
+A genuine120second continuous local UI video is now available in evidence/video/HSK_Pilot_Local_UI_Demo_120s.mp4, with original180second recording, edit disclosure, hashes, full decode check and inspected frames. It is synthetic local evidence, not a mainnet/real-model/submitted competition video. See evidence/video/verification.json. No new Argon call or financial action occurred.

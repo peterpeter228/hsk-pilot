@@ -1,0 +1,137 @@
+- banner:
+  - generic: ↗
+  - text: HSK Pilot
+  - navigation "Main navigation":
+    - link "Session":
+      - /url: "#overview"
+    - link "Activity & evidence":
+      - /url: "#activity"
+    - generic: SIMULATION
+- main:
+  - heading "Your limits. Every decision." [level=1]
+  - paragraph: A bounded WHSK / USDT session, with nothing hidden.
+  - generic: PRIVATE SANDBOX
+  - button "Pause session"
+  - strong: Synthetic data. No real funds, wallet, AI calls or mainnet trades.
+  - text: B0 · DEX-valued in USDT — independent fair-value protection unavailable.
+  - generic: B1 BLOCKED
+  - alert:
+    - text: Synthetic session not found
+    - button "Refresh state"
+  - heading "Session overview" [level=2]
+  - generic: ACTIVE
+  - generic: WHSK / USDT
+  - generic: ·
+  - generic: Policy v1
+  - generic: ·
+  - generic: Isolated sandbox
+  - paragraph: Synthetic portfolio value
+  - generic: 20USDT
+  - paragraph: "Fixed illustrative price: 1 WHSK = 1 USDT. Not a live DEX quote."
+  - paragraph: REALIZED TRADING P&L
+  - generic: 0 USDT
+  - paragraph: UNREALIZED TRADING P&L
+  - generic: 0 USDT
+  - paragraph: NET AFTER COSTS
+  - generic: Unavailable
+  - paragraph: Cost coverage incomplete
+  - text: WHSK allocation
+  - strong: 0%
+  - generic: Target 30%
+  - meter "WHSK allocation"
+  - generic: 0 WHSK
+  - generic: 20 USDT
+  - generic: "Source: synthetic server ledger · Last event 2026-10-26 08:59:30.293Z"
+  - heading "Latest decision" [level=2]
+  - generic: RULE-BASED · NOT AI
+  - generic: Ⅱ
+  - heading "Waiting to start" [level=3]
+  - paragraph: Open an isolated sandbox and start the rule-based simulation to inspect a decision.
+  - heading "Trading limits" [level=2]
+  - generic: B0 · BOUNDED
+  - paragraph: Target / rebalance band
+  - paragraph: 30% / ±5%
+  - paragraph: Deterministic strategy
+  - paragraph: Buy budget used
+  - paragraph: 0 / 10 USDT
+  - paragraph: Cumulative gross buys
+  - paragraph: Single buy limit
+  - paragraph: 2 USDT
+  - paragraph: Synthetic guard
+  - paragraph: WHSK inventory cap
+  - paragraph: 100 WHSK
+  - paragraph: Synthetic guard
+  - paragraph: Minimum interval
+  - paragraph: 60 seconds
+  - paragraph: Synthetic guard
+  - paragraph: Slippage / quote age
+  - paragraph: 0.3% / 30s
+  - paragraph: Synthetic guard
+  - paragraph: New exposure
+  - paragraph: Allowed within limits
+  - paragraph: State + strategy policy
+  - paragraph: Daily buy budget
+  - paragraph: 0 / 5 USDT
+  - paragraph: UTC day · gross buys
+  - generic "Validity & exit limits"
+  - generic: Selling does not replenish the cumulative gross buy budget. Synthetic checks are not proof of deployed on-chain protection.
+  - heading "Activity & evidence" [level=2]
+  - combobox "Filter activity":
+    - option "All activity" [selected]
+    - option "HOLD"
+    - option "Rebalances"
+    - option "Rejected"
+  - list:
+    - strong: created
+    - paragraph: synthetic manual simulation
+    - paragraph: 2026-10-26 08:59:30.293Z
+    - button "Evidence"
+  - generic: No signatures, broadcast, receipts or chain confirmations are simulated as real facts.
+  - heading "Positions & costs" [level=2]
+  - generic: USDT balance
+  - generic: 20 USDT
+  - generic: WHSK balance
+  - generic: 0 WHSK
+  - generic: WHSK cost basis
+  - generic: 0 USDT
+  - generic: Trading P&L (before costs)
+  - generic: 0 USDT
+  - generic: execution costs (HSK)
+  - generic: Unavailable · not incurred / unverified
+  - generic: model costs (USD)
+  - generic: Unavailable · not incurred / unverified
+  - generic: Setup costs
+  - generic: Unavailable · no deployment
+  - paragraph: "Initial synthetic allocation: 20 USDT. Capital movements are not profit. Fees are not represented as zero; net P&L remains unavailable without complete cost coverage."
+  - complementary:
+    - heading "Set the boundaries" [level=2]
+    - generic: 01 / REVIEW / APPLY
+    - button "Guided controls" [pressed]
+    - button "Text commands"
+    - text: WHSK target (%)
+    - textbox "WHSK target (%)" [disabled]: "20"
+    - text: Single buy (USDT)
+    - textbox "Single buy (USDT)" [disabled]: "1"
+    - text: Cooldown (seconds)
+    - textbox "Cooldown (seconds)" [disabled]: "300"
+    - text: Slippage (%)
+    - textbox "Slippage (%)" [disabled]: "0.3"
+    - button "Preview policy changes" [disabled]
+    - paragraph: Preview only. The current policy stays in force until you explicitly confirm the versioned diff.
+    - heading "Session controls" [level=2]
+    - paragraph: One start runs server-side rule checks. No per-trade clicks, no model, no real execution.
+    - button "Start rule simulation" [disabled]
+    - button "Stop new exposure" [disabled]
+    - button "Close & return synthetic balances" [disabled]
+    - paragraph: Reduce-only is recorded before an exit is attempted. It does not guarantee a fill. Paused sessions require a new sandbox to restart.
+    - button "Create a fresh sandbox"
+    - generic: INSPECT, DON’T TRUST
+    - heading "A record for every result." [level=2]
+    - paragraph: Download the synthetic record, inspect the policy and replay the event history. A record is not a profit guarantee.
+    - button "Download evidence JSON"
+    - button "What is — and isn’t — live"
+    - button "Export session evidence"
+- contentinfo:
+  - generic: HSK Pilot · Target chain HSK 177 · Simulation only
+  - button "Capabilities & limitations"
+  - generic: "Build: 4c4698d0e82aae225295d1db00d6625e99c7201d"

@@ -44,3 +44,35 @@ Height remained757 CSS pixels. No zoom, developer capability, policy change or h
 Root stopped its owned foreground synthetic server normally with Ctrl+C at09:00:16. No browser network emulation/settings or DevTools used. An idle sandbox created08:59:30.293Z on tab9 remained showing last-known ACTIVE/v1/20USDT/0WHSK. Actual polling failure displayed “Connection interrupted or timed out. The server result is not confirmed. Refresh session state before trying another action.” Policy inputs, Preview, Start, Stop exposure and Withdraw were disabled; Refresh state appeared. Screenshot12 and DOM12 captured.
 
 Pause remained enabled as an emergency-attempt exception, and Create a fresh sandbox remained available for recovery. At parent's explicit request, Pause was clicked exactly once while server remained stopped. The error persisted and last-known ACTIVE/v1/balances were retained; no PAUSED state or success message appeared. Previous “Isolated synthetic session created” success notice cleared. DOM13 captured. No blind retries or fresh-sandbox attempt during outage. Recovery still pending server restart; do not label the whole outage/recovery case passed yet.
+
+## Follow-up: restarted build ccdbed53c4e57d8817e0d4e82fd22023c996b713
+At09:13 old tab9 correctly reported “Synthetic session not found” after server restart lost in-memory session. Explicit Refresh retained that truthful error, no fabricated restoration (DOM14). Fresh-sandbox was clicked, but immediate AX unchanged and tester reloaded before establishing that request's completion; artifact15-recovered-dom.txt is intermediate and NOT proof of recovery. Reload displayed new-build judge view. Explicit Open synthetic sandbox plus visible-state wait then verified PRIVATE SANDBOX/v1/20USDT and editable controls at09:13:30 (15-recovered-after-reload-dom.txt). Thus fresh session recovery after reload passed; direct old-page recovery is not separately asserted.
+
+### Ordinary iframe responsive acceptance (NOT mobile-device emulation)
+Visited root-provided http://localhost:3100/assets/qa-viewports.html in own tab11. Fixture uses same-origin unchanged app in ordinary CSS-sized iframe. No DevTools, CDP emulation, zoom, policy settings or network emulation used. Visible width controls and Measure rendered frame showed:
+
+| Actual iframe innerWidth | Client/scroll width | Height | Whole-app horizontal overflow |
+|---:|---:|---:|---|
+|375|360/360|900|false|
+|768|753/753|900|false|
+|1440|1425/1425|900|false|
+
+At each actual width: fresh synthetic sandbox v1 → guided Preview → visible versioned diff → acknowledgment checkbox → Confirm → dialog closes and v2 displayed. Screenshots16/17/18 and DOM snapshots record evidence. 375 table wraps but remains readable and confirmation reachable. 1440 iframe is wider than physical browser viewport: screenshot18 is explicitly a PARTIAL view with ordinary outer horizontal scroll, not full1440 capture. One wide-frame locator click did not activate an off-screen fresh-sandbox button; inspected unchanged state, normally scrolled it visibly into view and then clicked successfully. Similarly offscreen Close in evidence modal did not close until documented keyboard Escape. These are recorded harness/CUA visibility constraints, not app success claims for no-op clicks.
+
+New inline SVG brand arrow visibly renders rather than missing glyph. At768 actual frame, Start→REBALANCE, Inspect decision modal, Escape focus return, real scheduled HOLD, and Pause were exercised again. Arrow decision icon visible behind evidence modal in19; HOLD two-stroke icon clearly visible in20, no missing-font square. Final session PAUSED and Start disabled; no simulation left running. Saved final DOM21 and new-build console21. No relevant app-origin error found in exercised new-build frame (extension metadata noise remains).
+
+Scope: these follow-ups establish actual CSS iframe responsiveness/forms/dialog/confirm at three widths, NOT full39-case matrix, mobile hardware, top-level375/768/1440, real money, mainnet or AI acceptance. Server remained under root ownership throughout.
+
+## Continuous recording interaction milestones (root owns recording validation)
+Direct app tab12, buildccdb; prepared foreground judge view before GO. Root reported capture09:28:58–09:31:58. GO message received09:30:21, so actual action window was under97seconds, not the earlier estimated140seconds. The following observed server-event UTC times came from actual UI actions:
+-09:30:31.811 sandbox created;09:30:32.091 versioned draft.
+-09:30:43.038 explicit acknowledgment/confirm appliedv2.
+-09:30:43.317 Start produced synthetic buy REBALANCE (1WHSK/19USDT).
+-09:30:45.310 and09:30:55.310 scheduled HOLD.
+-09:30:55.819 reduce-only persisted.
+-09:31:05.311 scheduled sell, balances0WHSK/20USDT.
+-09:31:11.981 PAUSED, Start disabled.
+-Final combined withdrawal/export/limitations tool call timed out and CUA kernel reset around09:32:01. No blind action retry was made. Reacquired existing tab12 and inspected state at09:32:25: CLOSED with withdrawal event09:31:27.378 and zero balances. Thus withdrawal acceptance did occur; whether it is visibly framed in recording requires root's decoded-frame review. Cancellation was deliberately not repeated in this short recording.
+-Export/limitations completion was not established. Do not claim those actions appear in video. DOM22 preserves recovered closed state. Prior desktop evidence-download integrity acceptance remains valid, but is separate from this recording attempt.
+
+No generated frames, fake UI mutations, backend requests or terminal interaction by this browser agent. Root handles actual recording duration/decode/content validation and any truthful trimming, retaining original.
