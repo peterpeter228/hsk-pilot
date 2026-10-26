@@ -16,5 +16,5 @@ Latest local core: durable PostgreSQL signing barrier→real local dual signatur
 
 ## Collaboration V3
 - Engineering handoff prepared; dot remains build owner.
-- Grok delivery/acceptance: UNSENT, blocked on verified route. Notion: NOT_CONFIGURED. New project monitor: UNSCHEDULED; existing tasks unchanged.
-- Validate local record and private persistence before reporting this patch complete. This is not product/mainnet acceptance.
+- Grok delivery/acceptance: UNSENT, blocked on verified route. Notion: one-time project/SHA/owner projection verified at 2026-10-26T11:41:16Z; not an automatic sync service. New project monitor: UNSCHEDULED; existing tasks unchanged.
+- Local record and 32 tests passed; feature branch/CI verified. Projection receipt: https://github.com/peterpeter228/hsk-pilot/pull/2#issuecomment-6415150727 . User authorized review and merge on 2026-10-26; merge result must still be read back. This is not product/mainnet acceptance.
