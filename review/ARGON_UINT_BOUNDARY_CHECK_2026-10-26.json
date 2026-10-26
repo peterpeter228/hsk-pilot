@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "field": "sessionId",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "policyVersion",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "intentNonce",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "amountInRaw",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "referenceAmountOutRaw",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "amountOutMinimumRaw",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "quoteObservedAt",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "quoteBlockNumber",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    },
+    {
+      "field": "deadline",
+      "maxAcceptedAndHashable": true,
+      "overflowRejected": true
+    }
+  ],
+  "scope": "Isolated direct uint-boundary/viem-hashing check; no wallet/network; typed data uses bigint by design; does not establish future JSON adapter correctness"
+}

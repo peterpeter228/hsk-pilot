@@ -11,7 +11,7 @@ A bounded WHSK/USDT rebalancing assistant being developed for HSK Chain Horizon 
 - TypeScript candidate/risk, accounting, indexer and recovery modules; structured-model adapter exists but no real product model has been configured or exercised.
 - PostgreSQL durable job-store substrate has real local database concurrency and restart evidence. **The demo does not use it:** demo sessions and tokens live in process memory and disappear on restart. No live broadcaster or wallet route exists.
 
-No public hosted demo, mainnet deployment/trade, real-browser click acceptance, finished video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit** or external Argon review.
+No public hosted demo, mainnet deployment/trade, real-browser click acceptance, finished video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit** ; see the completed external review and independent adjudication in review/ARGON_VERIFICATION_2026-10-26.md.
 
 ## Run locally
 
@@ -50,7 +50,7 @@ Replace the illustrative connection parameters; do not point tests at shared/pro
 
 | Evidence | What it establishes |
 |---|---|
-| [Integrated TypeScript tests](evidence/final/tests.log) | 63 tests across eight files pass, zero skips, including actual PostgreSQL18.4 integration; no model/live/browser claims |
+| [Integrated TypeScript tests](evidence/final/tests.log) | 68 tests across nine files pass, zero skips, including actual PostgreSQL18.4 integration; no model/live/browser claims |
 | [Typecheck](evidence/final/typecheck.log), [doctor](evidence/final/doctor.log), [native contracts](evidence/final/contracts.log) | Final local commands pass; doctor confirms no application model or owner/signing keys loaded |
 | [HTTP smoke](evidence/G3/http-smoke.json), [build log](evidence/final/build.log) | Built app and HTTP synthetic flow, not browser acceptance |
 | [PostgreSQL results](evidence/G3/pg/RESULTS.md) | Seven real local-DB tests and process restart; substrate, not wired live autopilot |
@@ -75,3 +75,6 @@ The HSKSwap website returned a jurisdictional HTTP403 to the research service. S
 Private repository: https://github.com/peterpeter228/hsk-pilot . Access is not automatically granted to judges. No open-source license has been selected; private delivery, licensing and public publication are separate decisions. Dependency notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The official body deadline is **November 1, 2026, 16:00 UTC / November 2, 00:00 Beijing**; a later header-widget deadline conflicts. Plan against the earlier time. Mainnet contract deployment is required for demo selection, so this local prototype has **not** met that eligibility gate. See [owner hand-off](docs/OWNER_HANDOFF.md), [English draft](submission/SUBMISSION_DRAFT_EN.md), [three-minute storyboard](submission/VIDEO_STORYBOARD.md), and [unsigned action plan](templates/MAINNET_ACTION_PLAN.md). Nothing in this repository constitutes submission, registration or a claim of selection.
+
+## External review checkpoint
+One user-approved Argon request reviewed source commit `8f064dab87d0275d1ff0768c2c57f3fd981217ef`. See [original final answer](review/ARGON_ORIGINAL_2026-10-26.md), [receipt](review/ARGON_RECEIPT_2026-10-26.json), and [independent verification](review/ARGON_VERIFICATION_2026-10-26.md). Its alleged integer overflow was not reproduced, but adversarial follow-up exposed unsafe runtime Number acceptance in bigint-declared fields; explicit type validation now rejects it. The post-review root run passed 68 TypeScript tests across nine files, no skips, plus25contract tests. Browser/live gates remain blocked.

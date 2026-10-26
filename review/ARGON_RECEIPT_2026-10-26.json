@@ -1,0 +1,28 @@
+{
+  "requested_model": "gemini-4-argon-high",
+  "provider": "api.xiaoyiapi.xyz",
+  "started_at_utc": "2026-10-26T07:51:15.075631+00:00",
+  "request_bytes": 348452,
+  "automatic_retry": false,
+  "request_sha256": "a4dcd0d2f1cef3d55a24d51e8306f494c78fdc1ef78efd91d760c101f27d06b6",
+  "approval_message_id": "Sentinel_2fb902085bec8191ab04649c23d624c2",
+  "cost": "unknown",
+  "source_commit": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
+  "http_status": 200,
+  "request_id": "334ceb80-7d00-4f0a-b77e-37d1a24c05cc",
+  "duration_seconds": 22.056,
+  "model_version": null,
+  "usage": {
+    "promptTokenCount": 100001,
+    "candidatesTokenCount": 1285,
+    "totalTokenCount": 103101,
+    "thoughtsTokenCount": 1815
+  },
+  "review_characters": 5261,
+  "outcome": "completed_http_200",
+  "finish_reason": "STOP",
+  "model_identity_verification": "requested alias only; provider omitted modelVersion",
+  "provider_thought_parts": 1,
+  "review_file_contains": "provider final answer only; thought-marked content removed from response.json",
+  "no_retry_executed": true
+}

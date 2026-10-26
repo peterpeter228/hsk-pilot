@@ -1,11 +1,11 @@
 {
-  "executedAt": "2026-10-26T07:42:14Z",
+  "executedAt": "2026-10-26T07:56:10Z",
   "status": "PASS_LOCAL_NOT_SUBMISSION_READY",
   "codeCommit": null,
   "sourceCommitBinding": "Upload manifest will bind exact source bytes to verified remote commit",
   "typescript": {
-    "passed": 63,
-    "files": 8,
+    "passed": 68,
+    "files": 9,
     "skipped": 0,
     "database": "PostgreSQL18.4 actual isolated schema"
   },
@@ -22,7 +22,7 @@
   "browser": "NOT_RUN_ENVIRONMENT_BLOCKED",
   "mainnetDeployment": null,
   "mainnetTransactions": [],
-  "argon": "PENDING_APPROVAL_NOT_CALLED",
+  "argon": "COMPLETED_ONCE_INDEPENDENTLY_ADJUDICATED",
   "productModel": "NOT_CONFIGURED",
   "publicDemo": null,
   "cleanInstallBuild": "PASS_FROZEN_LOCKFILE",
@@ -37,5 +37,7 @@
     "sourceBlock": 29326419,
     "executionChainId": 31337,
     "sourceChainId": 177
-  }
+  },
+  "reviewedBaseline": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
+  "postReviewCorrection": "Runtime bigint fields reject Number inputs before conversion"
 }

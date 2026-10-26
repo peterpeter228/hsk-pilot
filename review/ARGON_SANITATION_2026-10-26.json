@@ -1,0 +1,9 @@
+{
+  "source_files": 50,
+  "snapshot_hash_mismatches": [],
+  "credential_like_sk_prefixes": 0,
+  "literal_bytes32_remaining": 0,
+  "synthetic_short_key_literals_remaining": 0,
+  "packet_hash_matches": true,
+  "scope": "static sanitation verification, not comprehensive secret-detection guarantee"
+}

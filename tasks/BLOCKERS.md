@@ -3,7 +3,7 @@
 | Blocker | Actual state | Continue without it |
 |---|---|---|
 | Browser runtime | Environment failure observed; HSK E2E prepared, unrun | API/SSR/build and local/fork tests completed |
-| Argon review | New per-call credential-use approval pending | Independent bounded review completed; no impersonation |
+| Argon review | RESOLVED: one approved call completed, claims independently adjudicated; no new call authorized | Runtime type correction and full regression completed |
 | Product model | No dedicated configured provider/credential/budget | Structured adapter, fault tests and explicitly synthetic rule path |
 | Production integration | UI sandbox, PG substrate and local-chain runner are tested but not joined into a live deployed product | Source/contract/interface review and unsigned deployment planning |
 | HSKSwap access eligibility | Public website403 jurisdiction restriction; scope unresolved | Public docs and public chain analysis, local simulated fork; no bypass |

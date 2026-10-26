@@ -27,3 +27,10 @@
 - LocalAnvil and fixedblockfork evidence are separate from mainnet. Browser assertions/video not executed; no public deployment or submission.
 - Original failed invariant harness, failed router getter probe, initial build shim and HTTP startup errors retained with corrected reruns.
 - Next: verify private persistence, then finish actual browser/review/production gates without inventing external results.
+
+## 2026-10-26 07:56 UTC · external review and corrected checkpoint
+- Pre-review private main8f064dab87d0275d1ff0768c2c57f3fd981217ef verified150/150files including executable modes.
+- New user approval granted one HSK Argon call. HTTP200 in22.056s, alias gemini-4-argon-high, actual backend version absent; costunknown. No retry. Original finalanswer/inputmanifest/receipt preserved, private reasoning and credentials excluded.
+- Reclassified disabledB1/manualreorg concerns as known releasegates and rejected unsupportedtimestamp replacement. Independent followup reproduced unsafe runtime Number acceptance in bigint-typed helper and numericzero bypass; strict runtime types fixed. Five new tests and final full68TS tests/ninefiles/no skips +25contract tests passed with realPG; build/doctor/HTTP passed;PGstopped.
+- Reviewed sourceSHA differs from forthcoming post-review correction; no claim externalmodel re-reviewed changedsource.
+- Current still not submissionready: browser, product-model/liveproduction wiring, serviceaccess, owner financialhandoff, publicdeployment andentry remainblocked.

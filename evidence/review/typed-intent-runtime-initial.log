@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+ ❯ tests/audit/typed-intent-runtime.test.ts (4 tests | 2 failed) 11ms
+   × rejects runtime JS number where raw bigint is required, before silently retaining rounding 7ms
+   × rejects number zero instead of bypassing bigint zero-amount guard 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/audit/typed-intent-runtime.test.ts > rejects runtime JS number where raw bigint is required, before silently retaining rounding
+AssertionError: expected [Function] to throw an error
+ ❯ tests/audit/typed-intent-runtime.test.ts:9:86
+      7|  const unsafe=JSON.parse('{"amountInRaw":9007199254740993}');
+      8|  expect(unsafe.amountInRaw).toBe(9007199254740992);
+      9|  expect(()=>Reflect.apply(prepareTypedIntent,null,[177,guard,{...valid…
+       |                                                                                      ^
+     10| });
+     11| it('rejects number zero instead of bypassing bigint zero-amount guard'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/audit/typed-intent-runtime.test.ts > rejects number zero instead of bypassing bigint zero-amount guard
+AssertionError: expected [Function] to throw an error
+ ❯ tests/audit/typed-intent-runtime.test.ts:12:90
+     10| });
+     11| it('rejects number zero instead of bypassing bigint zero-amount guard'…
+     12|  expect(()=>Reflect.apply(prepareTypedIntent,null,[177,guard,{...valid…
+       |                                                                                          ^
+     13| });
+     14| it('accepts exact bigint beyond safe JS integer and enforces uint widt…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  16:53:42
+   Duration  435ms (import 83%, transform 12%, tests 4%, worker 1%)
+

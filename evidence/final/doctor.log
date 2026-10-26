@@ -1,6 +1,6 @@
 $ node --import tsx scripts/doctor.ts
 {
-  "executedAt": "2026-10-26T07:42:04.321Z",
+  "executedAt": "2026-10-26T07:55:54.612Z",
   "node": "v24.22.1",
   "sourceMode": "SIMULATION",
   "liveFundsEnabled": false,

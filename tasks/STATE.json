@@ -1,6 +1,6 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-26T07:42:14Z",
+  "updatedAt": "2026-10-26T07:56:10Z",
   "timezone": "Asia/Shanghai",
   "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
   "currentGate": "G3",
@@ -45,10 +45,10 @@
     }
   },
   "nextActions": [
-    "Persist and verify private source snapshot",
+    "Persist post-review correction and verify remote SHA",
     "Actual browser acceptance in functioning environment",
-    "Argon review only after separate credential-use approval",
-    "Resolve production integration and owner handoff gates"
+    "Resolve access and dedicated product model configuration",
+    "Finish production integration before owner-operated mainnet handoff"
   ],
   "unknownAuthorizations": [
     "mainnet capital/gas envelope",
@@ -57,12 +57,19 @@
   ],
   "activeBlockers": [
     "browser execution environment",
-    "Argon credential-use approval pending",
     "dedicated product model configuration",
     "production end-to-end wiring",
     "service access restrictions unresolved",
     "owner-operated mainnet actions",
     "public deployment/publication/submission"
   ],
-  "initialRemoteSha": "43753387eb278e97943b5f40f9af694d0abf54d8"
+  "initialRemoteSha": "43753387eb278e97943b5f40f9af694d0abf54d8",
+  "preArgonCheckpointSha": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
+  "argonReview": {
+    "status": "COMPLETED_ONCE_ADJUDICATED",
+    "sourceCommit": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
+    "httpStatus": 200,
+    "backendVersion": null,
+    "cost": null
+  }
 }
