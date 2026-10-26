@@ -1,0 +1,214 @@
+{
+  "schema_version": "dot-grok-v3.1",
+  "status": "PREPARED",
+  "from": "dot",
+  "to": "GROK_DEV",
+  "project_id": "hsk-pilot",
+  "opportunity_id": null,
+  "round_id": null,
+  "repo": "peterpeter228/hsk-pilot",
+  "branch": "dot/collaboration-v3-20261026",
+  "fixed_sha": "cc2b93a84fd0e258c0e781eb3f5ced266a47c563",
+  "versions": {
+    "source_commit": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+    "build_commit": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+    "deploy_commit": null,
+    "evidence_commit": "cc2b93a84fd0e258c0e781eb3f5ced266a47c563",
+    "submission_frozen_commit": null
+  },
+  "version_note": "Browser capture used ccdbed53c4e57d8817e0d4e82fd22023c996b713; later cc2b93 is evidence-only checkpoint.",
+  "build_owner": "dot",
+  "watch_owner": null,
+  "state_writer": null,
+  "proposed_state_writer": "GROK_HUNTER",
+  "receiver_ack": null,
+  "delivery": {
+    "status": "UNSENT",
+    "endpoint": null
+  },
+  "notion": {
+    "status": "UNSYNCED",
+    "page_id": "40501c91172281f993e2c347e345a44c",
+    "page_url": "https://app.notion.com/p/40501c91172281f993e2c347e345a44c?pvs=204",
+    "last_readback": null,
+    "note": "Parent verified Notion connection and created unique private Hub/project rows; same-revision GitHub/Notion readback pending."
+  },
+  "monitoring": {
+    "status": "UNSCHEDULED",
+    "routine_id": null,
+    "previous_monitor_unchanged": true
+  },
+  "gate": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
+  "DONE": [
+    "112 TypeScript tests/12 files, 25 native contract tests, 27 independent regressions, real local PostgreSQL and Anvil composition",
+    "Actual browser core and representative 375/768/1440 iframe policy flows",
+    "120s continuous synthetic browser video; not real AI or mainnet"
+  ],
+  "BLOCKED": [
+    "Lawful HSKSwap access unresolved; do not bypass jurisdiction restriction",
+    "Dedicated model/production UI-durable-worker integration not complete",
+    "No mainnet deployment/trade; owner-operated financial actions and public deployment/submission remain separate"
+  ],
+  "NEXT": [
+    "Prepare independently verifiable receiver review against fixed SHA; do not transfer ownership without actual ACCEPTED receipt"
+  ],
+  "VERIFY": [
+    "Read fixed GitHub checkpoint, rules and source/build hashes",
+    "Rerun relevant commands with permitted dependencies; do not interpret fixture/fork evidence as mainnet",
+    "Confirm receiver identity, exact project/version and remaining limitations before responsibility transfer"
+  ],
+  "allowed_paths": [
+    "coordination/",
+    "docs/COLLABORATION_V3.md",
+    "scripts/validate-collaboration.mjs",
+    "tests/collaboration-protocol.test.mjs",
+    "AGENTS.md",
+    "docs/OWNER_HANDOFF.md",
+    "tasks/WORKLOG.md",
+    "tasks/TASKS.md",
+    "docs/PROJECT_PROFILE.md",
+    "docs/STATUS.md",
+    "docs/HANDOFF.md",
+    ".github/ISSUE_TEMPLATE/",
+    ".github/pull_request_template.md",
+    ".github/workflows/collaboration.yml"
+  ],
+  "forbidden_changes": [
+    "Product code, locks, credentials, public visibility, deployment, mainnet/signing/financial actions, submission",
+    "Other projects, Grok cache/combined state, Notion, existing schedules"
+  ],
+  "test_commands": [
+    "node scripts/validate-collaboration.mjs coordination/handoff.json",
+    "node --test tests/collaboration-protocol.test.mjs"
+  ],
+  "cost_time_constraints": {
+    "incremental_paid_budget_usd": 0,
+    "existing_code": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+    "this_increment": "Collaboration records, read-only offline validator and documentation only",
+    "mvp_hours": null,
+    "from_zero_hours": null,
+    "review_and_material_hours": null,
+    "owner_wait_hours": null,
+    "scope_stop": "Stop after private persistence/readback and truthful handoff; no external sync implementation"
+  },
+  "evidence": [
+    "docs/OWNER_HANDOFF.md",
+    "tasks/STATE.json",
+    "evidence/final/tests.log",
+    "evidence/browser-cua/REPORT.md",
+    "evidence/video/verification.json",
+    "contracts/evidence/durable-local/verification.json"
+  ],
+  "exit_conditions": [
+    "Offline validator and tests pass",
+    "Feature branch exact files read back; draft PR linked to actual Issue",
+    "CI result inspected; failed or blocked CI not PASS",
+    "Notion same project/SHA/owner readback or explicit SYNC_PENDING",
+    "No merge or role transfer"
+  ],
+  "uncommitted_changes": {
+    "application": [],
+    "coordination_patch": "This proposal and validation/docs are the only new patch; containing commit identifies their bytes without self-reference"
+  },
+  "unknowns": [
+    "Hunter opportunity_id and round_id not received; do not invent shared IDs",
+    "Full seven-dimension level mapping and complete strict_fast_cash conditions absent",
+    "Grok endpoint/acceptance and actual new rule-monitor Routine evidence absent"
+  ],
+  "user_actions": [
+    "Supply verified Grok Dev/Hunter handoff destination only when actual cross-agent delivery is desired",
+    "Separate secure project-specific provider setup and scoped external actions per docs/OWNER_HANDOFF.md; never paste keys in chat"
+  ],
+  "claims_not_made": [
+    "No Grok acceptance or ownership transfer",
+    "No Notion synchronization or enabled new Routine",
+    "No mainnet/full production acceptance",
+    "No prize, payout date, win probability or fast_cash qualification",
+    "No repeat Argon call or public submission"
+  ],
+  "next_step": "Receiver independently reviews fixed checkpoint after an authorized verified delivery route is available; until then dot retains build responsibility",
+  "prepared_at": "2026-10-26T11:21:00Z",
+  "expires_at": "2026-10-27T11:21:00Z",
+  "scores": {
+    "hunter_seven_dimension": {
+      "weights": [
+        25,
+        20,
+        20,
+        15,
+        15,
+        3,
+        2
+      ],
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "total": null
+    },
+    "strict_fast_cash": {
+      "qualified": null,
+      "conditions_verified": false,
+      "first_payment_usd": null,
+      "payment_by": null,
+      "official_submission_count": null,
+      "checked_at": null
+    },
+    "formal_development": {
+      "qualified": null,
+      "minimum_score": 75,
+      "minimum_coverage": 0.75,
+      "minimum_individual_usd": 400
+    }
+  },
+  "outbox": [
+    {
+      "event_id": "hsk-pilot-handoff-prepared-cc2b93a84fd0e258c0e781eb3f5ced266a47c563",
+      "kind": "ENGINEERING_HANDOFF_PREPARED",
+      "status": "PENDING",
+      "idempotency_key": "hsk-pilot:dot-grok-v3.1:cc2b93a84fd0e258c0e781eb3f5ced266a47c563",
+      "attempts": 0,
+      "recipient": "GROK_DEV",
+      "source_commit": "cc2b93a84fd0e258c0e781eb3f5ced266a47c563"
+    }
+  ],
+  "rules": {
+    "source_type": "Existing verified repository evidence; NOT a received Hunter package",
+    "organizer": "HSK Chain",
+    "edition_url": "https://dorahacks.io/hackathon/hskchainindia/detail",
+    "details_path": "docs/01_VERIFIED_RULES_AND_DECISIONS.md",
+    "network_requirement": "HSK Chain mainnet contract deployment required for demo selection; absent",
+    "studio_requirement": null,
+    "rewards_payment": "Track1 2500/1500/1000 USDT prizes, not guaranteed personal income; rules state14workingdays after announcement, payout eligibility/network unresolved",
+    "eligibility": "See cited rules; final eligibility/claiming terms not fully verified",
+    "ai_old_code_ip": "Preserve original source, incremental history, AI disclosure and license review; unknown details not PASS",
+    "submission_deadlines": [
+      "2026-11-01T16:00:00Z",
+      "2026-11-02T03:00:00Z"
+    ],
+    "deadline_conflict": "Body/Luma earlier deadline versus Dora header UTC-4; earlier used only for internal planning pending confirmation",
+    "registration_deadline": null,
+    "claim_deadline": null,
+    "official_scoring_weights": null,
+    "required_materials": "Working HSKSwap AI agent/mainnet evidence and actual event form requirements; video format not confirmed",
+    "authorization": "Current private reversible coding/testing/docs only; scoped external permissions not inferred"
+  },
+  "default_branch": "main",
+  "handoff_status": "NONE",
+  "sync_state": "PENDING",
+  "track": "WEB3_BOUNTY",
+  "task_id": "peterpeter228/hsk-pilot#1",
+  "github_issue_url": "https://github.com/peterpeter228/hsk-pilot/issues/1",
+  "active_prs": [],
+  "ci": {
+    "status": "NOT_RUN",
+    "url": null,
+    "observed_at": "2026-10-26T11:26:00Z",
+    "scope": "Preparation-time observation; actual subsequent run is linked from the draft PR and Notion, not recursively written into its own source revision."
+  }
+}

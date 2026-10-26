@@ -1,6 +1,6 @@
 # Owner hand-off — local delivery, external gates still open
 
-Prepared 2026-10-26. This is a consolidated action list, not a request to expose secrets or an assertion of financial authority. Read README and the individual evidence records before proceeding. Final SHA and external results remain null until verified.
+Prepared 2026-10-26. This is a consolidated action list, not a request to expose secrets or an assertion of financial authority. Read README and the individual evidence records before proceeding. Private evidence checkpoint is `cc2b93a84fd0e258c0e781eb3f5ced266a47c563`; current source/build is `ccdbed53c4e57d8817e0d4e82fd22023c996b713`. External deployment/submission results remain null.
 
 ## Ready to inspect
 
@@ -14,7 +14,7 @@ Local synthetic web/server, bounded Guard and TypeScript modules; final integrat
 | Product-model test | Choose provider/model, restricted secret-manager entry and explicit finite spend limit; never paste a key into public docs | Redacted actual call/response-schema/failure/cost tests; adapter existence is insufficient |
 | Argon supervision | Completed one separately approved HSK call; no repeat call authorized | Final text, input hashes, receipt and independent adjudication are in review/; backend model version and cost remain unknown |
 | Real integration | After lawful access is resolved, refresh current read-only checks and review the recorded fixed-block fork evidence; finish durable-store/runner, signing, signed simulation, recovery and accounting integration | Same-version receipts and assertions, no synthetic substitute |
-| Browser acceptance | Use an available authorized browser, click core flow at 375/768/1440 widths and capture failures/console/export | Real trace/screenshots; build/HTTP alone cannot close this gate |
+| Browser acceptance | Completed core clicks and representative ordinary iframe375/768/1440 checks; remaining live/error matrix is distinct | evidence/browser-cua/REPORT.md; not full planned39cases or mobilehardware |
 | Hosted demonstration | Approve hosting destination, region and finite cost; choose judge read-only access | Working reachable URL, deployed SHA and health evidence; none exists now |
 | Real wallet/mainnet actions | Owner reviews exact unsigned plan, budgets, addresses and route, then personally controls signing/funding/trading/wallet execution | Verified chain-177 receipts, balances, fees, remaining authority and recovery; agent does not perform these financial actions |
 | Private code access / licensing | Decide judge-access arrangement and project license; public release requires separate authorization | Verified permissions/license choice; private repository is not public judging access |
@@ -32,7 +32,7 @@ Use `templates/MAINNET_ACTION_PLAN.md`; fill each public address and exact raw-u
 - Refresh official details/tracks/Luma and actual account form; repo visibility, mandatory license, video format and duration are unverified.
 - Replace manifest nulls only with observed facts. Align source SHA, build, evidence, deployed bytecode and any video capture; do not fabricate hash/URL placeholders.
 - If still local-only, preserve this candid draft; do not label the mainnet/AI autonomous requirements complete. Owner chooses whether to submit an explicitly incomplete entry if the platform permits it.
-- Storyboard is not a recording. No performance benchmark or profit claim exists. Include negative outcomes, gas/model cost and valuation limitations if real samples later exist.
+- Actual120second synthetic recording is now saved; older storyboard remains historical planning. No performance benchmark or profit claim exists. Include negative outcomes, gas/model cost and valuation limitations if real samples later exist.
 - Verify public materials contain no private token, credential, customer data or unrelated files. Dependency metadata does not itself grant a license to publish project source.
 - Obtain actual submission confirmation, then separately monitor official Nov 3 selection/schedule if requested. Demo Nov 4 and winners Nov 5 do not imply selection or prize entitlement.
 
@@ -43,8 +43,11 @@ Inspect current Git HEAD/status, `tasks/STATE.json`, evidence timestamps and run
 ## Latest local integration delta
 The core LocalCoordinator now has an exercised PostgreSQL+Anvil31337 integration, including durable pre-signing quarantine and actual signature/receipt verification. See contracts/evidence/durable-local/verification.json and evidence/G3/pg/SIGNING_RESULTS.md. The web sandbox itself remains in memory. Production UI/identity/model/provider wiring and external deployment are still distinct unfinished work; do not mistake a local runner for a hosted financial service. Browser environment discovery was repeated at08:18UTC and still returned no configured computer or coding environment.
 
-## Browser handoff correction
-No new coding environment is currently required from the owner for desktop browser acceptance. The built-in cloud terminal/browser path now works and core actual clicks passed. The earlier suggestion to create a saved cloud environment as a browser fix is withdrawn. Responsive/recovery/video checks continue within available supported tools; other model/access/mainnet/publication needs remain separate.
+## Historical browser handoff correction
+No new coding environment is currently required from the owner for desktop browser acceptance. The built-in cloud terminal/browser path now works and core actual clicks passed. The earlier suggestion to create a saved cloud environment as a browser fix is withdrawn. At that intermediate point responsive/recovery/video checks continued; they subsequently completed with the scoped evidence below; other model/access/mainnet/publication needs remain separate.
 
 ## Browser/video work no longer needs owner environment setup
 Core actual browser acceptance, exact ordinary iframe375/768/1440 policy flows and a genuine120second synthetic UI recording are complete within the built-in cloud computer. See evidence/browser-cua/REPORT.md and evidence/video/verification.json for scope and unasserted cases. No new cloud configuration is required from the owner. Next external inputs remain dedicated product-model configuration, lawful service access, production integration/resources and owner-operated financial actions; public release and formal submission are still separate.
+
+## Cross-agent handoff V3
+See `coordination/handoff.json` and `docs/COLLABORATION_V3.md`. This private engineering proposal is PREPARED/UNSENT, not an accepted transfer. dot remains build owner. No verified Grok destination or Notion page exists; no synchronization or monitor handover is claimed. Review the fixed checkpoint independently before accepting.
