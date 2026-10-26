@@ -57,3 +57,21 @@ All reviewer regressions now **13/13 PASS**, exit 0 (`typed-intent-all-audit-fin
 Other allegations checked against source: B1 remains explicitly disabled via UnsupportedOracleMode; reorg quarantine is intentional fail-closed behavior requiring ledger reversal/reconciliation, not accidental permission restoration; clock_timestamp records operational times and is not used by the canonical receipt accounting order (blockNumber/transactionIndex/logIndex). `bigserial` audit IDs identify records but do not establish commit order. No evidence supports replacing clock_timestamp with statement_timestamp as a correctness fix.
 
 Final adjudication typecheck: `tsc --noEmit` PASS, exit 0 (`typed-intent-typecheck-final.log`).
+
+## Durable local coordinator review (~08:09 UTC)
+
+Updated reviewer fixture for sourceChainId=177 and executionChainId/typed-domain/adapter=31337, required fence and signature-verifier capabilities, and actual sender/txNonce submission metadata. Existing tampered-payload rejection remains exact and pre-sign. Added seven reviewer-authored injected-adapter regressions covering partial second-signer failure retaining SIGNING/no retry; failed SIGNING persistence invoking zero signers; stale fence before role two; stale fence immediately before send retaining UNKNOWN; ambiguous send no retry; rejected signature verification; and successful write-ahead ordering. **20/20 reviewer tests PASS**, exit 0 (`durable-coordinator-audit.log`); typecheck PASS (`durable-coordinator-typecheck.log`). These are mocks, not real PostgreSQL or blockchain evidence.
+
+Source review of PgLocalCoordinatorStore, PgJobStore, and migration002 finds conservative separation: only PREPARED can be claimed for signing, SIGNING/SIGNED are pending unique-account states, migration quarantines legacy PREPARED, and reconciliation claims do not restore PREPARED. Signing and send barriers commit before their respective external side effects. Leases are checked between roles and before send; an external operation already in progress cannot be retroactively cancelled by lease expiry. No unverified promise of exactly-once network delivery or automatic recovery from every ambiguous outcome is made.
+
+## Cost and stop-keeper targeted verification (~08:12 UTC)
+
+Explicit synthetic zero-cost estimates were added only to test fixtures (source SYNTHETIC); this does not assert real gas/model fees are zero or net accounting complete. Independent normal-coordinator tests exercise absent/future/stale/over-cap execution costs: all return EXECUTION_COST_* rejection before reservation/signing/send, with signer and send counters zero. Direct risk tests retain the known synthetic-cost positive control.
+
+Five independent local stop-keeper tests verify request→confirmed REDUCE_ONLY status→durable confirmation→status recheck→exit ordering; lack of confirmation, persistence failure, or owner pause prevents exit; failed exit retains confirmed reduce-only state. These use synthetic callbacks and do not prove mainnet keeper availability or exact stop-loss execution.
+
+Current reviewer suite: **27/27 PASS**, exit 0 (`cost-stopkeeper-audit.log`). Typecheck: PASS, exit 0 (`cost-stopkeeper-typecheck.log`). No new concrete defect found within this targeted pass. PostgreSQL runtime was intentionally not restarted or mutated during contract agent's composition test; real-PG evidence remains separately owned, not mislabeled as this reviewer's execution. Source hashes refreshed across coordinator, keeper, durable adapter and migrations.
+
+## Frozen reviewer validation (~08:16 UTC)
+
+Final coordinator behavior classifies unhealthy/unknown normal execution cost as **HOLD**, not REJECTED, per the product requirement. Reviewer fixture updated this classification only; exact EXECUTION_COST_* reason and zero signer/send assertions remain. This supersedes earlier wording describing rejection status (risk still returns allowed=false). All **27/27 reviewer tests PASS**, exit 0 (`final-frozen-audit.log`); `tsc --noEmit` PASS, exit 0 (`final-frozen-typecheck.log`). Reviewer source edits frozen. No independent PG process started, avoiding overlap with root's final full-suite verification; real-PG assertions and actual Anvil composition evidence remain separately attributed to their executing agents.

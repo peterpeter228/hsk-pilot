@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "durable-local-verification/1",
+  "observedAt": "2026-10-26T08:21:01.391043+00:00",
+  "command": "HSK_TEST_DATABASE_URL='<explicit-isolated-loopback-postgres-url>' node contracts/script/durable-local-integration.mjs",
+  "exitCode": 0,
+  "status": "PASS",
+  "executionDataMode": "SIMULATION",
+  "executionChainId": 31337,
+  "sourceSha256": {
+    "contracts/script/durable-local-integration.mjs": "885062a506ff679b387d595c1c3c02c4578e990a5a45bb6c5943e60fc3ca39b2",
+    "contracts/script/durable-local-modules.ts": "d01e7f8729185a42f4b6e15f2b7b78372035fc0e440fcde0e943ece5620c3be2",
+    "apps/worker/src/coordinator.ts": "fd9d0e8208e1a239f031ca9ef64a4398b4bcb275145ff36d9ec2b3a3f3686d68",
+    "apps/worker/src/recovery.ts": "ade0211de47a07f4217230a10912ef68bdda1721653253f1fec45447906828a6",
+    "apps/server/local-coordinator-store.ts": "8de739dfa2b51a37c6d5adbf7f2fc55bbf2e4e2ac1189d0b2af2480d83d1b86c",
+    "apps/server/job-store.ts": "8d190cc48b01444ba4e83abd0ab8831fd0701fef5896b3d77d92b844e83d0d73",
+    "packages/strategy/src/index.ts": "960358a20fc3ec270f5af1c88c35018f953c0904908fd9e5c92547a75fdf2f68",
+    "migrations/001_durable_jobs.sql": "b1f1f1e077853ec1dc6e0bd18847a37cdbbc58946fa85ec6189b83e1466abd9a",
+    "migrations/002_signing_barrier.sql": "f27dc35763f4076a54292ebdd8a773bd218f942815307ef168cd1eaf2685717b",
+    "contracts/src/TradingSessionGuard.sol": "a7633d65dd164b988f9e40c4d02b9ac9e6abdd6dfdd3645bafc1e66a7f7ea09c"
+  },
+  "evidencePath": "contracts/evidence/durable-local/integration.json",
+  "evidenceSha256": "08fb2cb5e0264f6f9662f847c4fff790e79126f3564cace5c749298180625857",
+  "actualTradeCount": 1,
+  "roleSignatureCount": 2,
+  "guards": [
+    "SIGNING persisted before actual keys",
+    "typed signature recovery vs expected distinct roles",
+    "full actual signed eth_call",
+    "UNKNOWN persisted before actual local send",
+    "sender and EOA nonce from local RPC transaction",
+    "restart blocks additional signing/send",
+    "new fence confirms canonical actual RPC receipt",
+    "single canonical transaction row and guard nonce1"
+  ],
+  "limitations": [
+    "Synthetic model/quotes; no externalAI invocation",
+    "Actual local gas fee retained; synthetic pretrade estimate not observedzero fee",
+    "No mainnet writes/assets or hostedDB service",
+    "Local one-confirmation policy only"
+  ],
+  "configurationChecks": {
+    "missingUrlExitCode": 2,
+    "remoteHostExitCode": 2,
+    "queryHostOverrideExitCode": 2,
+    "validationPrecedesChildrenAndSockets": true,
+    "evidencePath": "contracts/evidence/durable-local/config-negative.log"
+  }
+}

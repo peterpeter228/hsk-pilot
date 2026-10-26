@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 
-export type JobStatus = 'PREPARED' | 'UNKNOWN' | 'SUBMITTED' | 'MINED' | 'CONFIRMED' | 'FAILED' | 'REORGED';
+export type JobStatus = 'PREPARED' | 'SIGNING' | 'SIGNED' | 'REJECTED' | 'UNKNOWN' | 'SUBMITTED' | 'MINED' | 'CONFIRMED' | 'FAILED' | 'REORGED';
 export interface ReserveJob {
   chainId: string; account: string; sessionId: string; nonce: string;
   intentHash: string; payload: Record<string, unknown>;
@@ -41,7 +41,7 @@ export class PgJobStore {
   }
   async pending(chainId: string, account: string): Promise<DurableJob[]> {
     return (await this.pool.query<DurableJob>(`SELECT * FROM hsk_jobs WHERE chain_id=$1 AND account=$2
-      AND status IN ('PREPARED','UNKNOWN','SUBMITTED','MINED','REORGED') ORDER BY created_at`,[uint(chainId),hex(account,40)])).rows;
+      AND status IN ('PREPARED','SIGNING','SIGNED','UNKNOWN','SUBMITTED','MINED','REORGED') ORDER BY created_at`,[uint(chainId),hex(account,40)])).rows;
   }
   async reserve(input: ReserveJob): Promise<DurableJob> {
     const chain = uint(input.chainId); if (chain === '0') fail('INVALID_CHAIN');
@@ -61,7 +61,7 @@ export class PgJobStore {
         return job;
       }
       if (a.quarantined) fail('ACCOUNT_QUARANTINED');
-      if ((await c.query(`SELECT id FROM hsk_jobs WHERE chain_id=$1 AND account=$2 AND status IN ('PREPARED','UNKNOWN','SUBMITTED','MINED')`,[chain,account])).rowCount) fail('ACCOUNT_PENDING');
+      if ((await c.query(`SELECT id FROM hsk_jobs WHERE chain_id=$1 AND account=$2 AND status IN ('PREPARED','SIGNING','SIGNED','UNKNOWN','SUBMITTED','MINED')`,[chain,account])).rowCount) fail('ACCOUNT_PENDING');
       const row = (await c.query<DurableJob>(`INSERT INTO hsk_jobs(id,chain_id,account,session_id,nonce,intent_hash,payload,status)
         VALUES($1,$2,$3,$4,$5,$6,$7,'PREPARED') RETURNING *`,[randomUUID(),chain,account,input.sessionId,input.nonce,intent,payload])).rows[0];
       await this.audit(c,row.id,'RESERVED'); return row;
@@ -69,12 +69,22 @@ export class PgJobStore {
   }
   /** Claim permits reconciliation of UNKNOWN, never rebroadcast. Fence is a decimal string. */
   async claim(id: string, worker: string, leaseMs = 30_000): Promise<JobLease | null> {
+    return this.claimEligible(id,worker,leaseMs,false);
+  }
+  async claimPrepared(id: string, worker: string, leaseMs = 30_000): Promise<JobLease | null> {
+    return this.claimEligible(id,worker,leaseMs,true);
+  }
+  async claimReconciliation(id: string, worker: string, leaseMs = 30_000): Promise<JobLease | null> {
+    return this.claimEligible(id,worker,leaseMs,false,true);
+  }
+  private async claimEligible(id: string, worker: string, leaseMs: number, preparedOnly: boolean, includeTerminal=false): Promise<JobLease | null> {
     if (!worker || !Number.isSafeInteger(leaseMs) || leaseMs < 1 || leaseMs > 300_000) fail('INVALID_LEASE');
     return this.transaction(async c => {
       const result = await c.query<DurableJob>(`UPDATE hsk_jobs SET fence=fence+1,lease_owner=$2,
         lease_until=clock_timestamp()+($3::double precision * interval '1 millisecond'),updated_at=clock_timestamp()
-        WHERE id=$1 AND status IN ('PREPARED','UNKNOWN','SUBMITTED','MINED','REORGED')
-        AND (lease_until IS NULL OR lease_until<=clock_timestamp()) RETURNING *`,[id,worker,leaseMs]);
+        WHERE id=$1 AND (status IN ('PREPARED','SIGNING','SIGNED','UNKNOWN','SUBMITTED','MINED','REORGED') OR ($5::boolean AND status IN ('CONFIRMED','FAILED')))
+        AND (NOT $4::boolean OR status='PREPARED')
+        AND (lease_until IS NULL OR lease_until<=clock_timestamp()) RETURNING *`,[id,worker,leaseMs,preparedOnly,includeTerminal]);
       if (!result.rows[0]) return null;
       const lease = {jobId:id,worker,fence:result.rows[0].fence};
       await this.audit(c,id,'CLAIMED',{worker,fence:lease.fence}); return lease;
@@ -89,11 +99,53 @@ export class PgJobStore {
       AND lease_until>clock_timestamp() FOR UPDATE`,[lease.jobId,uint(lease.fence),lease.worker])).rows[0];
     if (!row) fail('STALE_LEASE'); return row;
   }
+  /** Validates a live fence and account quarantine; no external side effects occur here. */
+  async assertLease(lease: JobLease): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      const a=(await c.query('SELECT quarantined FROM hsk_job_accounts WHERE chain_id=$1 AND account=$2',[job.chain_id,job.account])).rows[0];
+      if(a.quarantined) fail('ACCOUNT_QUARANTINED');
+      if(!['PREPARED','SIGNING','SIGNED','UNKNOWN','SUBMITTED','MINED'].includes(job.status)) fail('INACTIVE_JOB');
+    });
+  }
+  /** Write-ahead signing barrier: UNKNOWN signer outcome must never become PREPARED again. */
+  async beginSigning(lease: JobLease): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      if(job.status!=='PREPARED') fail('NOT_PREPARED_NO_RESIGN');
+      const a=(await c.query('SELECT quarantined FROM hsk_job_accounts WHERE chain_id=$1 AND account=$2',[job.chain_id,job.account])).rows[0];
+      if(a.quarantined) fail('ACCOUNT_QUARANTINED');
+      await c.query("UPDATE hsk_jobs SET status='SIGNING',updated_at=clock_timestamp() WHERE id=$1",[job.id]);
+      await this.audit(c,job.id,'SIGNING_WRITE_AHEAD');
+    });
+  }
+  async markSigned(lease: JobLease): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      if(job.status!=='SIGNING') fail('NOT_SIGNING');
+      await c.query("UPDATE hsk_jobs SET status='SIGNED',updated_at=clock_timestamp() WHERE id=$1",[job.id]);
+      await this.audit(c,job.id,'BOTH_ROLE_SIGNATURES_VERIFIED');
+    });
+  }
+  async rejectPrepared(lease: JobLease, reason: string): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      if(job.status!=='PREPARED') fail('SIGNING_CANNOT_BE_RELEASED');
+      await c.query("UPDATE hsk_jobs SET status='REJECTED',lease_owner=NULL,lease_until=NULL,updated_at=clock_timestamp() WHERE id=$1",[job.id]);
+      await this.audit(c,job.id,'PRE_SIGN_REJECTED',{reason});
+    });
+  }
+  async recordReconciliationWait(lease: JobLease): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      await this.audit(c,job.id,'RECONCILIATION_WAIT',{status:job.status});
+    });
+  }
   /** Persist the uncertainty barrier BEFORE invoking any network submission. A crash now requires reconciliation. */
   async beginSubmission(lease: JobLease): Promise<void> {
     await this.transaction(async c => {
       const job = await this.locked(c,lease);
-      if (job.status !== 'PREPARED') fail('NOT_PREPARED_NO_REBROADCAST');
+      if (job.status !== 'SIGNED') fail('NOT_SIGNED_NO_REBROADCAST');
       const a = (await c.query('SELECT quarantined FROM hsk_job_accounts WHERE chain_id=$1 AND account=$2',[job.chain_id,job.account])).rows[0];
       if (a.quarantined) fail('ACCOUNT_QUARANTINED');
       await c.query(`UPDATE hsk_jobs SET status='UNKNOWN',updated_at=clock_timestamp() WHERE id=$1`,[job.id]);
@@ -133,6 +185,13 @@ export class PgJobStore {
       await this.audit(c,job.id,'REPLACEMENT_OBSERVED',{txHash:hash,replacesHash:oldHash});
     });
   }
+  async assertTransactionIdentity(lease: JobLease, submission: Submission): Promise<void> {
+    await this.transaction(async c => {
+      const job=await this.locked(c,lease);
+      const tx=(await c.query('SELECT sender,tx_nonce FROM hsk_job_transactions WHERE chain_id=$1 AND tx_hash=$2 AND job_id=$3',[job.chain_id,hex(submission.txHash,64),job.id])).rows[0];
+      if(!tx || tx.sender!==hex(submission.sender,40) || tx.tx_nonce!==uint(submission.txNonce)) fail('TRANSACTION_IDENTITY_MISMATCH');
+    });
+  }
   async recordReceipt(lease: JobLease, receipt: {txHash: string; blockNumber: string; blockHash: string; success: boolean}): Promise<void> {
     await this.transaction(async c => {
       const job = await this.locked(c,lease);
@@ -164,8 +223,9 @@ export class PgJobStore {
   /** Trusted indexer entrypoint: atomically revoke receipt, flag accounting reversal and block account.
    * No automatic clear/rebroadcast: ledger reversal and chain reconciliation must be implemented separately.
    */
-  async markReorg(id: string, orphanedBlockHash: string): Promise<void> {
+  async markReorg(id: string, orphanedBlockHash: string, lease?: JobLease): Promise<void> {
     await this.transaction(async c => {
+      if(lease) { if(lease.jobId!==id) fail('RESERVATION_MISMATCH'); await this.locked(c,lease); }
       const job = (await c.query<DurableJob>('SELECT * FROM hsk_jobs WHERE id=$1',[id])).rows[0];
       if (!job) fail('JOB_NOT_FOUND');
       await c.query('SELECT 1 FROM hsk_job_accounts WHERE chain_id=$1 AND account=$2 FOR UPDATE',[job.chain_id,job.account]);

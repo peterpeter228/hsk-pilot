@@ -1,0 +1,221 @@
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+ ❯ tests/server/local-job-adapter.test.ts (10 tests | 9 failed) 2137ms
+   ❯ LocalCoordinator with real PostgreSQL (fake execution only) (10)
+     × runs a complete local substrate trace; independent coordinator race signs twice total and sends once 11ms
+     × actual child crash before-first-sign survives independent restart without sign/send replay 504ms
+     × actual child crash during-second-sign survives independent restart without sign/send replay 467ms
+     × actual child crash after-signed survives independent restart without sign/send replay 490ms
+     × actual child crash after-unknown survives independent restart without sign/send replay 583ms
+     × expired signer fence stops second role and leaves SIGNING, not PREPARED 3ms
+     × failed write-ahead SIGNING persistence invokes no signer 5ms
+     × failed UNKNOWN persistence does not send, keeps SIGNED quarantined 1ms
+     × blocks mismatched version/typed payload and forged reservation ownership 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > runs a complete local substrate trace; independent coordinator race signs twice total and sends once
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/server/local-job-adapter.test.ts:25:53
+     23|   const account=testAddress(101),f=localJobFixture(adapter(account,'a'…
+     24|   const results=await Promise.all([new LocalCoordinator(f.deps).run(),…
+     25|   expect(results.filter(r=>r.status==='SUBMITTED')).toHaveLength(1);
+       |                                                     ^
+     26|   expect([...f.calls,...g.calls].sort()).toEqual(['send','sign:RISK','…
+     27|   const job=(await jobs.pending('31337',account))[0];expect(job.status…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > actual child crash before-first-sign survives independent restart without sign/send replay
+AssertionError: /workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25
+throw Error('EXPECTED_CRASH_BOUNDARY_NOT_REACHED');
+      ^
+
+Error: EXPECTED_CRASH_BOUNDARY_NOT_REACHED
+    at <anonymous> (/workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25:7)
+
+Node.js v24.22.1
+: expected 1 to be 71 // Object.is equality
+
+- Expected
++ Received
+
+- 71
++ 1
+
+ ❯ <anonymous> tests/server/local-job-crash-child.ts:25:7
+ ❯ tests/server/local-job-adapter.test.ts:38:51
+     36|    const account=testAddress(index);
+     37|    const child=spawnSync(process.execPath,['--import','tsx','tests/ser…
+     38|    expect(child.status,child.stderr+child.stdout).toBe(code);
+       |                                                   ^
+     39|    await pool.query('SELECT pg_sleep(0.03)');
+     40|    const independent=new Pool({connectionString:url,options:`-c search…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > actual child crash during-second-sign survives independent restart without sign/send replay
+AssertionError: /workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25
+throw Error('EXPECTED_CRASH_BOUNDARY_NOT_REACHED');
+      ^
+
+Error: EXPECTED_CRASH_BOUNDARY_NOT_REACHED
+    at <anonymous> (/workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25:7)
+
+Node.js v24.22.1
+: expected 1 to be 72 // Object.is equality
+
+- Expected
++ Received
+
+- 72
++ 1
+
+ ❯ <anonymous> tests/server/local-job-crash-child.ts:25:7
+ ❯ tests/server/local-job-adapter.test.ts:38:51
+     36|    const account=testAddress(index);
+     37|    const child=spawnSync(process.execPath,['--import','tsx','tests/ser…
+     38|    expect(child.status,child.stderr+child.stdout).toBe(code);
+       |                                                   ^
+     39|    await pool.query('SELECT pg_sleep(0.03)');
+     40|    const independent=new Pool({connectionString:url,options:`-c search…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > actual child crash after-signed survives independent restart without sign/send replay
+AssertionError: /workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25
+throw Error('EXPECTED_CRASH_BOUNDARY_NOT_REACHED');
+      ^
+
+Error: EXPECTED_CRASH_BOUNDARY_NOT_REACHED
+    at <anonymous> (/workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25:7)
+
+Node.js v24.22.1
+: expected 1 to be 73 // Object.is equality
+
+- Expected
++ Received
+
+- 73
++ 1
+
+ ❯ <anonymous> tests/server/local-job-crash-child.ts:25:7
+ ❯ tests/server/local-job-adapter.test.ts:38:51
+     36|    const account=testAddress(index);
+     37|    const child=spawnSync(process.execPath,['--import','tsx','tests/ser…
+     38|    expect(child.status,child.stderr+child.stdout).toBe(code);
+       |                                                   ^
+     39|    await pool.query('SELECT pg_sleep(0.03)');
+     40|    const independent=new Pool({connectionString:url,options:`-c search…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > actual child crash after-unknown survives independent restart without sign/send replay
+AssertionError: /workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25
+throw Error('EXPECTED_CRASH_BOUNDARY_NOT_REACHED');
+      ^
+
+Error: EXPECTED_CRASH_BOUNDARY_NOT_REACHED
+    at <anonymous> (/workspace/scratch/c01bd6fe117d/hsk-pilot/tests/server/local-job-crash-child.ts:25:7)
+
+Node.js v24.22.1
+: expected 1 to be 74 // Object.is equality
+
+- Expected
++ Received
+
+- 74
++ 1
+
+ ❯ <anonymous> tests/server/local-job-crash-child.ts:25:7
+ ❯ tests/server/local-job-adapter.test.ts:38:51
+     36|    const account=testAddress(index);
+     37|    const child=spawnSync(process.execPath,['--import','tsx','tests/ser…
+     38|    expect(child.status,child.stderr+child.stdout).toBe(code);
+       |                                                   ^
+     39|    await pool.query('SELECT pg_sleep(0.03)');
+     40|    const independent=new Pool({connectionString:url,options:`-c search…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > expired signer fence stops second role and leaves SIGNING, not PREPARED
+AssertionError: expected [] to deeply equal [ 'sign:STRATEGY' ]
+
+- Expected
++ Received
+
+- [
+-   "sign:STRATEGY",
+- ]
++ []
+
+ ❯ tests/server/local-job-adapter.test.ts:57:117
+     55|   const sign=f.deps.execution.sign;
+     56|   f.deps.execution.sign=async(role,intent)=>{const r=await sign(role,i…
+     57|   const result=await new LocalCoordinator(f.deps).run();expect(result.…
+       |                                                                                                                     ^
+     58|   expect((await jobs.pending('31337',account))[0].status).toBe('SIGNIN…
+     59|   const restart=localJobFixture(adapter(account,'replacement'),account…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > failed write-ahead SIGNING persistence invokes no signer
+TypeError: Cannot read properties of undefined (reading 'status')
+ ❯ tests/server/local-job-adapter.test.ts:64:120
+     62|   const account=testAddress(107),store=adapter(account),f=localJobFixt…
+     63|   const transition=store.transition.bind(store);store.transition=async…
+     64|   await new LocalCoordinator(f.deps).run();expect(f.calls).toEqual([])…
+       |                                                                                                                        ^
+     65|  });
+     66|  it('failed UNKNOWN persistence does not send, keeps SIGNED quarantine…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > failed UNKNOWN persistence does not send, keeps SIGNED quarantined
+AssertionError: expected [] to deeply equal [ 'sign:STRATEGY', 'sign:RISK' ]
+
+- Expected
++ Received
+
+- [
+-   "sign:STRATEGY",
+-   "sign:RISK",
+- ]
++ []
+
+ ❯ tests/server/local-job-adapter.test.ts:69:60
+     67|   const account=testAddress(108),store=adapter(account),f=localJobFixt…
+     68|   const transition=store.transition.bind(store);store.transition=async…
+     69|   await new LocalCoordinator(f.deps).run();expect(f.calls).toEqual(['s…
+       |                                                            ^
+     70|  });
+     71|  it('blocks mismatched version/typed payload and forged reservation ow…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯
+
+ FAIL  tests/server/local-job-adapter.test.ts > LocalCoordinator with real PostgreSQL (fake execution only) > blocks mismatched version/typed payload and forged reservation ownership
+TypeError: Cannot read properties of undefined (reading 'payload')
+ ❯ tests/server/local-job-adapter.test.ts:73:71
+     71|  it('blocks mismatched version/typed payload and forged reservation ow…
+     72|   const account=testAddress(109),store=adapter(account),f=localJobFixt…
+     73|   const job=(await jobs.pending('31337',account))[0];const intent=job.…
+       |                                                                       ^
+     74|   await expect(store.reserve({...intent,policyVersion:'99'})).rejects.…
+     75|   const changed=structuredClone(intent);(changed.typedData.message as …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/9]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  9 failed | 8 passed (17)
+   Start at  08:06:28
+   Duration  2.58s (tests 90%, import 6%, transform 3%)
+

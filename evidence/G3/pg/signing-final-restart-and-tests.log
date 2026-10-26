@@ -1,0 +1,20 @@
+Mon Oct 26 08:17:08 UTC 2026
+waiting for server to start.... done
+server started
+PREPARE: durable UNKNOWN committed; no tx hash, no broadcast
+waiting for server to shut down.... done
+server stopped
+waiting for server to start.... done
+server started
+VERIFY: actual PostgreSQL stop/start preserved UNKNOWN and blocked new intent; no hash invented
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+
+ Test Files  2 passed (2)
+      Tests  19 passed (19)
+   Start at  08:17:09
+   Duration  6.91s (tests 95%, import 4%, transform 1%)
+
+waiting for server to shut down.... done
+server stopped

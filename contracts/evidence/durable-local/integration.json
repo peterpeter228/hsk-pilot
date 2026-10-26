@@ -1,0 +1,347 @@
+{
+  "schemaVersion": "hsk-durable-local-integration/1",
+  "sourceDataMode": "SIMULATION",
+  "executionDataMode": "SIMULATION",
+  "executionKind": "LOCAL_TX",
+  "chainId": 31337,
+  "startedAt": "2026-10-26T08:20:30.819Z",
+  "status": "PASS",
+  "databaseSchema": "hsk_anvil_6ed94174eae443cd9b5b51b66dd20413",
+  "transactions": [
+    {
+      "label": "deploy mock WHSK18",
+      "hash": "0x7883ba63f076f7c7c96098cefd46513f30b1de2c26967cf1bc0aa8d4a1f8f1e6",
+      "blockNumber": "1",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock USDT6",
+      "hash": "0xe78ac858d7a04f86baaf3d8d684e452a4298881343b6d17643ddd19248fa1e08",
+      "blockNumber": "2",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock pool",
+      "hash": "0xe8683c7cd9559e29978ab0121d66be516cbb6b909e594e4c582bff8d4dc5b535",
+      "blockNumber": "3",
+      "gasUsed": "207666",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock factory",
+      "hash": "0x4837b3dc1f888b32637ffa62af856f52890c606ff42d6e1e0939655a013638ac",
+      "blockNumber": "4",
+      "gasUsed": "121798",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock router",
+      "hash": "0x6ab75f1e15161565eac3e533d8ea0efdf821ffa021c3a978ff6dfce817b47eb6",
+      "blockNumber": "5",
+      "gasUsed": "538184",
+      "status": "success"
+    },
+    {
+      "label": "deploy guard",
+      "hash": "0x53da7f871e45cea4a733a6124a6907d08fb7448309f3fc32a86b42c5bbe6da01",
+      "blockNumber": "6",
+      "gasUsed": "2816415",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x64fa8b3230126af36090beb2ead731664d794c5200d4a0dff9d5a62385dc4c32",
+      "blockNumber": "7",
+      "gasUsed": "68061",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x691b00fc919c4649f2500923bd9e04c23a9fc7c8d3b206f0934861bcaedabb3a",
+      "blockNumber": "8",
+      "gasUsed": "68109",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0xc93bfb5ff15110ec861e3e245741c57101f120f4d178a4b7b791f30d4a4e0bc5",
+      "blockNumber": "9",
+      "gasUsed": "50961",
+      "status": "success"
+    },
+    {
+      "label": "startSession",
+      "hash": "0xcb56de5a12e7d4ea4a980b9a1ee0de2eb3e9d45aef9195849b60219012faeeed",
+      "blockNumber": "10",
+      "gasUsed": "370194",
+      "status": "success"
+    },
+    {
+      "label": "configure",
+      "hash": "0x4a32c46eab8ca45dcdcbc475f40fb71b31e7230b4d7903ad7c53e0e7efbc7134",
+      "blockNumber": "11",
+      "gasUsed": "48352",
+      "status": "success"
+    },
+    {
+      "label": "coordinator actual local buy",
+      "hash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+      "blockNumber": "12",
+      "gasUsed": "300809",
+      "status": "success"
+    }
+  ],
+  "checks": [
+    {
+      "check": "actual strategy-risk coordinator with durable pre-sign barrier, cryptographic role recovery, signed eth_call, local transaction and exact deltas",
+      "status": "PASS",
+      "intentId": "0xd6bb6757e9d5f15ab334682f475f171af51a5dfbae4f2f1b2f1ab30cced0616d",
+      "jobId": "214bc016-3348-41fc-af6e-95f15db19183",
+      "transactionHash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+      "intentNonce": "0",
+      "eoaNonce": "11",
+      "sender": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "check": "new coordinator/PG pool blocks duplicate before reconciliation and confirms canonical RPC receipt under new fence",
+      "status": "PASS",
+      "restartResult": {
+        "status": "BLOCKED",
+        "reason": "UNRESOLVED_INTENT_OR_LOCK",
+        "intentId": "0xa8c817f6bf3d88f1358663841ec9842a5c351b3dabeaf445cc13b1252b5c8cbf",
+        "txHash": null
+      },
+      "finalState": "CONFIRMED",
+      "signCalls": 2,
+      "verifiedSignatures": 2,
+      "simulations": 1,
+      "sendCalls": 1,
+      "receipts": [
+        {
+          "chain_id": "31337",
+          "tx_hash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+          "job_id": "214bc016-3348-41fc-af6e-95f15db19183",
+          "sender": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+          "tx_nonce": "11",
+          "replaces_hash": null,
+          "block_number": "12",
+          "block_hash": "0x57e9f04ccd60acb3f6960ed22c9c2c4432bed58e975c8c0462d28bce8093530e",
+          "receipt_success": true,
+          "canonical": true,
+          "created_at": "2026-10-26T08:20:31.115Z"
+        }
+      ],
+      "audit": [
+        {
+          "event": "RESERVED",
+          "detail": {},
+          "created_at": "2026-10-26T08:20:31.054Z"
+        },
+        {
+          "event": "CLAIMED",
+          "detail": {
+            "fence": "1",
+            "worker": "durable-local-first"
+          },
+          "created_at": "2026-10-26T08:20:31.056Z"
+        },
+        {
+          "event": "SIGNING_WRITE_AHEAD",
+          "detail": {},
+          "created_at": "2026-10-26T08:20:31.060Z"
+        },
+        {
+          "event": "BOTH_ROLE_SIGNATURES_VERIFIED",
+          "detail": {},
+          "created_at": "2026-10-26T08:20:31.085Z"
+        },
+        {
+          "event": "SUBMISSION_UNCERTAIN",
+          "detail": {},
+          "created_at": "2026-10-26T08:20:31.101Z"
+        },
+        {
+          "event": "SUBMITTED",
+          "detail": {
+            "txHash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5"
+          },
+          "created_at": "2026-10-26T08:20:31.116Z"
+        },
+        {
+          "event": "CLAIMED",
+          "detail": {
+            "fence": "2",
+            "worker": "durable-local-restarted"
+          },
+          "created_at": "2026-10-26T08:20:41.110Z"
+        },
+        {
+          "event": "RECEIPT_OBSERVED",
+          "detail": {
+            "txHash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+            "success": true,
+            "blockHash": "0x57e9f04ccd60acb3f6960ed22c9c2c4432bed58e975c8c0462d28bce8093530e"
+          },
+          "created_at": "2026-10-26T08:20:41.125Z"
+        },
+        {
+          "event": "CONFIRMED",
+          "detail": {
+            "txHash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+            "success": true,
+            "blockHash": "0x57e9f04ccd60acb3f6960ed22c9c2c4432bed58e975c8c0462d28bce8093530e"
+          },
+          "created_at": "2026-10-26T08:20:41.127Z"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Synthetic tokens and router, not HSKSwap integration or mainnet performance.",
+    "Ephemeral local chain transaction hashes are not mainnet explorer evidence.",
+    "Role keys are different but execute in one test process; no independent trust domains.",
+    "Configured sourceChainId177 is coordinator project metadata only; this fixture reads no mainnet market data. All snapshot/quote/token/router data are synthetic Anvil31337.",
+    "One confirmation is a local-test setting, not a production finality policy.",
+    "Schema is dropped after exporting evidence; this is a local integration test, not a hosted durable service."
+  ],
+  "addresses": {
+    "guard": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707",
+    "risk": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "quote": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "pool": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "factory": "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9",
+    "router": "0xdc64a140aa3e981100a9beca4e685f962f0cf6c9",
+    "owner": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+    "strategySigner": "0xCfb9E5dAc8816768e20c7B4B024087F3eBfc9516",
+    "riskSigner": "0x00d9A21A341F3b5c179720e3F1231E8c46DB248C"
+  },
+  "finishedAt": "2026-10-26T08:20:41.134Z",
+  "intent": {
+    "id": "0xd6bb6757e9d5f15ab334682f475f171af51a5dfbae4f2f1b2f1ab30cced0616d",
+    "nonce": "0",
+    "policyVersion": "1",
+    "deadline": 1793002861,
+    "typedData": {
+      "domain": {
+        "name": "HSKPilotGuard",
+        "version": "1",
+        "chainId": 31337,
+        "verifyingContract": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707"
+      },
+      "types": {
+        "TradeIntent": [
+          {
+            "name": "sessionId",
+            "type": "uint64"
+          },
+          {
+            "name": "policyVersion",
+            "type": "uint32"
+          },
+          {
+            "name": "strategyPolicyHash",
+            "type": "bytes32"
+          },
+          {
+            "name": "intentNonce",
+            "type": "uint256"
+          },
+          {
+            "name": "direction",
+            "type": "uint8"
+          },
+          {
+            "name": "amountInRaw",
+            "type": "uint256"
+          },
+          {
+            "name": "referenceAmountOutRaw",
+            "type": "uint256"
+          },
+          {
+            "name": "amountOutMinimumRaw",
+            "type": "uint256"
+          },
+          {
+            "name": "quoteObservedAt",
+            "type": "uint64"
+          },
+          {
+            "name": "quoteBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "name": "quoteBlockHash",
+            "type": "bytes32"
+          },
+          {
+            "name": "deadline",
+            "type": "uint64"
+          },
+          {
+            "name": "evidenceHash",
+            "type": "bytes32"
+          }
+        ]
+      },
+      "primaryType": "TradeIntent",
+      "message": {
+        "sessionId": "1",
+        "policyVersion": "1",
+        "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e",
+        "intentNonce": "0",
+        "direction": 0,
+        "amountInRaw": "10000000",
+        "referenceAmountOutRaw": "10000000000000000000",
+        "amountOutMinimumRaw": "9900000000000000000",
+        "quoteObservedAt": "1793002831",
+        "quoteBlockNumber": "11",
+        "quoteBlockHash": "0x30aa3ddd8cee5d5b48b5e51c6443525e28bccf4f18d317dcaffd2df2c3c9c2e5",
+        "deadline": "1793002861",
+        "evidenceHash": "0x2804ab07c06dc44d17a308792a4f0833927f1267086ed8f69f0abbe57e11c096"
+      }
+    }
+  },
+  "receiptObservation": {
+    "now": 1793002831,
+    "nonce": "1",
+    "policyVersion": "1",
+    "canonicalBlockHash": "0x57e9f04ccd60acb3f6960ed22c9c2c4432bed58e975c8c0462d28bce8093530e",
+    "receipt": {
+      "success": true,
+      "blockHash": "0x57e9f04ccd60acb3f6960ed22c9c2c4432bed58e975c8c0462d28bce8093530e",
+      "blockNumber": "12",
+      "txHash": "0xc1b210284035a4f78f3de2c1afe412c74a6a6a50a51dc0c3d6861d99606405e5",
+      "sender": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "txNonce": "11",
+      "confirmations": 1
+    }
+  },
+  "consumedRoleSignatures": [
+    {
+      "role": "STRATEGY",
+      "signerId": "0xCfb9E5dAc8816768e20c7B4B024087F3eBfc9516",
+      "signature": "0xc1469ca3dc09f0e2b01fa54366ff7fd21d1f6a20a910da2f5c93be2c7342c43501966d533cdc220cfab20d00c109e7200d7daa7de47d2d95261974fe01b9ba461b",
+      "intentId": "0xd6bb6757e9d5f15ab334682f475f171af51a5dfbae4f2f1b2f1ab30cced0616d"
+    },
+    {
+      "role": "RISK",
+      "signerId": "0x00d9A21A341F3b5c179720e3F1231E8c46DB248C",
+      "signature": "0x6ae57ed967fdd45f71a13feae2169d91b50ced94ee71470d8ba346d1dfc584291219ed44815cad99b7ab3da37c0bf6160f376a5ca869dc7141eb3a5a1c3a3db71b",
+      "intentId": "0xd6bb6757e9d5f15ab334682f475f171af51a5dfbae4f2f1b2f1ab30cced0616d"
+    }
+  ],
+  "costDisclosure": {
+    "preTradeEstimate": {
+      "quoteRaw": "0",
+      "source": "SYNTHETIC"
+    },
+    "actualLocalGasUsed": "300809",
+    "effectiveGasPrice": "242048644",
+    "actualLocalNativeFeeWei": "72810410552996",
+    "quoteCostConversion": null,
+    "note": "Synthetic estimate is not observed zero cost; USDT conversion unknown."
+  }
+}

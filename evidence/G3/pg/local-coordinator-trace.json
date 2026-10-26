@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-26T08:17:44.366Z",
+  "dataMode": "SIMULATION",
+  "execution": "FAKE_SIGNATURES_AND_SEND_ONLY",
+  "executionChainId": 31337,
+  "sourceChainId": 177,
+  "events": [
+    "RESERVED",
+    "CLAIMED",
+    "SIGNING_WRITE_AHEAD",
+    "BOTH_ROLE_SIGNATURES_VERIFIED",
+    "SUBMISSION_UNCERTAIN",
+    "SUBMITTED"
+  ],
+  "roleCalls": [
+    "sign:STRATEGY",
+    "sign:RISK",
+    "send"
+  ],
+  "eoaNonce": "42",
+  "intentNonce": "0",
+  "status": "SUBMITTED"
+}

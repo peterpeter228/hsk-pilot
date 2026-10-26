@@ -5,7 +5,7 @@ import {WacLedger,valueSession,aggregateCapitalAdjustedPnl} from '../../apps/wor
 import {defaultPolicy as p,defaultStrategy as t,SimulationSession} from '../../apps/worker/src/simulation.js';
 import {reconcile} from '../../apps/worker/src/recovery.js';
 import {assertReadOnlyRpcMethod} from '../../packages/chain/src/index.js';
-const s:Snapshot={hash:'s',policyHash:'p',now:1000,observedAt:1000,quoteBalanceRaw:'20000000',riskBalanceRaw:'0',indicativeRiskValueQuoteRaw:'0',sessionGrossBuyRaw:'0',dayGrossBuyRaw:'0',lastTradeAt:0,lastExitAt:0};
+const s:Snapshot={executionCostEstimate:{quoteRaw:'0',observedAt:1000,source:'SYNTHETIC'},hash:'s',policyHash:'p',now:1000,observedAt:1000,quoteBalanceRaw:'20000000',riskBalanceRaw:'0',indicativeRiskValueQuoteRaw:'0',sessionGrossBuyRaw:'0',dayGrossBuyRaw:'0',lastTradeAt:0,lastExitAt:0};
 const quote=async(d:'BUY'|'SELL',a:bigint)=>d==='BUY'?a*10n**12n:a/10n**12n;
 describe('integer boundaries and proposals',()=>{
  it('rejects negative, float, exponent, overuint and excess precision',()=>{for(const x of ['-1','1.1','1e6','01',(1n<<256n).toString()])expect(()=>parseRaw(x)).toThrow();expect(()=>parseUnitsStrict('0.0000001',6)).toThrow();expect(parseUnitsStrict('20',6)).toBe('20000000');expect(parsePercentBps('0.3%')).toBe(30);});
@@ -51,3 +51,6 @@ describe('fixed typed intent and control boundary',()=>{
  it('paused simulator cannot silently resume through reduce-only',()=>{const x=new SimulationSession();x.pause();expect(()=>x.enterReduceOnly()).toThrow('SESSION_PAUSED_WITHDRAW_ONLY');expect(x.withdraw().status).toBe('CLOSED');});
 });
 it('pending receipt does not enter realized accounting before required confirmations',()=>{const l=new CanonicalLedger();const receipt={chainId:177,txHash:'pending',blockNumber:1,transactionIndex:0,confirmations:1,blockHash:'b',status:'SUCCESS' as const,gasNativeRaw:'1',gasComplete:true,fills:[{logIndex:0,direction:'BUY' as const,riskRaw:'3',quoteRaw:'10'}]};l.ingest(receipt);expect(l.state('0').riskRaw).toBe('0');l.ingest({...receipt,confirmations:3});expect(l.state('10').riskRaw).toBe('3');});
+describe('explicit execution cost cap',()=>{
+ it('fails normal risk closed for missing/stale/future/overcap and accepts known synthetic zero',async()=>{const c=(await buildCandidate(s,p,t,quote))!;for(const [estimate,reason]of [[undefined,'EXECUTION_COST_UNKNOWN'],[{quoteRaw:'0',observedAt:969,source:'SYNTHETIC'},'EXECUTION_COST_STALE'],[{quoteRaw:'0',observedAt:1001,source:'SYNTHETIC'},'EXECUTION_COST_STALE'],[{quoteRaw:'100001',observedAt:1000,source:'SYNTHETIC'},'EXECUTION_COST_LIMIT']] as const){expect((await assessRisk(c,{...s,executionCostEstimate:estimate},p,t,quote)).reason).toBe(reason);}expect((await assessRisk(c,s,p,t,quote)).allowed).toBe(true);});
+});

@@ -10,9 +10,12 @@ try {
  if(process.argv[2]==='prepare') {
   await admin.query(`CREATE SCHEMA ${schema}`);
   await pool.query(await readFile(new URL('../../../migrations/001_durable_jobs.sql',import.meta.url),'utf8'));
+  await pool.query(await readFile(new URL('../../../migrations/002_signing_barrier.sql',import.meta.url),'utf8'));
   const j=await store.reserve({chainId:'177',account:'0x'+'a'.repeat(40),sessionId:'1',nonce:'0',intentHash:'0x'+'b'.repeat(64),payload:{sourceDataMode:'SIMULATION'}});
   const l=await store.claim(j.id,'restart-probe',1_000);
   if(!l) throw Error('claim missing');
+  await store.beginSigning(l);
+  await store.markSigned(l);
   await store.beginSubmission(l);
   await writeFile('/tmp/hsk-restart-job-id',j.id);
   console.log('PREPARE: durable UNKNOWN committed; no tx hash, no broadcast');

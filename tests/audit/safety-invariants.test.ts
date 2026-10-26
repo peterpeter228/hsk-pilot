@@ -2,7 +2,7 @@ import {describe,it,expect} from 'vitest';
 import {buildCandidate,assessRisk,type Snapshot} from '../../packages/strategy/src/index.js';
 import {defaultPolicy as p,defaultStrategy as t} from '../../apps/worker/src/simulation.js';
 import {CanonicalLedger} from '../../apps/worker/src/indexer.js';
-const s:Snapshot={hash:'audit-s',policyHash:'audit-p',now:1000,observedAt:1000,quoteBalanceRaw:'20000000',riskBalanceRaw:'0',indicativeRiskValueQuoteRaw:'0',sessionGrossBuyRaw:'0',dayGrossBuyRaw:'0',lastTradeAt:0,lastExitAt:0};
+const s:Snapshot={hash:'audit-s',policyHash:'audit-p',now:1000,observedAt:1000,executionCostEstimate:{quoteRaw:'0',observedAt:1000,source:'SYNTHETIC'},quoteBalanceRaw:'20000000',riskBalanceRaw:'0',indicativeRiskValueQuoteRaw:'0',sessionGrossBuyRaw:'0',dayGrossBuyRaw:'0',lastTradeAt:0,lastExitAt:0};
 const quote=async(d:'BUY'|'SELL',a:bigint)=>d==='BUY'?a*10n**12n:a/10n**12n;
 describe('independent safety audit: expected invariants',()=>{
  it('risk approval must not authorize caller-weakened reference/minimum',async()=>{
@@ -51,4 +51,15 @@ it('pending receipt does not enter confirmed inventory or costs until threshold'
  l.ingest({...receipt,confirmations:3});
  expect(l.state('10').riskRaw).toBe('3');
  expect(l.state('10').knownGasNativeRaw).toBe('4');
+});
+it('normal risk fails closed for absent, future, stale, or over-cap execution cost',async()=>{
+ const c=(await buildCandidate(s,p,t,quote))!;
+ const cases:[Snapshot,string][]=[
+  [{...s,executionCostEstimate:undefined},'EXECUTION_COST_UNKNOWN'],
+  [{...s,executionCostEstimate:{quoteRaw:'0',observedAt:1001,source:'SYNTHETIC'}},'EXECUTION_COST_STALE'],
+  [{...s,executionCostEstimate:{quoteRaw:'0',observedAt:969,source:'SYNTHETIC'}},'EXECUTION_COST_STALE'],
+  [{...s,executionCostEstimate:{quoteRaw:(BigInt(t.maxExecutionCostQuoteRaw)+1n).toString(),observedAt:1000,source:'SYNTHETIC'}},'EXECUTION_COST_LIMIT']
+ ];
+ for(const [snapshot,reason]of cases){const risk=await assessRisk(c,snapshot,p,t,quote);expect(risk.allowed).toBe(false);expect(risk.reason).toBe(reason);}
+ expect((await assessRisk(c,s,p,t,quote)).allowed).toBe(true);
 });

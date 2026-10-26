@@ -1,0 +1,16 @@
+# Durable local signing integration — actual test results
+
+- UTC: 2026-10-26 08:17:08–08:17:17.
+- Base checkpoint: 6c49b95b38b1a7935d59da659065a74f21105209; this tested working-tree increment is pinned by `signing-source-sha256.txt`, not claimed committed under the base SHA.
+- Command: `HSK_TEST_DATABASE_URL=postgresql://agent@127.0.0.1:55439/postgres TZ=UTC node_modules/.bin/vitest run tests/server/job-store.test.ts tests/server/local-job-adapter.test.ts`.
+- Actual result: exit 0, **19/19 passed** (7 storage + 12 local adapter integration). PostgreSQL 18.4, isolated per-suite schemas removed. Database stopped afterward and runtime handed to separate local-Anvil integration owner.
+- Evidence: `signing-final-restart-and-tests.log` (also verifies updated 001+002 restart probe across actual PostgreSQL shutdown/startup); earlier `signing-integration.log`; machine-written actual audit trace `local-coordinator-trace.json`.
+- Four actual spawned Node processes exit without cleanup: after committed SIGNING before first signer; during second role signer; after SIGNED; after UNKNOWN with send result unavailable. Each independent restarted coordinator performs zero additional signer/send calls, even after DB lease expiry. SIGNING/SIGNED remain quarantined; recovery claims cannot enter SIGNING again.
+- Successful competing-coordinator trace: RESERVED → CLAIMED → SIGNING_WRITE_AHEAD → BOTH_ROLE_SIGNATURES_VERIFIED → SUBMISSION_UNCERTAIN → SUBMITTED. Exactly two fake role-sign calls and one fake send. EOA nonce 42 is stored separately from intent nonce 0.
+- Additional assertions: expired slow first-signer lease prevents second role; SIGNING persistence failure invokes zero signers; UNKNOWN persistence failure invokes zero sends; immutable version/payload and foreign reservation worker rejected; mismatched receipt EOA identity rejected without state advancement; matching receipt confirms then a separate terminal reconciliation claim marks reorg; stale pre-confirmation fence is rejected; adapter construction rejects chain177; legacy001 PREPARED upgrade quarantines and pending unique index includes SIGNING/SIGNED.
+- Execution chain: 31337. Source metadata: 177. **DataMode SIMULATION, fake signatures and fake send only in this test suite.** Actual local EVM integration is separate evidence; no mainnet funds or private credentials used here.
+- Full TypeScript typecheck exited 0 at 08:12 UTC after fixture synchronization.
+- Initial iteration failure retained in `signing-integration-first.log`: chain-binding fixture changes had not yet been synchronized with the concurrently updated coordinator. Final run above is the verified result.
+- Remaining limits: no public API authorization or live signer/provider; no automatic signed-intent release; no ledger reversal implementation; no production UI/trading completion claim. Reconciliation metadata must come from a trusted chain adapter.
+
+Final explicit account-quarantine assertions PASS in the final 19-test run above: newer already-leased PREPARED job fails assertLease following an older reorg; a new nonce reservation fails after confirmed→reorg. The separate auditor reviewed source and ran its independent non-PG tests; this final PG run was executed by the storage implementer after runtime handoff.

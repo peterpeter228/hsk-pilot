@@ -1,6 +1,6 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-26T07:56:10Z",
+  "updatedAt": "2026-10-26T08:18:18Z",
   "timezone": "Asia/Shanghai",
   "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
   "currentGate": "G3",
@@ -28,8 +28,12 @@
       "evidence": []
     },
     "G3": {
-      "status": "PARTIAL",
-      "evidence": []
+      "status": "PASS_LOCAL_CORE_PARTIAL_PRODUCT",
+      "evidence": [
+        "evidence/final/tests.log",
+        "contracts/evidence/durable-local/verification.json",
+        "evidence/G3/pg/SIGNING_RESULTS.md"
+      ]
     },
     "G4": {
       "status": "BLOCKED",
@@ -71,5 +75,13 @@
     "httpStatus": 200,
     "backendVersion": null,
     "cost": null
+  },
+  "postArgonCheckpointSha": "6c49b95b38b1a7935d59da659065a74f21105209",
+  "localComposition": {
+    "status": "PASS",
+    "executionChainId": 31337,
+    "sourceChainId": 177,
+    "evidence": "contracts/evidence/durable-local/verification.json",
+    "webSandboxPersistence": "MEMORY_ONLY"
   }
 }

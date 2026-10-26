@@ -25,7 +25,7 @@ Ran 23 tests for test/TradingSessionGuard.t.sol:GuardTest
 [PASS] testSurplusNotAllocatedAndDeficitFailsClosed() (gas: 343649)
 [PASS] testTimeBlockDirectionAmountAndSlippageBounds() (gas: 467873)
 [PASS] testUnsupportedOracleModeNeverDowngrades() (gas: 62421)
-Suite result: ok. 23 passed; 0 failed; 0 skipped; finished in 155.74ms (337.57ms CPU time)
+Suite result: ok. 23 passed; 0 failed; 0 skipped; finished in 158.16ms (316.51ms CPU time)
 
 Ran 2 tests for test/GuardInvariant.t.sol:GuardInvariantTest
 [PASS] invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly() (runs: 64, calls: 2048, reverts: 0)
@@ -33,18 +33,18 @@ Ran 2 tests for test/GuardInvariant.t.sol:GuardInvariantTest
 ╭--------------+-----------------+-------+---------+----------╮
 | Contract     | Selector        | Calls | Reverts | Discards |
 +=============================================================+
-| GuardHandler | closeAndRestart | 412   | 0       | 0        |
+| GuardHandler | closeAndRestart | 443   | 0       | 0        |
 |--------------+-----------------+-------+---------+----------|
-| GuardHandler | donate          | 385   | 0       | 0        |
+| GuardHandler | donate          | 422   | 0       | 0        |
 |--------------+-----------------+-------+---------+----------|
-| GuardHandler | reduce          | 410   | 0       | 0        |
+| GuardHandler | reduce          | 427   | 0       | 0        |
 |--------------+-----------------+-------+---------+----------|
-| GuardHandler | tighten         | 411   | 0       | 0        |
+| GuardHandler | tighten         | 405   | 0       | 0        |
 |--------------+-----------------+-------+---------+----------|
-| GuardHandler | trade           | 430   | 0       | 0        |
+| GuardHandler | trade           | 351   | 0       | 0        |
 ╰--------------+-----------------+-------+---------+----------╯
 
 [PASS] testGhostDailyExcludesSuccessfulSale() (gas: 309082)
-Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 417.41ms (414.95ms CPU time)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 365.68ms (364.75ms CPU time)
 
-Ran 2 test suites in 418.72ms (573.15ms CPU time): 25 tests passed, 0 failed, 0 skipped (25 total tests)
+Ran 2 test suites in 366.52ms (523.84ms CPU time): 25 tests passed, 0 failed, 0 skipped (25 total tests)

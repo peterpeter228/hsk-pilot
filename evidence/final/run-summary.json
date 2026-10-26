@@ -1,11 +1,11 @@
 {
-  "executedAt": "2026-10-26T07:56:10Z",
+  "executedAt": "2026-10-26T08:18:18Z",
   "status": "PASS_LOCAL_NOT_SUBMISSION_READY",
   "codeCommit": null,
   "sourceCommitBinding": "Upload manifest will bind exact source bytes to verified remote commit",
   "typescript": {
-    "passed": 68,
-    "files": 9,
+    "passed": 112,
+    "files": 12,
     "skipped": 0,
     "database": "PostgreSQL18.4 actual isolated schema"
   },
@@ -39,5 +39,21 @@
     "sourceChainId": 177
   },
   "reviewedBaseline": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
-  "postReviewCorrection": "Runtime bigint fields reject Number inputs before conversion"
+  "postReviewCorrection": "Runtime bigint fields reject Number inputs before conversion",
+  "durableLocalComposition": {
+    "status": "PASS",
+    "executionChainId": 31337,
+    "sourceChainId": 177,
+    "actualLocalTradeCount": 1,
+    "realPgIntegrationTests": 19,
+    "independentAuditTests": 27,
+    "evidence": "contracts/evidence/durable-local/verification.json"
+  },
+  "limitations": [
+    "Web sandbox remains in memory",
+    "No real product model call",
+    "No browser acceptance",
+    "No mainnet/public deployment/submission",
+    "External Argon review predates composition/cost/keeper changes"
+  ]
 }

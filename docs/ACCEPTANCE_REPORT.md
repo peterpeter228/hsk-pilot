@@ -7,11 +7,11 @@
 ## Executed evidence
 
 - Restored 41 handoff files before implementation: 40 manifest-declared files matched byte counts/SHA256; the manifest itself was hashed separately. `evidence/restoration/verification.json`.
-- Post-review root integrated run at 07:55–07:56 UTC: **68 TypeScript tests, nine files, zero skipped**, using actual isolated PostgreSQL18.4. Typecheck, frontend/server build, doctor and compiled-server HTTP smoke passed. See `evidence/final/` and `evidence/G3/http-smoke.json`.
+- Latest root integrated run at 08:17–08:18 UTC: **112 TypeScript tests, twelve files, zero skipped**, using actual isolated PostgreSQL18.4. Typecheck, frontend/server build, doctor and compiled-server HTTP smoke passed. See `evidence/final/` and `evidence/G3/http-smoke.json`.
 - Native Solidity0.8.30/Cancun tests: **25 tests**, including two 256-run fuzz properties and a 64-run/2048-call stateful invariant. The Foundry npm wrapper's exit/signal propagation issue was avoided by the checked-in resolver for its official native binary. A real invariant harness counter defect was fixed with a targeted regression; the failed log was retained, not described as a production contract vulnerability.
 - Local Anvil chain31337: actual local transactions, separate fixture roles, signed full-call simulation, balance deltas, policy tightening, reduce-only persistence, exit and withdrawal. `contracts/evidence/local-integration.json`. These local hashes are NOT mainnet receipts.
 - Fixed-block HSKSwap FORK test at29326419: actual deployed router code on locally forked state, sell/buy/minOut/old signature/reduce-only/withdraw checks. `contracts/evidence/fork-test.log`. Public state reads and local synthetic funding do not constitute a real swap, mainnet deployment, or jurisdiction clearance.
-- PostgreSQL substrate: seven tests plus actual database stop/start preservation of hashless UNKNOWN; concurrent reservation, fencing, replacement linkage and reorg quarantine. `evidence/G3/pg/RESULTS.md`.
+- PostgreSQL: nineteen storage/local-adapter tests plus actual database stop/start and child-process interruption probes; durable signing/send quarantine, fencing, replacement linkage and reorg quarantine. `evidence/G3/pg/SIGNING_RESULTS.md` (initial seven-test checkpoint retained separately).
 - Independent review reproduced and fixed six defects, with eight audit regressions. `evidence/review/independent-safety-review.md`. This is bounded engineering review, not a certified audit.
 
 ## Fresh read-only chain observations
@@ -33,7 +33,16 @@
 
 Test counts are not a claim that every C/F/W/P/UI specification row has passed. Local and fork coverage does not replace mainnet eligibility evidence. Unknown costs/net results remain null; HSK/USDT/USD units are not interchangeable. Evidence hashes establish content integrity, not factual truth or correctness of reasoning.
 
-Next: obtain a functioning browser execution environment and finish actual UI acceptance, perform the separately approved external review if granted, then resolve access/credentials and production integration before preparing any owner-operated financial step. Do not lower gates to meet the deadline.
+Next: obtain a functioning browser execution environment and finish actual UI acceptance, retain the completed external review and subsequent independent regression evidence, then resolve access/credentials and production integration before preparing any owner-operated financial step. Do not lower gates to meet the deadline.
 
 ## Post-Argon follow-up
-The provider supplied no proof for its broad bigint-overflow allegation. Independent runtime-boundary tests found a narrower concrete defect: already-rounded JavaScript Number input and numeric zero could pass a helper whose API declares bigint fields. Explicit runtime types now reject both, preserving uint width bounds. Five added regression tests pass; the independent audit suite is now13tests. Root reran all68TS/25contract checks and builds/HTTP with realPG successfully. Original failed reproduction logs are retained. This correction has not been sent back for an additional Argon call.
+The provider supplied no proof for its broad bigint-overflow allegation. Independent runtime-boundary tests found a narrower concrete defect: already-rounded JavaScript Number input and numeric zero could pass a helper whose API declares bigint fields. Explicit runtime types now reject both, preserving uint width bounds. Five added regression tests pass; the independent audit suite is now13tests. Root reran all112TS/25contract checks and builds/HTTP with realPG successfully. Original failed reproduction logs are retained. This correction has not been sent back for an additional Argon call.
+
+## Durable local composition (08:18 UTC)
+The previously separated local coordinator and PostgreSQL store are now composed with an actual ephemeral Anvil node. The local runner persists SIGNING before invoking real fixture keys, recovers both signatures, simulates the exact signed call, writes UNKNOWN before a local send, stores the actual sender/EOA nonce, and confirms a canonical RPC receipt. A new pool/coordinator cannot duplicate signing or submission. Execution chain31337 is enforced; source177 is metadata only. No real asset or remote transaction was used.
+
+Migration002 adds SIGNING/SIGNED barriers and conservatively quarantines old PREPARED rows; execution claims cannot reclaim them. Terminal reconciliation can quarantine on a later reorg without silently reopening execution. Nineteen real PG tests include four spawned-process crash boundaries, latest fence/account-quarantine checks and actual DB shutdown/startup. No automatic quarantine release or production accounting reversal is claimed.
+
+Mandatory cost checks and local drawdown keeper are now implemented. Unknown/stale/future/over-cap execution cost yields HOLD before signatures. Only fresh session-allocated whole-position USDT valuations update observed high water; the keeper requires confirmed, durably recorded REDUCE_ONLY and a final owner-state check before local exit. These are local deterministic checks, not a continuous live stop-loss guarantee.
+
+Root final verification:112TypeScript tests/12files/no skips with actualPG,25native contract tests, typecheck/build/doctor/HTTP passed; servers stopped. UI sessions remain memory-only, actual browser/model/live production gates remain blocked. The external review concerned8f064dab87d0275d1ff0768c2c57f3fd981217ef, not these later changes.

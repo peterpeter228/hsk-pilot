@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "hsk-durable-local-integration/1",
+  "sourceDataMode": "SIMULATION",
+  "executionDataMode": "SIMULATION",
+  "executionKind": "LOCAL_TX",
+  "chainId": 31337,
+  "startedAt": "2026-10-26T08:11:08.054Z",
+  "status": "FAIL",
+  "databaseSchema": "hsk_anvil_73fabcc943ec41ca89bb27fa4606c156",
+  "transactions": [
+    {
+      "label": "deploy mock WHSK18",
+      "hash": "0x7883ba63f076f7c7c96098cefd46513f30b1de2c26967cf1bc0aa8d4a1f8f1e6",
+      "blockNumber": "1",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock USDT6",
+      "hash": "0xe78ac858d7a04f86baaf3d8d684e452a4298881343b6d17643ddd19248fa1e08",
+      "blockNumber": "2",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock pool",
+      "hash": "0xe8683c7cd9559e29978ab0121d66be516cbb6b909e594e4c582bff8d4dc5b535",
+      "blockNumber": "3",
+      "gasUsed": "207666",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock factory",
+      "hash": "0x4837b3dc1f888b32637ffa62af856f52890c606ff42d6e1e0939655a013638ac",
+      "blockNumber": "4",
+      "gasUsed": "121798",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock router",
+      "hash": "0x6ab75f1e15161565eac3e533d8ea0efdf821ffa021c3a978ff6dfce817b47eb6",
+      "blockNumber": "5",
+      "gasUsed": "538184",
+      "status": "success"
+    },
+    {
+      "label": "deploy guard",
+      "hash": "0x53da7f871e45cea4a733a6124a6907d08fb7448309f3fc32a86b42c5bbe6da01",
+      "blockNumber": "6",
+      "gasUsed": "2816415",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x64fa8b3230126af36090beb2ead731664d794c5200d4a0dff9d5a62385dc4c32",
+      "blockNumber": "7",
+      "gasUsed": "68061",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x691b00fc919c4649f2500923bd9e04c23a9fc7c8d3b206f0934861bcaedabb3a",
+      "blockNumber": "8",
+      "gasUsed": "68109",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0xc93bfb5ff15110ec861e3e245741c57101f120f4d178a4b7b791f30d4a4e0bc5",
+      "blockNumber": "9",
+      "gasUsed": "50961",
+      "status": "success"
+    },
+    {
+      "label": "startSession",
+      "hash": "0xada05bb3a2cda5c5360ee8567ba3932491de61d94253cdcf052b266559066e99",
+      "blockNumber": "10",
+      "gasUsed": "370206",
+      "status": "success"
+    },
+    {
+      "label": "configure",
+      "hash": "0x3651b4bb134b4c9d3fbb6d5ed8486019e2baa66fd3efd63cc7bf90893d7a0c38",
+      "blockNumber": "11",
+      "gasUsed": "48352",
+      "status": "success"
+    },
+    {
+      "label": "coordinator actual local buy",
+      "hash": "0x4ebf715d34ce5291803f333cd7f267fec4dcdabdc6ebc3885b1a4f9bc2bb8a40",
+      "blockNumber": "12",
+      "gasUsed": "300821",
+      "status": "success"
+    }
+  ],
+  "checks": [
+    {
+      "check": "actual strategy-risk coordinator with durable pre-sign barrier, cryptographic role recovery, signed eth_call, local transaction and exact deltas",
+      "status": "PASS",
+      "intentId": "0x5447dd9cacc6257ea302640cd12495918ef872a0bb0fb43bf1c1ddf32ef694b5",
+      "jobId": "0eedc2e0-9b4f-401c-b165-a3288e55bd6d",
+      "transactionHash": "0x4ebf715d34ce5291803f333cd7f267fec4dcdabdc6ebc3885b1a4f9bc2bb8a40",
+      "intentNonce": "0",
+      "eoaNonce": "11",
+      "sender": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    }
+  ],
+  "limitations": [
+    "Synthetic tokens and router, not HSKSwap integration or mainnet performance.",
+    "Ephemeral local chain transaction hashes are not mainnet explorer evidence.",
+    "Role keys are different but execute in one test process; no independent trust domains."
+  ],
+  "addresses": {
+    "guard": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707",
+    "risk": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "quote": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "pool": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "factory": "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9",
+    "router": "0xdc64a140aa3e981100a9beca4e685f962f0cf6c9",
+    "owner": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+    "strategySigner": "0xC7bfB725F7a54672a4eDc5B472E4908b63DDeaD9",
+    "riskSigner": "0x66bE47DB718968F1B6fD392C5f0CEb9A86713aA6"
+  },
+  "finishedAt": "2026-10-26T08:11:08.406Z",
+  "error": "{\"status\":\"REJECTED\",\"reason\":\"ACCOUNT_PENDING\",\"intentId\":\"0x6a32cc562ddea650a991225222a9fafb025753de6a929909d6351b8162683d20\",\"txHash\":null}\n+ actual - expected\n\n+ 'REJECTED'\n- 'BLOCKED'\n"
+}

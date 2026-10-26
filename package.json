@@ -21,7 +21,8 @@
     "test:e2e": "node tests/e2e/browser-acceptance.mjs",
     "test:local-chain": "node --import tsx contracts/script/local-integration.mjs",
     "smoke:http": "node scripts/http-smoke.mjs",
-    "verify:local": "bash scripts/verify-local.sh"
+    "verify:local": "bash scripts/verify-local.sh",
+    "test:durable-local-chain": "node contracts/script/durable-local-integration.mjs"
   },
   "dependencies": {
     "viem": "2.57.11",

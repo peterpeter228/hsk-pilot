@@ -34,3 +34,11 @@
 - Reclassified disabledB1/manualreorg concerns as known releasegates and rejected unsupportedtimestamp replacement. Independent followup reproduced unsafe runtime Number acceptance in bigint-typed helper and numericzero bypass; strict runtime types fixed. Five new tests and final full68TS tests/ninefiles/no skips +25contract tests passed with realPG; build/doctor/HTTP passed;PGstopped.
 - Reviewed sourceSHA differs from forthcoming post-review correction; no claim externalmodel re-reviewed changedsource.
 - Current still not submissionready: browser, product-model/liveproduction wiring, serviceaccess, owner financialhandoff, publicdeployment andentry remainblocked.
+
+## 2026-10-26 08:18 UTC · bounded local integration finished
+- Saved post-review source6c49b95b38b1a7935d59da659065a74f21105209 verified165files. Continued authorized local integration rather than treating missing model credentials as a reason to stop reversible code work.
+- Added migration002, durableSIGNING/SIGNED quarantine before key use, fence checks, actual sender/EOA nonce receipt metadata and terminal reorg reconciliation. LegacyPREPARED conservatively quarantined; no auto release.
+- Actual PostgreSQL child-process interruption and DBrestart probes passed. Actual Anvil+PG+LocalCoordinator composition passed with cryptographic role recovery, signedeth_call,1localbuy, real receipt, restartnoduplicate. Localchain31337 hardbound/source177 separate. Actual local gas fee recorded; synthetic pretrade0estimate not actualzerofee.
+- Root found unusedcost/drawdownpolicy fields; implemented deterministiccostfailclosedHOLD and localobserveddrawdownkeeper with confirmed durableREDUCE_ONLY beforeexit. Independent27auditcases passed.
+- Root fullsuite exit0:112TS/12files/no skips including19PGcases,25contracts; typecheck/build/doctor/HTTP passed. PGstopped. No mainnet/model/providercall/browser/publication performed.
+- Latest environmentdiscovery still empty. Stop localfeatureexpansion; persist this checkpoint and hand off actualbrowser and externalintegration requirements.
