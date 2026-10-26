@@ -55,3 +55,6 @@
 - Actual180second passivebrowserwindow capture completed; final120second clip removes first60seconds idle, retainscontinuousspeed/frames, addsoptionalEnglishcaptions. Full decode exit0; actualframes38/60/95 inspected. Sourceccdb preserved; no realmodel or mainnet.
 - A final combinedCUA call timedout; independent existingDOM confirmedwithdrawal/CLOSED09:31:27.378 andvideoframe95 showswithdrawalhistory. Export/capabilitiesnotclaimedcaptured; no mutationretry.
 - Actualvideo andbrowserartifacts pendingfinalprivatepersistence; nativeLibrarydelivery pending. HSKserver stillrunning localhost3100 inownednativeTerminal35651587. Recordingterminal35653225 finished. RecallLedger QA readytoresume next using sameworkingroute, source11d2af readbackverified.
+
+## 2026-10-26 11:21 UTC · Collaboration V3 adoption
+Read AGENTS, remote main `cc2b93a84fd0e258c0e781eb3f5ced266a47c563`, open PR list (0 returned), current rules/handoff. Added bounded private collaboration protocol and PREPARED/UNSENT handoff; no external sends, ownership transfer, Notion sync or schedule changes. Application unchanged. Offline validator/test evidence follows in coordination/validation.log.

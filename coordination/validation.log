@@ -1,0 +1,45 @@
+UTC 2026-10-26T11:36:48Z
+v24.22.1
+node scripts/validate-collaboration.mjs coordination/handoff.json
+PASS: handoff structure is internally consistent; no delivery, acceptance or sync has been verified by this offline check.
+node --test tests/collaboration-protocol.test.mjs
+✔ valid PREPARED record stays offline and owned by dot (2.37678ms)
+✔ missing required next_step (0.286305ms)
+✔ short SHA (0.220738ms)
+✔ unknown scores cannot retain old 87 (0.14148ms)
+✔ altered scoring weights (0.187659ms)
+✔ expiry before preparation (0.181279ms)
+✔ non UTC timestamp (0.245845ms)
+✔ premature owner transfer (0.233757ms)
+✔ unverified acceptance (1.186302ms)
+✔ fake Notion sync (0.232926ms)
+✔ false sync_state OK (0.335628ms)
+✔ missing deploy version (0.147859ms)
+✔ fake monitor (0.2422ms)
+✔ duplicate idempotency key (0.174098ms)
+✔ duplicate event ID (0.127739ms)
+✔ unverified fast cash (0.139036ms)
+✔ verified boolean without cash facts (0.092638ms)
+✔ missing sync_state (0.08055ms)
+✔ false offered projection (0.150133ms)
+✔ weakened formal threshold (0.400164ms)
+✔ formal qualification cannot be granted by proposal (0.088452ms)
+✔ sent event without evidence (0.175631ms)
+✔ unknown delivery status (0.078727ms)
+✔ missing versions field (0.165035ms)
+✔ malformed levels fail without crashing (0.09366ms)
+✔ structurally complete acceptance is allowed but not authenticated by validator (0.188259ms)
+✔ malformed/null input fails without exception (0.122231ms)
+✔ evidenced fast cash fields are structurally valid, not independently verified (0.766147ms)
+✔ Notion UNSYNCED and PENDING can retain unknown page (0.344772ms)
+✔ Notion readback must bind project, source and current owner (0.483658ms)
+✔ outbox source reference is not mislabeled as a content digest (0.119728ms)
+✔ accepted acknowledgement cannot cross project/repo or violate ordering and expiry (0.26974ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.510098
