@@ -1,0 +1,9 @@
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  16:40:46
+   Duration  408ms (import 78%, transform 17%, tests 3%, worker 2%)
+

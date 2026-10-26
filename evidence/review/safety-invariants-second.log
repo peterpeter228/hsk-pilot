@@ -1,0 +1,30 @@
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+ ❯ tests/audit/safety-invariants.test.ts (5 tests | 1 failed) 11ms
+   × unconfirmed reverted receipt must remain pending until confirmation threshold 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/audit/safety-invariants.test.ts > unconfirmed reverted receipt must remain pending until confirmation threshold
+AssertionError: expected 'REJECTED' to be 'MINED' // Object.is equality
+
+Expected: "MINED"
+Received: "REJECTED"
+
+ ❯ tests/audit/safety-invariants.test.ts:38:30
+     36|  const intent={id:'i',nonce:'0',policyVersion:'1',deadline:2000,state:…
+     37|  const result=reconcile(intent,{now:1000,nonce:'0',policyVersion:'1',r…
+     38|  expect(result.intent.state).toBe('MINED');
+       |                              ^
+     39| });
+     40|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  16:30:28
+   Duration  241ms (transform 56%, import 21%, tests 15%, worker 7%)
+

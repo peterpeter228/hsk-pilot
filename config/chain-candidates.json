@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "chain-candidates/1.0",
+  "purpose": "REVALIDATE_BEFORE_DEPLOYMENT_NOT_A_LIVE_ALLOWLIST",
+  "researchedAt": "2026-10-26T05:15:22.293015+00:00",
+  "researchBlockNumber": 29322293,
+  "chainId": 177,
+  "testnetChainId": 133,
+  "rpcPrimary": "https://mainnet.hsk.xyz",
+  "rpcSecondaryCandidates": [
+    "https://hashkey.drpc.org",
+    "https://177.rpc.thirdweb.com"
+  ],
+  "explorer": "https://hashkey.blockscout.com",
+  "modeDefault": "BOUNDED_EXECUTION",
+  "oracleGuardedStatus": "BLOCKED_AT_RESEARCH_SNAPSHOT",
+  "liveFundsEnabled": false,
+  "contracts": {
+    "WHSK": {
+      "address": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Token-Contracts",
+      "researchCodeSha256": "81e4d563013c89aa95c8d595bbebef16fc7d732f54a0894790add820a230928b",
+      "researchDecimals": 18,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "USDT": {
+      "address": "0xf1b50ed67a9e2cc94ad3c477779e2d4cbfff9029",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Token-Contracts",
+      "researchCodeSha256": "3525453e931592f0526a99c7c396e337cff94d583c26575de93298235c276876",
+      "researchDecimals": 6,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "router": {
+      "address": "0x2c16f75b95Cf1390c328aB70e2CEE7f4b80bD8F3",
+      "documentedSource": "https://hashkey.blockscout.com/address/0x2c16f75b95Cf1390c328aB70e2CEE7f4b80bD8F3",
+      "researchCodeSha256": "c7b07c49bdfeb39e9acf5776d1f177e9181d7b6b29090697f0d165da03f2d934",
+      "researchDecimals": null,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "factory": {
+      "address": "0x972cA9D1662F5e029cD18327D29026532E84c742",
+      "documentedSource": "https://hashkey.blockscout.com/address/0x972cA9D1662F5e029cD18327D29026532E84c742",
+      "researchCodeSha256": "4a66401a619d34c9bcb1ff656996f3673f8dc90b6f1489f923c5054e912d15ad",
+      "researchDecimals": null,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "quoter": {
+      "address": "0x603f70466fDdbE3F238220B9a74FFF419a2BbFDD",
+      "documentedSource": "https://hashkey.blockscout.com/address/0x603f70466fDdbE3F238220B9a74FFF419a2BbFDD",
+      "researchCodeSha256": "71345f7d5a5e6ffbba95178535449e8206ca3c246b1ef798557d56808cbbc71e",
+      "researchDecimals": null,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "HSK_USD": {
+      "address": "0x86CE42c1b714149Dc3A7b17169EF67b5F78A224b",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Tools/Oracle",
+      "researchCodeSha256": "aae8999e58d2f2964af5e37a1782ad745c818366a6bae28e24a932d1f5b36b3f",
+      "researchDecimals": 8,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "USDT_USD": {
+      "address": "0x823d7f90f7A3498DB6595886b6B5dC95E6B0B7f3",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Tools/Oracle",
+      "researchCodeSha256": "aae8999e58d2f2964af5e37a1782ad745c818366a6bae28e24a932d1f5b36b3f",
+      "researchDecimals": 8,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "EAS": {
+      "address": "0x4200000000000000000000000000000000000021",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Contract-Addresses",
+      "researchCodeSha256": "30ccc4ce49c00fae11d7118fc244f29a13788fb32cd4022ee69acc2f15c0e2f5",
+      "researchDecimals": null,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    },
+    "SchemaRegistry": {
+      "address": "0x4200000000000000000000000000000000000020",
+      "documentedSource": "https://docs.hskchain.net/docs/Build-on-HashKey-Chain/Contract-Addresses",
+      "researchCodeSha256": "30ccc4ce49c00fae11d7118fc244f29a13788fb32cd4022ee69acc2f15c0e2f5",
+      "researchDecimals": null,
+      "runtimeCodeHashKeccak256": null,
+      "lastValidatedAt": null
+    }
+  },
+  "pool": {
+    "address": "0x4ff515761864e7838b0adb8b5b2b8b7a068905dc",
+    "fee": 3000,
+    "pair": [
+      "WHSK",
+      "USDT"
+    ],
+    "token0": "WHSK",
+    "token1": "USDT",
+    "thirtyMinuteTwapAvailableAtResearchBlock": false,
+    "targetSizeBuyQuote": null,
+    "targetSizeSellQuote": null
+  },
+  "projectDeployment": {
+    "guardAddress": null,
+    "deployedCodeSha": null,
+    "deployTxHash": null,
+    "owner": null,
+    "strategySigner": null,
+    "riskSigner": null
+  },
+  "documentedOracleMaxAgeSeconds": {
+    "HSK_USD": 3600,
+    "USDT_USD": 86400
+  },
+  "note": "Do not put research SHA256 fingerprints into extcodehash comparisons. Read current code, calculate keccak256, verify proxies/ABI and record block. All project live fields remain null."
+}

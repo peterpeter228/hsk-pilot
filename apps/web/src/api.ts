@@ -1,0 +1,7 @@
+export class ApiError extends Error { constructor(public code:string,message:string,public retryable=false){super(message);} }
+export async function request<T>(path:string, options:{token?:string;body?:unknown}={}):Promise<T>{
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),12000);
+ try {const response=await fetch(path,{method:options.body===undefined?'GET':'POST',headers:{...(options.body!==undefined?{'Content-Type':'application/json'}:{}),...(options.token?{Authorization:`Bearer ${options.token}`}:{})},...(options.body!==undefined?{body:JSON.stringify(options.body)}:{}),signal:controller.signal});const body=await response.json();if(!response.ok)throw new ApiError(body.code??'REQUEST_FAILED',body.message??'The server could not complete this request.',body.retryable??false);return body as T;}
+ catch(error){if(error instanceof ApiError)throw error;throw new ApiError('CONNECTION_UNCONFIRMED','Connection interrupted or timed out. The server result is not confirmed. Refresh session state before trying another action.',true);}finally{clearTimeout(timer);}
+}
+export function downloadJson(value:unknown,name:string){const url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));const anchor=document.createElement('a');anchor.href=url;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

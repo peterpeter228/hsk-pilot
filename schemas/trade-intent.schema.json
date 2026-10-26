@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "sessionId": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "policyVersion": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "strategyPolicyHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    },
+    "intentNonce": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "direction": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "amountInRaw": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "referenceAmountOutRaw": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "amountOutMinimumRaw": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "quoteObservedAt": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "quoteBlockNumber": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "quoteBlockHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    },
+    "deadline": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "maxLength": 78
+    },
+    "evidenceHash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-fA-F]{64}$"
+    }
+  },
+  "required": [
+    "sessionId",
+    "policyVersion",
+    "strategyPolicyHash",
+    "intentNonce",
+    "direction",
+    "amountInRaw",
+    "referenceAmountOutRaw",
+    "amountOutMinimumRaw",
+    "quoteObservedAt",
+    "quoteBlockNumber",
+    "quoteBlockHash",
+    "deadline",
+    "evidenceHash"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIP-712 message only; semantic uint widths and constraints also required"
+}

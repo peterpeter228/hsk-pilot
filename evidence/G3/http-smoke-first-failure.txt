@@ -1,0 +1,1 @@
+Initial HTTP smoke failed before output persistence: Fastify 0.0.0.0 listen address enumeration returned uv_interface_addresses EPERM. Switched standard local development host default to127.0.0.1; production HOST remains explicit. Also fixed test harness process-close listener registration race; no pass claimed for first run.

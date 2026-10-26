@@ -1,0 +1,52 @@
+Compiling 27 files with Solc 0.8.30
+Solc 0.8.30 finished in 9.18s
+Compiler run successful!
+Warning: Failure from "/workspace/scratch/c01bd6fe117d/hsk-pilot/contracts/cache/invariant/failures/GuardInvariantTest/invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly" file was ignored because test contract bytecode has changed.
+
+Ran 23 tests for test/TradingSessionGuard.t.sol:GuardTest
+[PASS] testBuySellActualDeltaFixedPoolAndAllowance() (gas: 361880)
+[PASS] testDailyBudgetPersistsAcrossSessionsAndTightening() (gas: 571958)
+[PASS] testDistinctNonzeroRolesRequired() (gas: 67252)
+[PASS] testEveryIntentFieldBoundByBothSignatures() (gas: 64415)
+[PASS] testExitAfterOrdinaryBudgetExhaustedAndExpiryWindow() (gas: 527299)
+[PASS] testFuzzBuyAccountingAndSurplus(uint96,uint96) (runs: 256, μ: 301725, ~: 301747)
+[PASS] testFuzzSlippageFloor(uint96,uint16) (runs: 256, μ: 344176, ~: 344198)
+[PASS] testGoldenViemDigest() (gas: 20727)
+[PASS] testGrossBudgetNeverReplenishedByProfitableSaleOrMidnight() (gas: 444054)
+[PASS] testInventoryLimitRevertsEntireBuy() (gas: 341040)
+[PASS] testMalformedMalleableSignatureRejected() (gas: 62662)
+[PASS] testMissingWrongAndSwappedRoleSignatures() (gas: 194389)
+[PASS] testNativeAndUnknownTokenRecoveryOnlyToOwner() (gas: 538989)
+[PASS] testOwnerPauseWithdrawalAndUnauthorizedPaths() (gas: 191522)
+[PASS] testOwnershipTransferClosesAtBothStepsAndRenounceDisabled() (gas: 149046)
+[PASS] testPolicyTighteningAndRoleRotationPreserveSpendAndInvalidateOldSignatures() (gas: 507942)
+[PASS] testReduceOnlyPersistsAfterFailureAndIndependentExitCooldown() (gas: 566319)
+[PASS] testReplayNonceSessionVersionChainAndContract() (gas: 2902769)
+[PASS] testRouterCannotReenterOwnerStateChangeEvenWhenOwner() (gas: 371893)
+[PASS] testRouterFailureRollsBackBudgetNonceAllowanceAndBalances() (gas: 710468)
+[PASS] testSurplusNotAllocatedAndDeficitFailsClosed() (gas: 343649)
+[PASS] testTimeBlockDirectionAmountAndSlippageBounds() (gas: 467873)
+[PASS] testUnsupportedOracleModeNeverDowngrades() (gas: 62421)
+Suite result: ok. 23 passed; 0 failed; 0 skipped; finished in 154.09ms (328.12ms CPU time)
+
+Ran 2 tests for test/GuardInvariant.t.sol:GuardInvariantTest
+[PASS] invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly() (runs: 64, calls: 2048, reverts: 0)
+
+╭--------------+-----------------+-------+---------+----------╮
+| Contract     | Selector        | Calls | Reverts | Discards |
++=============================================================+
+| GuardHandler | closeAndRestart | 453   | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | donate          | 414   | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | reduce          | 389   | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | tighten         | 408   | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | trade           | 384   | 0       | 0        |
+╰--------------+-----------------+-------+---------+----------╯
+
+[PASS] testGhostDailyExcludesSuccessfulSale() (gas: 309082)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 411.68ms (410.89ms CPU time)
+
+Ran 2 test suites in 412.69ms (565.77ms CPU time): 25 tests passed, 0 failed, 0 skipped (25 total tests)

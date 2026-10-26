@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "hsk-contract-verification/1",
+  "observedAt": "2026-10-26T07:43:10.517513+00:00",
+  "codeSha": null,
+  "codeShaNote": "Root integration assigns repository Git SHA; these SHA-256 file hashes bind the exact verified contract artifacts.",
+  "sourceSha256": {
+    "src/TradingSessionGuard.sol": "a7633d65dd164b988f9e40c4d02b9ac9e6abdd6dfdd3645bafc1e66a7f7ea09c",
+    "foundry.toml": "882e2173fa2f10d68e2dca9521b0a9dd192343defcdcab6f4435cd8d5cd56c11",
+    "test/TradingSessionGuard.t.sol": "c06aa57a629e3e0602062e957c4453fe1a0ae5bd0974acec82aa1019264c6e67",
+    "test/GuardInvariant.t.sol": "263d827a53b0052bc756db7ab6ceaea62a8f8c8dddb70371a1dce41432ccce9c",
+    "fork/HSKFixedBlock.t.sol": "9b75afe07f447ff023822a916fbc1157c729c39b050e4c965fba29c5a705cd6f",
+    "script/local-integration.mjs": "9c1c7cab984cf701d1e9de178d02bd918857242d0ec90759dbf70d3a8f48730f",
+    "abi/TradingSessionGuard.json": "fa14e06b5ca8c210e9c5b26b769a85e8da9538f4e7c0a2579a7e5df6b40b6521"
+  },
+  "compiler": {
+    "version": "0.8.30",
+    "evmVersion": "cancun",
+    "viaIR": true,
+    "optimizer": true,
+    "optimizerRuns": 200,
+    "bytecodeHash": "none"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.4.0",
+    "@foundry-rs/forge": "1.4.4",
+    "@foundry-rs/anvil": "1.4.4"
+  },
+  "runtimeBytes": 12265,
+  "checks": [
+    {
+      "command": "contracts/script/forge-local.sh test -vv",
+      "exitCode": 0,
+      "status": "PASS",
+      "dataMode": "SIMULATION",
+      "tests": 25,
+      "fuzz": {
+        "cases": 2,
+        "runsEach": 256
+      },
+      "invariant": {
+        "runs": 64,
+        "depth": 32,
+        "calls": 2048
+      },
+      "evidencePath": "contracts/evidence/forge-test.log"
+    },
+    {
+      "command": "node contracts/script/typed-data-fixture.mjs --check",
+      "exitCode": 0,
+      "status": "PASS",
+      "dataMode": "SIMULATION",
+      "digest": "0xde57e301bceb9e52549884158015bed62cd046a6966c4bd9698d06c428c74491"
+    },
+    {
+      "command": "node contracts/script/local-integration.mjs",
+      "exitCode": 0,
+      "status": "PASS",
+      "dataMode": "SIMULATION",
+      "executionKind": "LOCAL_TX",
+      "chainId": 31337,
+      "localReceipts": 19,
+      "checks": 9,
+      "evidencePath": "contracts/evidence/local-integration.json"
+    },
+    {
+      "command": "contracts/script/fork-local.sh",
+      "exitCode": 0,
+      "status": "PASS",
+      "dataMode": "FORK",
+      "executionChainId": 31337,
+      "sourceChainId": 177,
+      "sourceBlock": "29326419",
+      "sourceBlockHash": "0xa5fcab74743a782a7cb709c6d07fe0b88d6454e508828414cbc0bda32e630364",
+      "tests": 1,
+      "evidencePath": "contracts/evidence/fork-test.log"
+    }
+  ],
+  "limitations": [
+    "Not audited; independent reviewer findings must be resolved before any live action.",
+    "ORACLE_GUARDED is deliberately unsupported; no independent fair-price or guaranteed-stop-loss claim.",
+    "All deployments, swaps and funding were local-only; no real wallet secret, live chain writes or real assets used.",
+    "Local integration uses synthetic deterministic selection; no real LLM invocation or independently operated signers.",
+    "Fixed-block fork proves local execution against historical public state, not future success or eligibility."
+  ],
+  "resolvedHarnessIssue": {
+    "description": "Ghost daily counter incorrectly included successful sells; production daily accounting remained zero. Explicit buy-only block and deterministic successful-sale regression now pass.",
+    "failureEvidence": "contracts/evidence/invariant-harness-failure.log",
+    "causeAttribution": "No established tool/formatter attribution."
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "hsk-pilot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": "24.22.1"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build && node scripts/build-server.mjs",
+    "dev": "node --import tsx apps/server/main.ts",
+    "start": "node dist/server/main.js",
+    "doctor": "node --import tsx scripts/doctor.ts",
+    "chain:preflight": "node --import tsx scripts/chain-preflight.ts",
+    "test:contracts": "bash contracts/script/forge-local.sh test",
+    "build:contracts": "bash contracts/script/forge-local.sh build",
+    "build:server": "node scripts/build-server.mjs",
+    "test:e2e": "node tests/e2e/browser-acceptance.mjs",
+    "test:local-chain": "node --import tsx contracts/script/local-integration.mjs",
+    "smoke:http": "node scripts/http-smoke.mjs",
+    "verify:local": "bash scripts/verify-local.sh"
+  },
+  "dependencies": {
+    "viem": "2.57.11",
+    "zod": "4.6.7",
+    "pg": "8.23.1",
+    "fastify": "5.12.7",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "canonicalize": "5.1.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.23.15",
+    "vitest": "5.0.5",
+    "vite": "8.3.5",
+    "@vitejs/plugin-react": "6.1.2",
+    "esbuild": "0.28.2",
+    "@types/node": "26.6.5",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@openzeppelin/contracts": "5.4.0",
+    "solc": "0.8.30",
+    "@foundry-rs/forge": "1.4.4",
+    "@foundry-rs/anvil": "1.4.4",
+    "@playwright/test": "1.64.1"
+  }
+}

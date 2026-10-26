@@ -1,0 +1,23 @@
+{
+  "status": "DRAFT_NOT_SUBMITTED",
+  "repositoryUrl": "https://github.com/peterpeter228/hsk-pilot",
+  "repositoryVisibility": "private",
+  "initialRemoteCheckpointSha": "43753387eb278e97943b5f40f9af694d0abf54d8",
+  "finalDeliverySha": null,
+  "submissionSha": null,
+  "hostedDemoUrl": null,
+  "guardAddress": null,
+  "deploymentTransactionHash": null,
+  "realTradeTransactionHashes": [],
+  "videoUrl": null,
+  "videoArtifact": null,
+  "submissionId": null,
+  "entrantName": null,
+  "contact": null,
+  "projectLicense": null,
+  "dataMode": "SIMULATION",
+  "protectionMode": "BOUNDED_EXECUTION",
+  "oracleGuardedEnabled": false,
+  "deadlineUtc": "2026-11-01T16:00:00Z",
+  "note": "Initial checkpoint supplied by delivery coordinator, not the final source identity. Nulls are intentional missing facts; update only with verified outcomes. Storyboard is not a video."
+}

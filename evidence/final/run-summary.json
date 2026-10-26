@@ -1,0 +1,41 @@
+{
+  "executedAt": "2026-10-26T07:42:14Z",
+  "status": "PASS_LOCAL_NOT_SUBMISSION_READY",
+  "codeCommit": null,
+  "sourceCommitBinding": "Upload manifest will bind exact source bytes to verified remote commit",
+  "typescript": {
+    "passed": 63,
+    "files": 8,
+    "skipped": 0,
+    "database": "PostgreSQL18.4 actual isolated schema"
+  },
+  "contracts": {
+    "passed": 25,
+    "fuzzRunsPerProperty": 256,
+    "invariantRuns": 64,
+    "invariantCalls": 2048
+  },
+  "typecheck": "PASS",
+  "build": "PASS",
+  "doctor": "PASS",
+  "compiledHttp": "PASS",
+  "browser": "NOT_RUN_ENVIRONMENT_BLOCKED",
+  "mainnetDeployment": null,
+  "mainnetTransactions": [],
+  "argon": "PENDING_APPROVAL_NOT_CALLED",
+  "productModel": "NOT_CONFIGURED",
+  "publicDemo": null,
+  "cleanInstallBuild": "PASS_FROZEN_LOCKFILE",
+  "localAnvil": {
+    "status": "PASS",
+    "chainId": 31337,
+    "localReceipts": 19,
+    "checks": 9
+  },
+  "fork": {
+    "status": "PASS_LOCAL_FORK",
+    "sourceBlock": 29326419,
+    "executionChainId": 31337,
+    "sourceChainId": 177
+  }
+}

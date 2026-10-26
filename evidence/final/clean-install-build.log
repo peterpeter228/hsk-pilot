@@ -1,0 +1,89 @@
+? Verifying lockfile against supply-chain policies (200 entries)...
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +142
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /tmp/hsk-pnpm-store/v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 142, reused 142, downloaded 0, added 142, done
+
+   ╭──────────────────────────────────────────────────────────────────────╮
+   │                                                                      │
+   │                 Update available! 11.25.0 → 12.15.0.                 │
+   │                 Changelog: https://pnpm.io/v/12.15.0                 │
+   │   To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -   │
+   │                                                                      │
+   ╰──────────────────────────────────────────────────────────────────────╯
+
+✓ Lockfile passes supply-chain policies (200 entries in 4.8s)
+.../node_modules/@foundry-rs/forge postinstall$ TARGET_TOOL=forge node ./postinstall.mjs
+.../node_modules/@foundry-rs/anvil postinstall$ TARGET_TOOL=anvil node ./postinstall.mjs
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../node_modules/@foundry-rs/forge postinstall: Platform specific package already installed. Skipping manual download.
+.../node_modules/@foundry-rs/forge postinstall: Done
+.../node_modules/@foundry-rs/anvil postinstall: Platform specific package already installed. Skipping manual download.
+.../node_modules/@foundry-rs/anvil postinstall: Done
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+dependencies:
++ canonicalize 5.1.0
++ fastify 5.12.7
++ pg 8.23.1
++ react 19.3.1
++ react-dom 19.3.1
++ viem 2.57.11
++ zod 4.6.7
+
+devDependencies:
++ @foundry-rs/anvil 1.4.4
++ @foundry-rs/forge 1.4.4
++ @openzeppelin/contracts 5.4.0
++ @playwright/test 1.64.1
++ @types/node 26.6.5
++ @types/pg 8.23.1
++ @types/react 19.3.0
++ @types/react-dom 19.3.0
++ @vitejs/plugin-react 6.1.2
++ esbuild 0.28.2
++ solc 0.8.30
++ tsx 4.23.15
++ typescript 5.9.3
++ vite 8.3.5
++ vitest 5.0.5
+
+Done in 5.6s using pnpm v11.25.0
+$ tsc --noEmit && vite build && node scripts/build-server.mjs
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 18 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/web/index.html                   0.54 kB │ gzip:  0.36 kB
+dist/web/assets/index-s-54F6Et.css    9.13 kB │ gzip:  2.77 kB
+dist/web/assets/index-B777m0Y-.js   246.27 kB │ gzip: 76.91 kB
+
+✓ built in 190ms
+$ node --import tsx scripts/doctor.ts
+{
+  "executedAt": "2026-10-26T07:43:09.993Z",
+  "node": "v24.22.1",
+  "sourceMode": "SIMULATION",
+  "liveFundsEnabled": false,
+  "files": {
+    "handoff": true,
+    "lockfile": true,
+    "guard": true
+  },
+  "credentials": {
+    "applicationModel": false,
+    "ownerKeyLoaded": false,
+    "strategyKeyLoaded": false,
+    "riskKeyLoaded": false
+  },
+  "limitations": [
+    "No real-chain broadcaster in local server",
+    "Browser requires working execution environment",
+    "RPC preflight is separate from trade execution"
+  ]
+}

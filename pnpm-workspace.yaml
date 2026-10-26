@@ -1,0 +1,5 @@
+packages: []
+allowBuilds:
+  esbuild: true
+  "@foundry-rs/forge": true
+  "@foundry-rs/anvil": true

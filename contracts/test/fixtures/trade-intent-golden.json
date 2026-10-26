@@ -1,0 +1,83 @@
+{
+  "dataMode": "SIMULATION",
+  "source": "viem.hashTypedData; frozen config/trade-intent-types.json",
+  "domain": {
+    "name": "HSKPilotGuard",
+    "version": "1",
+    "chainId": 177,
+    "verifyingContract": "0x1111111111111111111111111111111111111111"
+  },
+  "types": {
+    "TradeIntent": [
+      {
+        "name": "sessionId",
+        "type": "uint64"
+      },
+      {
+        "name": "policyVersion",
+        "type": "uint32"
+      },
+      {
+        "name": "strategyPolicyHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "intentNonce",
+        "type": "uint256"
+      },
+      {
+        "name": "direction",
+        "type": "uint8"
+      },
+      {
+        "name": "amountInRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "referenceAmountOutRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "amountOutMinimumRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "quoteObservedAt",
+        "type": "uint64"
+      },
+      {
+        "name": "quoteBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "name": "quoteBlockHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "deadline",
+        "type": "uint64"
+      },
+      {
+        "name": "evidenceHash",
+        "type": "bytes32"
+      }
+    ]
+  },
+  "primaryType": "TradeIntent",
+  "message": {
+    "sessionId": "7",
+    "policyVersion": 3,
+    "strategyPolicyHash": "0x28fe3691f63c4ea9daf9fdf67f1f0e6f05a3611794b99ec707d3fe83198135bd",
+    "intentNonce": "9",
+    "direction": 0,
+    "amountInRaw": "1000000",
+    "referenceAmountOutRaw": "11000000000000000000",
+    "amountOutMinimumRaw": "10890000000000000000",
+    "quoteObservedAt": "1800000000",
+    "quoteBlockNumber": "29322293",
+    "quoteBlockHash": "0x9dcd2b0a3dd198fa9d558d21d4628c6cf59da8486d87bcb3bd02d2da31c03398",
+    "deadline": "1800000030",
+    "evidenceHash": "0xca9e55f7ee17003c3edd33639b7ca4e024a6858c676f378191e1a1e90f5fb7b7"
+  },
+  "digest": "0xde57e301bceb9e52549884158015bed62cd046a6966c4bd9698d06c428c74491"
+}

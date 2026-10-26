@@ -1,0 +1,114 @@
+No files changed, compilation skipped
+note[named-struct-fields]: prefer initializing structs with named fields
+   --> test/GuardInvariant.t.sol:120:16
+    |
+120 |         a[0] = FuzzSelector(address(handler), s);
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#named-struct-fields
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> src/TradingSessionGuard.sol:96:29
+   |
+96 |     IERC20 public immutable riskToken;
+   |                             ^^^^^^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> src/TradingSessionGuard.sol:97:29
+   |
+97 |     IERC20 public immutable quoteToken;
+   |                             ^^^^^^^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> src/TradingSessionGuard.sol:98:36
+   |
+98 |     ISwapRouter02 public immutable router;
+   |                                    ^^^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> test/TradingSessionGuard.t.sol:23:29
+   |
+23 |     uint8 private immutable _dec;
+   |                             ^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> src/TradingSessionGuard.sol:99:30
+   |
+99 |     address public immutable factory;
+   |                              ^^^^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   --> src/TradingSessionGuard.sol:100:30
+    |
+100 |     address public immutable pool;
+    |                              ^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   --> src/TradingSessionGuard.sol:101:29
+    |
+101 |     uint24 public immutable poolFee;
+    |                             ^^^^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   --> src/TradingSessionGuard.sol:102:28
+    |
+102 |     uint8 public immutable riskDecimals;
+    |                            ^^^^^^^^^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+   --> src/TradingSessionGuard.sol:103:28
+    |
+103 |     uint8 public immutable quoteDecimals;
+    |                            ^^^^^^^^^^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> test/TradingSessionGuard.t.sol:70:30
+   |
+70 |     address public immutable factory;
+   |                              ^^^^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-immutable]: immutables should use SCREAMING_SNAKE_CASE
+  --> test/TradingSessionGuard.t.sol:72:31
+   |
+72 |     MockPool public immutable pool;
+   |                               ^^^^
+   |
+   = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-immutable
+
+note[screaming-snake-case-const]: constants should use SCREAMING_SNAKE_CASE
+   --> test/TradingSessionGuard.t.sol:116:26
+    |
+116 |     Vm internal constant vm = Vm(address(uint160(uint256(keccak256("hevm cheat code")))));
+    |                          ^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#screaming-snake-case-const
+
+note[unsafe-cheatcode]: usage of unsafe cheatcodes that can perform dangerous operations
+   --> test/TradingSessionGuard.t.sol:588:36
+    |
+588 |         string memory fixture = vm.readFile("test/fixtures/trade-intent-golden.json");
+    |                                    ^^^^^^^^
+    |
+    = help: https://book.getfoundry.sh/reference/forge/forge-lint#unsafe-cheatcode
+
+PASS LOCAL_TX SIMULATION: 19 local receipts; 9 checks. Evidence contracts/evidence/local-integration.json

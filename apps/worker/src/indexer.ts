@@ -1,0 +1,11 @@
+import {parseRaw} from '../../../packages/shared/src/index.js';
+import {WacLedger} from './accounting.js';
+export interface IndexedReceipt {chainId:number;txHash:string;blockNumber:number;transactionIndex:number;confirmations:number;blockHash:string;status:'SUCCESS'|'FAILED';gasNativeRaw:string|null;gasComplete:boolean;fills:{logIndex:number;direction:'BUY'|'SELL';riskRaw:string;quoteRaw:string}[]}
+/** Rebuilds exclusively from canonical receipts. Replacement tx receipts are distinct; only canonical executed receipts enter state. */
+export class CanonicalLedger {
+ constructor(private confirmationThreshold=3){if(!Number.isSafeInteger(confirmationThreshold)||confirmationThreshold<1)throw Error('INVALID_CONFIRMATIONS');}
+ private receipts=new Map<string,IndexedReceipt>();
+ ingest(receipt:IndexedReceipt){if(!Number.isSafeInteger(receipt.confirmations)||receipt.confirmations<0||!Number.isSafeInteger(receipt.transactionIndex)||receipt.transactionIndex<0||!Number.isSafeInteger(receipt.blockNumber)||receipt.blockNumber<0)throw Error('INVALID_RECEIPT_POSITION');if(receipt.gasNativeRaw!==null)parseRaw(receipt.gasNativeRaw);if(receipt.status==='FAILED'&&receipt.fills.length)throw Error('FAILED_RECEIPT_HAS_FILL');const logs=new Set<number>();for(const fill of receipt.fills){if(logs.has(fill.logIndex))throw Error('DUPLICATE_LOG');logs.add(fill.logIndex);}this.receipts.set(`${receipt.chainId}:${receipt.txHash}`,structuredClone(receipt));}
+ rollback(commonAncestorBlock:number){for(const [key,value]of this.receipts)if(value.blockNumber>commonAncestorBlock)this.receipts.delete(key);}
+ state(liquidationQuoteRaw:string|null){const ledger=new WacLedger();let knownGas=0n,gasComplete=true;for(const receipt of [...this.receipts.values()].sort((a,b)=>a.blockNumber-b.blockNumber||a.transactionIndex-b.transactionIndex)){if(receipt.confirmations<this.confirmationThreshold)continue;if(receipt.gasNativeRaw===null)gasComplete=false;else knownGas+=BigInt(receipt.gasNativeRaw);gasComplete&&=receipt.gasComplete;for(const fill of [...receipt.fills].sort((a,b)=>a.logIndex-b.logIndex))ledger.fill(`${receipt.chainId}:${receipt.txHash}:${fill.logIndex}`,fill.direction,fill.riskRaw,fill.quoteRaw);}return {...ledger.state(liquidationQuoteRaw),knownGasNativeRaw:knownGas.toString(),gasComplete};}
+}

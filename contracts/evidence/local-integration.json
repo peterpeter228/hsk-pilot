@@ -1,0 +1,453 @@
+{
+  "schemaVersion": "hsk-local-integration/1",
+  "sourceDataMode": "SIMULATION",
+  "executionDataMode": "SIMULATION",
+  "executionKind": "LOCAL_TX",
+  "chainId": 31337,
+  "startedAt": "2026-10-26T07:40:32.991Z",
+  "status": "PASS",
+  "transactions": [
+    {
+      "label": "deploy mock WHSK18",
+      "hash": "0x7883ba63f076f7c7c96098cefd46513f30b1de2c26967cf1bc0aa8d4a1f8f1e6",
+      "blockNumber": "1",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock USDT6",
+      "hash": "0xe78ac858d7a04f86baaf3d8d684e452a4298881343b6d17643ddd19248fa1e08",
+      "blockNumber": "2",
+      "gasUsed": "513128",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock pool",
+      "hash": "0xe8683c7cd9559e29978ab0121d66be516cbb6b909e594e4c582bff8d4dc5b535",
+      "blockNumber": "3",
+      "gasUsed": "207666",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock factory",
+      "hash": "0x4837b3dc1f888b32637ffa62af856f52890c606ff42d6e1e0939655a013638ac",
+      "blockNumber": "4",
+      "gasUsed": "121798",
+      "status": "success"
+    },
+    {
+      "label": "deploy mock router",
+      "hash": "0x6ab75f1e15161565eac3e533d8ea0efdf821ffa021c3a978ff6dfce817b47eb6",
+      "blockNumber": "5",
+      "gasUsed": "538184",
+      "status": "success"
+    },
+    {
+      "label": "deploy guard",
+      "hash": "0x53da7f871e45cea4a733a6124a6907d08fb7448309f3fc32a86b42c5bbe6da01",
+      "blockNumber": "6",
+      "gasUsed": "2816415",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x64fa8b3230126af36090beb2ead731664d794c5200d4a0dff9d5a62385dc4c32",
+      "blockNumber": "7",
+      "gasUsed": "68061",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0x691b00fc919c4649f2500923bd9e04c23a9fc7c8d3b206f0934861bcaedabb3a",
+      "blockNumber": "8",
+      "gasUsed": "68109",
+      "status": "success"
+    },
+    {
+      "label": "mint",
+      "hash": "0xc93bfb5ff15110ec861e3e245741c57101f120f4d178a4b7b791f30d4a4e0bc5",
+      "blockNumber": "9",
+      "gasUsed": "50961",
+      "status": "success"
+    },
+    {
+      "label": "startSession",
+      "hash": "0xbe0c45471f92b37921c5ef0d311f66bdb0548e7e03cc347315c9c4881cde0d35",
+      "blockNumber": "10",
+      "gasUsed": "370194",
+      "status": "success"
+    },
+    {
+      "label": "configure",
+      "hash": "0x4a32c46eab8ca45dcdcbc475f40fb71b31e7230b4d7903ad7c53e0e7efbc7134",
+      "blockNumber": "11",
+      "gasUsed": "48352",
+      "status": "success"
+    },
+    {
+      "label": "execute",
+      "hash": "0x2a8ceb07c1f28c50a97a087e685bf94d0203d4a1e56f16b9167c8c2a4e66dc76",
+      "blockNumber": "12",
+      "gasUsed": "300785",
+      "status": "success"
+    },
+    {
+      "label": "updatePolicy",
+      "hash": "0xa3e50f66ab962d795ff22380c32056be0da00e9c87dde068010b456e5efa1ae0",
+      "blockNumber": "13",
+      "gasUsed": "71339",
+      "status": "success"
+    },
+    {
+      "label": "enterReduceOnly",
+      "hash": "0x94fc097a22d4f56d961fd15d25b12e60762b0796f5317e888dd24cca6ea33c28",
+      "blockNumber": "14",
+      "gasUsed": "34359",
+      "status": "success"
+    },
+    {
+      "label": "configure",
+      "hash": "0x8af01ce4e9e96031d04c78ce34b7fae82e581b18aaaae0792f70f5810be524be",
+      "blockNumber": "15",
+      "gasUsed": "26380",
+      "status": "success"
+    },
+    {
+      "label": "configure",
+      "hash": "0x24a43e65dede9d8eda4f09965603656c2d4b67d01ab25fc1c18f88ba973ddfd1",
+      "blockNumber": "16",
+      "gasUsed": "48316",
+      "status": "success"
+    },
+    {
+      "label": "execute",
+      "hash": "0xc2182f2379c3e97b30534eda0d54412c516147b09c6b86863c0e9da5e19d499b",
+      "blockNumber": "17",
+      "gasUsed": "176540",
+      "status": "success"
+    },
+    {
+      "label": "pause",
+      "hash": "0xe24725c93c66bb7114e1e80ae25d11cc42342e53e22b3c9a634b5d67d9ad194f",
+      "blockNumber": "18",
+      "gasUsed": "37451",
+      "status": "success"
+    },
+    {
+      "label": "withdrawAll",
+      "hash": "0x77131a98252b4043bbc42d07384687df51396bd190795c6476b8c2cdffbdd354",
+      "blockNumber": "19",
+      "gasUsed": "73953",
+      "status": "success"
+    }
+  ],
+  "checks": [
+    {
+      "check": "buildCandidate -> validated synthetic choice -> assessRisk -> typed intent",
+      "status": "PASS",
+      "candidate": {
+        "id": "0xf66060fabde52f47832ac4d717fb6f5bd82cf3ad74d48fb73c129931f84d8742:1:BUY:10000000",
+        "direction": "BUY",
+        "amountInRaw": "10000000",
+        "referenceAmountOutRaw": "10000000000000000000",
+        "snapshotHash": "0xf66060fabde52f47832ac4d717fb6f5bd82cf3ad74d48fb73c129931f84d8742",
+        "policyVersion": "1",
+        "kind": "NORMAL_REBALANCE"
+      },
+      "fixtureChoice": {
+        "action": "REBALANCE",
+        "candidateId": "0xf66060fabde52f47832ac4d717fb6f5bd82cf3ad74d48fb73c129931f84d8742:1:BUY:10000000",
+        "sizeFractionBps": 10000,
+        "reasonCode": "REBALANCE_TARGET",
+        "reasonSummary": "Synthetic deterministic local-test selection; no LLM invocation.",
+        "inputSnapshotHash": "0xf66060fabde52f47832ac4d717fb6f5bd82cf3ad74d48fb73c129931f84d8742",
+        "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e"
+      },
+      "riskDecision": {
+        "allowed": true,
+        "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+        "minOutRaw": "9900000000000000000"
+      },
+      "modelInvocation": "NONE_SYNTHETIC_SELECTION"
+    },
+    {
+      "check": "dual-signed buy",
+      "status": "PASS",
+      "intent": {
+        "sessionId": "1",
+        "policyVersion": 1,
+        "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e",
+        "intentNonce": "0",
+        "direction": 0,
+        "amountInRaw": "10000000",
+        "referenceAmountOutRaw": "10000000000000000000",
+        "amountOutMinimumRaw": "9900000000000000000",
+        "quoteObservedAt": "1793000433",
+        "quoteBlockNumber": "11",
+        "quoteBlockHash": "0x10a3871417fc5aaf74bf11122bfa6d20d48c47f08b3600ed3133fd69002e560e",
+        "deadline": "1793000463",
+        "evidenceHash": "0xddff599c0079eb4390387c9242d857935fb99c20479ebae7d27808d5a192047a"
+      },
+      "intentHash": "0x25f1a1401a5180b118cf04726cdf9493d7d8f82461920f4cf7b51f4cf65fc5ea",
+      "transactionHash": "0x2a8ceb07c1f28c50a97a087e685bf94d0203d4a1e56f16b9167c8c2a4e66dc76",
+      "actualQuoteDelta": "-10000000",
+      "actualRiskDelta": "10000000000000000000",
+      "typedData": {
+        "domain": {
+          "name": "HSKPilotGuard",
+          "version": "1",
+          "chainId": 31337,
+          "verifyingContract": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707"
+        },
+        "types": {
+          "TradeIntent": [
+            {
+              "name": "sessionId",
+              "type": "uint64"
+            },
+            {
+              "name": "policyVersion",
+              "type": "uint32"
+            },
+            {
+              "name": "strategyPolicyHash",
+              "type": "bytes32"
+            },
+            {
+              "name": "intentNonce",
+              "type": "uint256"
+            },
+            {
+              "name": "direction",
+              "type": "uint8"
+            },
+            {
+              "name": "amountInRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "referenceAmountOutRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "amountOutMinimumRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "quoteObservedAt",
+              "type": "uint64"
+            },
+            {
+              "name": "quoteBlockNumber",
+              "type": "uint256"
+            },
+            {
+              "name": "quoteBlockHash",
+              "type": "bytes32"
+            },
+            {
+              "name": "deadline",
+              "type": "uint64"
+            },
+            {
+              "name": "evidenceHash",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "TradeIntent",
+        "message": {
+          "sessionId": "1",
+          "policyVersion": 1,
+          "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e",
+          "intentNonce": "0",
+          "direction": 0,
+          "amountInRaw": "10000000",
+          "referenceAmountOutRaw": "10000000000000000000",
+          "amountOutMinimumRaw": "9900000000000000000",
+          "quoteObservedAt": "1793000433",
+          "quoteBlockNumber": "11",
+          "quoteBlockHash": "0x10a3871417fc5aaf74bf11122bfa6d20d48c47f08b3600ed3133fd69002e560e",
+          "deadline": "1793000463",
+          "evidenceHash": "0xddff599c0079eb4390387c9242d857935fb99c20479ebae7d27808d5a192047a"
+        }
+      },
+      "strategySignature": "0x39277dd50fb414512fd77295cc0c79b234d87b2b15a5a9b98640e4f4ea44207e75486e169ba6d2e00616948c58a540a97ff3942bf973be93f526dfccd6efaebf1b",
+      "riskSignature": "0x579aa3cbbe12c5a68dcd1a7ba94acdfc7fb21cbab68631f1d44c5a7419c8afd63270be7901e721d453ad5e17ccf107fc708ae32513a721563dbd4bb67a4d47171c"
+    },
+    {
+      "check": "consumed nonce replay rejected by full eth_call",
+      "status": "PASS",
+      "transactionHash": null
+    },
+    {
+      "check": "same-session policy tightening preserves gross spend and invalidates old signature",
+      "status": "PASS",
+      "transactionHash": null
+    },
+    {
+      "check": "separately mined REDUCE_ONLY survives failed sell simulation",
+      "status": "PASS",
+      "transactionHash": null
+    },
+    {
+      "check": "buildCandidate -> validated synthetic choice -> assessRisk -> typed intent",
+      "status": "PASS",
+      "candidate": {
+        "id": "0xaa997b9760d1ea5eea618bb382c84bd3eb0ce27df4a9414c4763966d541f959d:2:SELL:10000000000000000000",
+        "direction": "SELL",
+        "amountInRaw": "10000000000000000000",
+        "referenceAmountOutRaw": "9000000",
+        "snapshotHash": "0xaa997b9760d1ea5eea618bb382c84bd3eb0ce27df4a9414c4763966d541f959d",
+        "policyVersion": "2",
+        "kind": "DETERMINISTIC_EXIT"
+      },
+      "fixtureChoice": {
+        "action": "REBALANCE",
+        "candidateId": "0xaa997b9760d1ea5eea618bb382c84bd3eb0ce27df4a9414c4763966d541f959d:2:SELL:10000000000000000000",
+        "sizeFractionBps": 10000,
+        "reasonCode": "RISK_REDUCTION",
+        "reasonSummary": "Synthetic deterministic local-test selection; no LLM invocation.",
+        "inputSnapshotHash": "0xaa997b9760d1ea5eea618bb382c84bd3eb0ce27df4a9414c4763966d541f959d",
+        "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e"
+      },
+      "riskDecision": {
+        "allowed": true,
+        "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+        "minOutRaw": "8910000"
+      },
+      "modelInvocation": "NONE_SYNTHETIC_SELECTION"
+    },
+    {
+      "check": "dual-signed sell",
+      "status": "PASS",
+      "intent": {
+        "sessionId": "1",
+        "policyVersion": 2,
+        "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e",
+        "intentNonce": "1",
+        "direction": 1,
+        "amountInRaw": "10000000000000000000",
+        "referenceAmountOutRaw": "9000000",
+        "amountOutMinimumRaw": "8910000",
+        "quoteObservedAt": "1793000433",
+        "quoteBlockNumber": "16",
+        "quoteBlockHash": "0xaa8bb67abd4d6a2401cb758ea0a2b0f051cc24f84432de47de976ab96384d9f8",
+        "deadline": "1793000463",
+        "evidenceHash": "0xd43427883a0f28971e4f2dd3b986ad69432984ccd95ad1337f624c9b57106606"
+      },
+      "intentHash": "0x4ba028ab6af9e7e4e8669c77709ea935c3d5ee027e0dde742181a4a952632f56",
+      "transactionHash": "0xc2182f2379c3e97b30534eda0d54412c516147b09c6b86863c0e9da5e19d499b",
+      "actualQuoteDelta": "9000000",
+      "actualRiskDelta": "-10000000000000000000",
+      "typedData": {
+        "domain": {
+          "name": "HSKPilotGuard",
+          "version": "1",
+          "chainId": 31337,
+          "verifyingContract": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707"
+        },
+        "types": {
+          "TradeIntent": [
+            {
+              "name": "sessionId",
+              "type": "uint64"
+            },
+            {
+              "name": "policyVersion",
+              "type": "uint32"
+            },
+            {
+              "name": "strategyPolicyHash",
+              "type": "bytes32"
+            },
+            {
+              "name": "intentNonce",
+              "type": "uint256"
+            },
+            {
+              "name": "direction",
+              "type": "uint8"
+            },
+            {
+              "name": "amountInRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "referenceAmountOutRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "amountOutMinimumRaw",
+              "type": "uint256"
+            },
+            {
+              "name": "quoteObservedAt",
+              "type": "uint64"
+            },
+            {
+              "name": "quoteBlockNumber",
+              "type": "uint256"
+            },
+            {
+              "name": "quoteBlockHash",
+              "type": "bytes32"
+            },
+            {
+              "name": "deadline",
+              "type": "uint64"
+            },
+            {
+              "name": "evidenceHash",
+              "type": "bytes32"
+            }
+          ]
+        },
+        "primaryType": "TradeIntent",
+        "message": {
+          "sessionId": "1",
+          "policyVersion": 2,
+          "strategyPolicyHash": "0x4dcf92bc8f0b4e74c5aedf12e2cf82928c48584160a10549e2dfcf1a2b075c7e",
+          "intentNonce": "1",
+          "direction": 1,
+          "amountInRaw": "10000000000000000000",
+          "referenceAmountOutRaw": "9000000",
+          "amountOutMinimumRaw": "8910000",
+          "quoteObservedAt": "1793000433",
+          "quoteBlockNumber": "16",
+          "quoteBlockHash": "0xaa8bb67abd4d6a2401cb758ea0a2b0f051cc24f84432de47de976ab96384d9f8",
+          "deadline": "1793000463",
+          "evidenceHash": "0xd43427883a0f28971e4f2dd3b986ad69432984ccd95ad1337f624c9b57106606"
+        }
+      },
+      "strategySignature": "0xac0cdb3b6ada268b7751b0a327cb4eb152500e14e0ebbce24aa17e40900f2dbd29e492e069c20440363ab982d5e25771e7e2f723e931a2fb2058f960bc80ff4e1b",
+      "riskSignature": "0x5c43abe1b85d063555b8cb5f578b15c03d46ee06312f59904ac2deee8c4daa5d2deb4252d6903abdc28cb6051acdf547c66b22cc1de1de2118d3e9ea369e8c4d1b"
+    },
+    {
+      "check": "consumed nonce replay rejected by full eth_call",
+      "status": "PASS",
+      "transactionHash": null
+    },
+    {
+      "check": "owner pause and withdrawal return synthetic capital, no oracle dependencies",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Synthetic tokens and router, not HSKSwap integration or mainnet performance.",
+    "Ephemeral local chain transaction hashes are not mainnet explorer evidence.",
+    "Role keys are different but execute in one test process; no independent trust domains."
+  ],
+  "addresses": {
+    "guard": "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707",
+    "risk": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "quote": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+    "pool": "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0",
+    "factory": "0xcf7ed3acca5a467e9e704c703e8d87f634fb0fc9",
+    "router": "0xdc64a140aa3e981100a9beca4e685f962f0cf6c9",
+    "owner": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+    "strategySigner": "0xcBe6A30D00c159bde139f52eB81A3CC6FE4d5201",
+    "riskSigner": "0xF0491AeC97025Fd35cCAe9Da58c5d1a983D4A602"
+  },
+  "finishedAt": "2026-10-26T07:40:33.328Z"
+}

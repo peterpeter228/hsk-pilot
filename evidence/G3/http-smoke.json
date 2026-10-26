@@ -1,0 +1,30 @@
+{
+  "executedAt": "2026-10-26T07:42:04.434Z",
+  "mode": "SIMULATION",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/api/health",
+      "status": 200
+    },
+    {
+      "route": "/api/demo",
+      "status": 200
+    },
+    {
+      "route": "/api/demo/evidence",
+      "status": 200
+    },
+    {
+      "route": "isolated synthetic TICK",
+      "status": 200,
+      "realTransactionHashes": []
+    }
+  ],
+  "browserAcceptance": false,
+  "status": "PASS_HTTP_ONLY",
+  "serverLog": "HSK Pilot SIMULATION only on port 3100; no live broadcaster\n"
+}

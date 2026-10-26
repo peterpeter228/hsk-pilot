@@ -1,0 +1,39 @@
+
+ RUN  v5.0.5 /workspace/scratch/c01bd6fe117d/hsk-pilot
+
+ ❯ tests/server/job-store.test.ts (7 tests | 7 skipped) 15ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/server/job-store.test.ts > PostgreSQL durable coordinator (real DB)
+error: role "postgres" does not exist
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ tests/server/job-store.test.ts:16:5
+     14|   beforeAll(async () => {
+     15|     admin = new Pool({connectionString:url});
+     16|     await admin.query(`CREATE SCHEMA ${schema}`);
+       |     ^
+     17|     pool = new Pool({connectionString:url, options:`-c search_path=${s…
+     18|     await pool.query('BEGIN');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/server/job-store.test.ts > PostgreSQL durable coordinator (real DB)
+error: role "postgres" does not exist
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ tests/server/job-store.test.ts:23:58
+     21|     store = new PgJobStore(pool);
+     22|   });
+     23|   afterAll(async () => { await pool?.end(); if (admin) { await admin.q…
+       |                                                          ^
+     24|   const reserve = (n:number, nonce='0') => store.reserve({chainId:'177…
+     25|   const lease = async (id:string) => { const l = await store.claim(id,…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 skipped (7)
+   Start at  16:29:41
+   Duration  217ms (transform 49%, import 29%, tests 17%, worker 4%)
+

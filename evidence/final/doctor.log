@@ -1,0 +1,23 @@
+$ node --import tsx scripts/doctor.ts
+{
+  "executedAt": "2026-10-26T07:42:04.321Z",
+  "node": "v24.22.1",
+  "sourceMode": "SIMULATION",
+  "liveFundsEnabled": false,
+  "files": {
+    "handoff": true,
+    "lockfile": true,
+    "guard": true
+  },
+  "credentials": {
+    "applicationModel": false,
+    "ownerKeyLoaded": false,
+    "strategyKeyLoaded": false,
+    "riskKeyLoaded": false
+  },
+  "limitations": [
+    "No real-chain broadcaster in local server",
+    "Browser requires working execution environment",
+    "RPC preflight is separate from trade execution"
+  ]
+}

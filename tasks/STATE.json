@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "dot-project-state/1.0",
+  "updatedAt": "2026-10-26T07:42:14Z",
+  "timezone": "Asia/Shanghai",
+  "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
+  "currentGate": "G3",
+  "researchCompleted": true,
+  "implementationCompleted": false,
+  "repositoryUrl": "https://github.com/peterpeter228/hsk-pilot",
+  "branch": "main",
+  "headSha": null,
+  "webUrl": null,
+  "guardAddress": null,
+  "pendingTransactions": [],
+  "protectionMode": "BOUNDED_EXECUTION",
+  "oracleGuardedStatus": "BLOCKED_STALE_HSK_FEED_AT_29326419",
+  "gates": {
+    "G0": {
+      "status": "PASS_LOCAL",
+      "evidence": []
+    },
+    "G1": {
+      "status": "PASS_READONLY_LIVE_BLOCKED",
+      "evidence": []
+    },
+    "G2": {
+      "status": "PASS_LOCAL_AND_FORK_REVIEW_LIMITED",
+      "evidence": []
+    },
+    "G3": {
+      "status": "PARTIAL",
+      "evidence": []
+    },
+    "G4": {
+      "status": "BLOCKED",
+      "evidence": []
+    },
+    "G5": {
+      "status": "BLOCKED_BROWSER_PARTIAL_RELIABILITY",
+      "evidence": []
+    },
+    "G6": {
+      "status": "DRAFTS_READY_NOT_SUBMITTED",
+      "evidence": []
+    }
+  },
+  "nextActions": [
+    "Persist and verify private source snapshot",
+    "Actual browser acceptance in functioning environment",
+    "Argon review only after separate credential-use approval",
+    "Resolve production integration and owner handoff gates"
+  ],
+  "unknownAuthorizations": [
+    "mainnet capital/gas envelope",
+    "hosted resource charges",
+    "external submission"
+  ],
+  "activeBlockers": [
+    "browser execution environment",
+    "Argon credential-use approval pending",
+    "dedicated product model configuration",
+    "production end-to-end wiring",
+    "service access restrictions unresolved",
+    "owner-operated mainnet actions",
+    "public deployment/publication/submission"
+  ],
+  "initialRemoteSha": "43753387eb278e97943b5f40f9af694d0abf54d8"
+}

@@ -1,0 +1,87 @@
+? Verifying lockfile against supply-chain policies (197 entries)...
+[WARN] Request took 10306ms: https://registry.npmjs.org/@fastify%2Fforwarded
+[WARN] Request took 10311ms: https://registry.npmjs.org/@fastify%2Ferror
+[WARN] Request took 10318ms: https://registry.npmjs.org/@esbuild%2Fopenbsd-arm64
+[WARN] Request took 10320ms: https://registry.npmjs.org/@esbuild%2Fnetbsd-arm64
+[WARN] Request took 10329ms: https://registry.npmjs.org/@fastify%2Fproxy-addr
+[WARN] Request took 10333ms: https://registry.npmjs.org/@fastify%2Fmerge-json-schemas
+[WARN] Request took 10340ms: https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec
+[WARN] Request took 10370ms: https://registry.npmjs.org/@esbuild%2Faix-ppc64
+[WARN] Request took 10345ms: https://registry.npmjs.org/@pinojs%2Fredact
+[WARN] Request took 10373ms: https://registry.npmjs.org/@esbuild%2Flinux-s390x
+[WARN] Request took 10368ms: https://registry.npmjs.org/@fastify%2Ffast-json-stringify-compiler
+[WARN] Request took 10377ms: https://registry.npmjs.org/@esbuild%2Flinux-ppc64
+[WARN] Request took 10384ms: https://registry.npmjs.org/@esbuild%2Fdarwin-x64
+[WARN] Request took 10379ms: https://registry.npmjs.org/@esbuild%2Flinux-riscv64
+[WARN] Request took 10380ms: https://registry.npmjs.org/@esbuild%2Fopenbsd-x64
+[WARN] Request took 10390ms: https://registry.npmjs.org/@esbuild%2Fdarwin-arm64
+[WARN] Request took 10390ms: https://registry.npmjs.org/@esbuild%2Flinux-loong64
+[WARN] Request took 10397ms: https://registry.npmjs.org/@esbuild%2Ffreebsd-x64
+[WARN] Request took 10393ms: https://registry.npmjs.org/@esbuild%2Fnetbsd-x64
+[WARN] Request took 10403ms: https://registry.npmjs.org/@esbuild%2Fandroid-arm
+[WARN] Request took 10400ms: https://registry.npmjs.org/@esbuild%2Flinux-x64
+[WARN] Request took 10407ms: https://registry.npmjs.org/@esbuild%2Flinux-ia32
+[WARN] Request took 10392ms: https://registry.npmjs.org/@jridgewell%2Fresolve-uri
+[WARN] Request took 10402ms: https://registry.npmjs.org/@esbuild%2Fwin32-ia32
+[WARN] Request took 10410ms: https://registry.npmjs.org/@esbuild%2Flinux-mips64el
+[WARN] Request took 10414ms: https://registry.npmjs.org/@esbuild%2Flinux-arm
+[WARN] Request took 10420ms: https://registry.npmjs.org/@esbuild%2Fandroid-x64
+[WARN] Request took 10398ms: https://registry.npmjs.org/@noble%2Fcurves
+[WARN] Request took 10421ms: https://registry.npmjs.org/@rolldown%2Fbinding-linux-arm64-gnu
+[WARN] Request took 10426ms: https://registry.npmjs.org/@rolldown%2Fbinding-linux-ppc64-gnu
+[WARN] Request took 10434ms: https://registry.npmjs.org/@rolldown%2Fbinding-darwin-x64
+[WARN] Request took 10445ms: https://registry.npmjs.org/@rolldown%2Fbinding-linux-arm64-musl
+[WARN] Request took 10456ms: https://registry.npmjs.org/@rolldown%2Fbinding-linux-arm-gnueabihf
+[WARN] Request took 10492ms: https://registry.npmjs.org/@foundry-rs%2Fanvil-darwin-amd64
+[WARN] Request took 10490ms: https://registry.npmjs.org/@openzeppelin%2Fcontracts
+[WARN] Request took 10511ms: https://registry.npmjs.org/@foundry-rs%2Fanvil
+[WARN] Request took 10513ms: https://registry.npmjs.org/@foundry-rs%2Fanvil-win32-amd64
+[WARN] Request took 10514ms: https://registry.npmjs.org/@foundry-rs%2Fforge-win32-amd64
+[WARN] Request took 10516ms: https://registry.npmjs.org/@foundry-rs%2Fforge-darwin-arm64
+[WARN] Request took 10520ms: https://registry.npmjs.org/@foundry-rs%2Fforge-darwin-amd64
+[WARN] Request took 10522ms: https://registry.npmjs.org/@foundry-rs%2Fforge
+[WARN] Request took 10552ms: https://registry.npmjs.org/@rolldown%2Fbinding-android-arm-eabi
+[WARN] Request took 10564ms: https://registry.npmjs.org/@fastify%2Fdeepmerge
+[WARN] Request took 10601ms: https://registry.npmjs.org/@esbuild%2Fopenharmony-arm64
+[WARN] Request took 10591ms: https://registry.npmjs.org/@noble%2Fciphers
+[WARN] Request took 10614ms: https://registry.npmjs.org/@fastify%2Fajv-compiler
+[WARN] Request took 10634ms: https://registry.npmjs.org/@adraffy%2Fens-normalize
+[WARN] Request took 10615ms: https://registry.npmjs.org/@rolldown%2Fbinding-android-arm64
+[WARN] Request took 10620ms: https://registry.npmjs.org/@jridgewell%2Ftrace-mapping
+[WARN] Request took 10623ms: https://registry.npmjs.org/@noble%2Fhashes
+[WARN] Request took 10657ms: https://registry.npmjs.org/@esbuild%2Fandroid-arm64
+[WARN] Request took 10634ms: https://registry.npmjs.org/@oxc-project%2Ftypes
+[WARN] Request took 10651ms: https://registry.npmjs.org/@esbuild%2Fwin32-x64
+[WARN] Request took 10662ms: https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64
+[WARN] Request took 10662ms: https://registry.npmjs.org/@esbuild%2Flinux-arm64
+[WARN] Request took 10656ms: https://registry.npmjs.org/@esbuild%2Fsunos-x64
+[WARN] Request took 10656ms: https://registry.npmjs.org/@esbuild%2Fwin32-arm64
+[WARN] Request took 10677ms: https://registry.npmjs.org/@foundry-rs%2Fanvil-linux-arm64
+[WARN] Request took 10680ms: https://registry.npmjs.org/@foundry-rs%2Fanvil-darwin-arm64
+[WARN] Request took 10680ms: https://registry.npmjs.org/@foundry-rs%2Fanvil-linux-amd64
+[WARN] Request took 10712ms: https://registry.npmjs.org/@foundry-rs%2Fforge-linux-arm64
+[WARN] Request took 10715ms: https://registry.npmjs.org/@foundry-rs%2Fforge-linux-amd64
+[WARN] Request took 10783ms: https://registry.npmjs.org/@rolldown%2Fbinding-freebsd-x64
+[WARN] Request took 10861ms: https://registry.npmjs.org/@rolldown%2Fbinding-darwin-arm64
+[WARN] Request took 11049ms: https://registry.npmjs.org/pnpm
+
+   ╭──────────────────────────────────────────────────────────────────────╮
+   │                                                                      │
+   │                 Update available! 11.25.0 → 12.15.0.                 │
+   │                 Changelog: https://pnpm.io/v/12.15.0                 │
+   │   To update, run: curl -fsSL https://get.pnpm.io/install.sh | sh -   │
+   │                                                                      │
+   ╰──────────────────────────────────────────────────────────────────────╯
+
+✓ Lockfile passes supply-chain policies (197 entries in 11.4s)
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 101, reused 74, downloaded 1, added 0
+Progress: resolved 189, reused 129, downloaded 2, added 0
+Packages: +3
++++
+Progress: resolved 200, reused 139, downloaded 3, added 3, done
+
+devDependencies:
++ @playwright/test 1.64.1
+
+Done in 14.9s using pnpm v11.25.0

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "handoff-manifest/1.0",
+  "createdDate": "2026-10-26",
+  "project": "HSK Pilot",
+  "totalFileCount": 41,
+  "hashAlgorithm": "sha256",
+  "note": "Hashes cover file bytes with LF endings. Manifest lists all files except itself. Project implementation remains NOT_STARTED.",
+  "files": {
+    ".env.example": {
+      "bytes": 861,
+      "sha256": "7eadcfa33fb76cff7f2d4fc59533974a1a19a2480238bf7c45e6f26f10aa3b3c"
+    },
+    ".gitignore": {
+      "bytes": 179,
+      "sha256": "5bfbacd78292b3f2be1aa328c21037d564a7772a31db2b48a9798765dd22d915"
+    },
+    "00_START_HERE.md": {
+      "bytes": 4316,
+      "sha256": "fcddd0c6af8bd956c6d423ef83f50c57b9597e883fff8c022b94f0eaafb0d6da"
+    },
+    "AGENTS.md": {
+      "bytes": 4465,
+      "sha256": "2c762fab5930015102a419eb3a648903aaf3d80ef49fd7935c5f356b3907b3bd"
+    },
+    "apps/web/AGENTS.md": {
+      "bytes": 763,
+      "sha256": "d39456c04f703db36b01bfc7c1cb7daf8bc0cff2e576ca3412eb32f7ed1ff34b"
+    },
+    "apps/worker/AGENTS.md": {
+      "bytes": 895,
+      "sha256": "d8f7bb0dc01c41580212a3287cbd0781bc5c26e109699ee7229ede627eb13d9a"
+    },
+    "config/chain-candidates.json": {
+      "bytes": 4828,
+      "sha256": "72a98e0c52c24f9b5b8dcc69035bba16331602b9c2300f775d0a70bbd2cade55"
+    },
+    "config/trade-intent-types.json": {
+      "bytes": 1356,
+      "sha256": "7e4e2ad57ffcc834a0933e5f469b98a0b14f7ed26ec382b999050a8283470368"
+    },
+    "contracts/AGENTS.md": {
+      "bytes": 1119,
+      "sha256": "cb131498e4b392f1aa811660325e2201cf8548c01d3e2087c6ae04a400a4e7db"
+    },
+    "docs/01_VERIFIED_RULES_AND_DECISIONS.md": {
+      "bytes": 12336,
+      "sha256": "f7b026fc0c6f6f8a998d642ed4c495141ec93f8b1bb0c5648e6882e184ad9467"
+    },
+    "docs/02_PRD_AND_SCOPE.md": {
+      "bytes": 5282,
+      "sha256": "3ba0617bcdd7c7b9159d8a614fb6685e9dd1c32ccdf10deb82f8632aa1441ed5"
+    },
+    "docs/03_ARCHITECTURE_AND_DATA.md": {
+      "bytes": 6950,
+      "sha256": "9a19077742607520039dd7ed930e7c8e50569b72fbc0f61d666735a401ff27d1"
+    },
+    "docs/04_CHAIN_PREFLIGHT.md": {
+      "bytes": 9427,
+      "sha256": "4f8546e4d6b8338c39240cf06f6812802a02567ae40c0141dce1e546f1f6a23f"
+    },
+    "docs/05_CONTRACT_SPEC.md": {
+      "bytes": 10859,
+      "sha256": "a452d259736c546fd12c293e4c510e922b2b854e3dc7874dead8ced9341f5b8e"
+    },
+    "docs/06_AGENT_STRATEGY_AND_RISK.md": {
+      "bytes": 8164,
+      "sha256": "78e9940740d5110b9fae7a387c31071f3d74cdbf25eda746a322998b5f370cb3"
+    },
+    "docs/07_NL_AND_API_CONTRACTS.md": {
+      "bytes": 5294,
+      "sha256": "c053f1d918fa771cf0800d66109cb1e8463c2ade6291ac9720cf4a4b8b7fe635"
+    },
+    "docs/08_UX_AND_BROWSER_ACCEPTANCE.md": {
+      "bytes": 10959,
+      "sha256": "5a3eddbf7c15b92ef52e0836529c319e07b1107e992bd2a6c89cba7baadf409d"
+    },
+    "docs/09_EXECUTION_GATES_AND_TICKETS.md": {
+      "bytes": 5431,
+      "sha256": "f8124b00797d69486f9e76e60b4f75cfeffa948d1d18f9c6e1ccfaf750de9965"
+    },
+    "docs/10_TEST_MATRIX.md": {
+      "bytes": 5740,
+      "sha256": "7a2710dc877e7fdf639afd9b586b467fc80c7d6c8d7a3f710224aad4c9844a86"
+    },
+    "docs/11_DEPLOYMENT_AND_OPERATIONS.md": {
+      "bytes": 4982,
+      "sha256": "2622f41c2ef60177da52d540e786733de1e4f0c93aa8706857ea2a2a72566770"
+    },
+    "docs/12_EVIDENCE_AND_PNL.md": {
+      "bytes": 8039,
+      "sha256": "3e55720d8b7fa37cf639a4de31bce81faf06381f1e19b41d33db223fb972912b"
+    },
+    "docs/13_SUBMISSION_AND_DEMO.md": {
+      "bytes": 11376,
+      "sha256": "d32993333c77dd894ff924c692a0e852297d5209f6da6d9211f0930698d275f9"
+    },
+    "docs/14_REVIEW_FINDINGS.md": {
+      "bytes": 15806,
+      "sha256": "fb54116e6027f648a8bfb71e28c9924db12532aed8866bd516d523a18b658f93"
+    },
+    "docs/15_SOURCES_AND_UNKNOWN_ITEMS.md": {
+      "bytes": 5639,
+      "sha256": "3a1aa5e164f28983ee4afb434bf5898ff8eebc8bc9678accf1ef467728faa238"
+    },
+    "docs/16_DOT_CAPABILITIES_AND_RECOVERY.md": {
+      "bytes": 4725,
+      "sha256": "bd62f2e9765e8015c59e7e1de32b2a40fef04df746abc368e2410557ca21d77a"
+    },
+    "docs/17_BENCHMARK_AND_PRODUCT_VALUE.md": {
+      "bytes": 10374,
+      "sha256": "c81df7243286c85a80ef86c774000b675bea42e87cb9219d255c8729bfbe9ebd"
+    },
+    "evidence/research_chain_snapshot.json": {
+      "bytes": 24028,
+      "sha256": "1faaef878aed4021e40e54ca7282fa2ecfdd0bb5e3f3fc0b90264cbff3e3e28d"
+    },
+    "schemas/evidence.schema.json": {
+      "bytes": 13813,
+      "sha256": "58ad56df4bfe04eedeaf32b1a75d32a1f7c730dfde929f60e07744304a890de8"
+    },
+    "schemas/policy-patch.schema.json": {
+      "bytes": 4405,
+      "sha256": "41d5fb34308037c5cce71f65c8adb75e54e576e5ac1fb44589870564ce6f9cf1"
+    },
+    "schemas/trade-intent.schema.json": {
+      "bytes": 1932,
+      "sha256": "668bcd29936ffe9ae77fb9f89bd92406db75edf2b319a55d1c934520302c22bc"
+    },
+    "tasks/BLOCKERS.md": {
+      "bytes": 1125,
+      "sha256": "fe2968a75fc8690dd6bbfa01a2cb00878296357e96de2eca99759a2144c65559"
+    },
+    "tasks/DECISIONS.md": {
+      "bytes": 1445,
+      "sha256": "75c9b561ad4a58aaf70ad740323424d6412860320ec627f898e15ad3f806cddb"
+    },
+    "tasks/STATE.json": {
+      "bytes": 1355,
+      "sha256": "b44201a360cbc8ddd5901cfe3db335e84b71cbe60c832d1f2dec362158ecf2a9"
+    },
+    "tasks/TASKS.md": {
+      "bytes": 967,
+      "sha256": "85f7ea35ee20442f4caf575ab29532b7bb0772c60d32018604abb1d32b1171af"
+    },
+    "tasks/WORKLOG.md": {
+      "bytes": 757,
+      "sha256": "d6f77c4ea887c09f44189a5ec3f2fddf7dc3dd6dc09b9db329d0faa19361da4f"
+    },
+    "templates/EVIDENCE_INDEX.md": {
+      "bytes": 1042,
+      "sha256": "b3b409de23bc1049bbe33fc41e1ad10d231f89dd857f3dfe8021d3312623fa5f"
+    },
+    "templates/MAINNET_ACTION_PLAN.md": {
+      "bytes": 2136,
+      "sha256": "83f73c1118d99c700242a3b8cebb8d47aaeb000d493e63271aaa5c3cb6e307a8"
+    },
+    "templates/ORGANIZER_QUESTIONS_EN.md": {
+      "bytes": 3603,
+      "sha256": "0f9c470a2754d13713a9b471fa70847808b0c247907591dd44e7334f0ab987a2"
+    },
+    "templates/SUBMISSION_DRAFT_EN.md": {
+      "bytes": 6945,
+      "sha256": "eacd902ea4c5af15d25eb6c03e0d871cf23dc8aa836305974f4d0193ce64eaaf"
+    },
+    "tools/restore_handoff.py": {
+      "bytes": 3264,
+      "sha256": "c0973ba27cc4735ec942f16abba6d1a710a803cbc1e2dc192355386e7c901473"
+    }
+  }
+}

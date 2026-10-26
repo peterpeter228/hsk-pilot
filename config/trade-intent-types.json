@@ -1,0 +1,66 @@
+{
+  "domainName": "HSKPilotGuard",
+  "domainVersion": "1",
+  "primaryType": "TradeIntent",
+  "types": {
+    "TradeIntent": [
+      {
+        "name": "sessionId",
+        "type": "uint64"
+      },
+      {
+        "name": "policyVersion",
+        "type": "uint32"
+      },
+      {
+        "name": "strategyPolicyHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "intentNonce",
+        "type": "uint256"
+      },
+      {
+        "name": "direction",
+        "type": "uint8"
+      },
+      {
+        "name": "amountInRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "referenceAmountOutRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "amountOutMinimumRaw",
+        "type": "uint256"
+      },
+      {
+        "name": "quoteObservedAt",
+        "type": "uint64"
+      },
+      {
+        "name": "quoteBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "name": "quoteBlockHash",
+        "type": "bytes32"
+      },
+      {
+        "name": "deadline",
+        "type": "uint64"
+      },
+      {
+        "name": "evidenceHash",
+        "type": "bytes32"
+      }
+    ]
+  },
+  "directions": {
+    "BUY_WHSK_WITH_USDT": 0,
+    "SELL_WHSK_FOR_USDT": 1
+  },
+  "note": "chainId and verifyingContract are read from validated live deployment, never placeholders. Types/field order must match Solidity exactly."
+}

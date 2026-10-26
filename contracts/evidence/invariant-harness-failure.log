@@ -1,0 +1,198 @@
+Compiling 2 files with Solc 0.8.30
+Solc 0.8.30 finished in 8.83s
+Compiler run successful!
+Warning: Failure from "/workspace/scratch/c01bd6fe117d/hsk-pilot/contracts/cache/invariant/failures/GuardInvariantTest/invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly" file was ignored because test contract bytecode has changed.
+
+Ran 1 test for test/GuardInvariant.t.sol:GuardInvariantTest
+[FAIL: day accounting reset]
+	[Sequence] (original: 22, shrunk: 2)
+		sender=0x0000000000000000000000000000000000001883 addr=[test/GuardInvariant.t.sol:GuardHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=donate(uint96,bool) args=[255941228294672687874 [2.559e20], true]
+		sender=0x83Aa752159254DD7Df635ac4162cE08163035636 addr=[test/GuardInvariant.t.sol:GuardHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=trade(uint96,bool,bool) args=[14107891906087178512104784 [1.41e25], false, false]
+ invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly() (runs: 0, calls: 0, reverts: 0)
+
+╭--------------+-----------------+-------+---------+----------╮
+| Contract     | Selector        | Calls | Reverts | Discards |
++=============================================================+
+| GuardHandler | closeAndRestart | 8     | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | donate          | 2     | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | reduce          | 4     | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | tighten         | 3     | 0       | 0        |
+|--------------+-----------------+-------+---------+----------|
+| GuardHandler | trade           | 5     | 0       | 0        |
+╰--------------+-----------------+-------+---------+----------╯
+
+Traces:
+  [11171591] GuardInvariantTest::setUp()
+    ├─ [11098163] → new GuardHandler@0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f
+    │   ├─ [0] VM::warp(1800000000 [1.8e9])
+    │   │   └─ ← [Return]
+    │   ├─ [0] VM::roll(100)
+    │   │   └─ ← [Return]
+    │   ├─ [0] VM::chainId(31337 [3.133e4])
+    │   │   └─ ← [Return]
+    │   ├─ [417146] → new MockToken@0x104fBc016F4bb334D775a19E8A6510109AC63E00
+    │   │   └─ ← [Return] 1857 bytes of code
+    │   ├─ [417146] → new MockToken@0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3
+    │   │   └─ ← [Return] 1857 bytes of code
+    │   ├─ [143178] → new MockPool@0xDDc10602782af652bB913f7bdE1fD82981Db7dd9
+    │   │   └─ ← [Return] 492 bytes of code
+    │   ├─ [63034] → new MockFactory@0x7FdB3132Ff7D02d8B9e221c61cC895ce9a4bb773
+    │   │   └─ ← [Return] 203 bytes of code
+    │   ├─ [447152] → new MockRouter@0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a
+    │   │   └─ ← [Return] 2231 bytes of code
+    │   ├─ [2513641] → new TradingSessionGuard@0xD76ffbd1eFF76C510C3a509fE22864688aC3A588
+    │   │   ├─ emit OwnershipTransferred(previousOwner: 0x0000000000000000000000000000000000000000, newOwner: GuardHandler: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f])
+    │   │   ├─ [380] MockRouter::factory() [staticcall]
+    │   │   │   └─ ← [Return] MockFactory: [0x7FdB3132Ff7D02d8B9e221c61cC895ce9a4bb773]
+    │   │   ├─ [248] MockRouter::WETH9() [staticcall]
+    │   │   │   └─ ← [Return] MockToken: [0x104fBc016F4bb334D775a19E8A6510109AC63E00]
+    │   │   ├─ [447] MockFactory::getPool(MockToken: [0x104fBc016F4bb334D775a19E8A6510109AC63E00], MockToken: [0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3], 3000) [staticcall]
+    │   │   │   └─ ← [Return] MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9]
+    │   │   ├─ [265] MockPool::token0() [staticcall]
+    │   │   │   └─ ← [Return] MockToken: [0x104fBc016F4bb334D775a19E8A6510109AC63E00]
+    │   │   ├─ [324] MockPool::token1() [staticcall]
+    │   │   │   └─ ← [Return] MockToken: [0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3]
+    │   │   ├─ [331] MockPool::fee() [staticcall]
+    │   │   │   └─ ← [Return] 3000
+    │   │   ├─ [247] MockToken::decimals() [staticcall]
+    │   │   │   └─ ← [Return] 18
+    │   │   ├─ [247] MockToken::decimals() [staticcall]
+    │   │   │   └─ ← [Return] 6
+    │   │   └─ ← [Return] 12265 bytes of code
+    │   ├─ [46465] MockToken::mint(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], 100000000 [1e8])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], value: 100000000 [1e8])
+    │   │   └─ ← [Stop]
+    │   ├─ [46465] MockToken::mint(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], 10000000000000000000 [1e19])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], value: 10000000000000000000 [1e19])
+    │   │   └─ ← [Stop]
+    │   ├─ [24565] MockToken::mint(MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], 1000000000000 [1e12])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], value: 1000000000000 [1e12])
+    │   │   └─ ← [Stop]
+    │   ├─ [24565] MockToken::mint(MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], 1000000000000000000000000 [1e24])
+    │   │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], value: 1000000000000000000000000 [1e24])
+    │   │   └─ ← [Stop]
+    │   ├─ [0] VM::addr(<pk>)
+    │   │   └─ ← [Return] 0xae0478140036d14e93A7B7482512e1d91745B650
+    │   ├─ [0] VM::addr(<pk>)
+    │   │   └─ ← [Return] 0x873ca4e9cCE193E6D76ddaCCefA5aD74aE854Df1
+    │   ├─ [350054] TradingSessionGuard::startSession(SessionPolicy({ mode: 0, validAfter: 1800000000 [1.8e9], validUntil: 1800086400 [1.8e9], strategySigner: 0xae0478140036d14e93A7B7482512e1d91745B650, riskSigner: 0x873ca4e9cCE193E6D76ddaCCefA5aD74aE854Df1, strategyPolicyHash: 0xb2590ce26adfc7f2814ca4b72880660e2369b23d16ffb446362696d8186d6348, maxBuyPerTradeQuoteRaw: 10000000 [1e7], maxSessionGrossBuyQuoteRaw: 20000000 [2e7], maxUtcDayGrossBuyQuoteRaw: 30000000 [3e7], maxRiskInventoryRaw: 100000000000000000000 [1e20], maxSellPerTradeRiskRaw: 5000000000000000000 [5e18], minTradeIntervalSec: 60, maxQuoteSlippageBps: 100, maxQuoteAgeSec: 30, maxIntentTtlSec: 60, exitMaxPerTradeRiskRaw: 10000000000000000000 [1e19], exitMinIntervalSec: 5, exitValidUntil: 1800172800 [1.8e9] }), 100000000 [1e8], 10000000000000000000 [1e19])
+    │   │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   │   └─ ← [Return] 100000000 [1e8]
+    │   │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   │   └─ ← [Return] 10000000000000000000 [1e19]
+    │   │   ├─ emit SessionStarted(sessionId: 1, policyVersion: 1, strategyPolicyHash: 0xb2590ce26adfc7f2814ca4b72880660e2369b23d16ffb446362696d8186d6348, allocatedQuoteRaw: 100000000 [1e8], allocatedRiskRaw: 10000000000000000000 [1e19])
+    │   │   └─ ← [Stop]
+    │   └─ ← [Return] 29953 bytes of code
+    └─ ← [Stop]
+
+  [20063] GuardHandler::donate(255941228294672687874 [2.559e20], true)
+    ├─ [12265] MockToken::mint(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], 255941228294672687874 [2.559e20])
+    │   ├─ emit Transfer(from: 0x0000000000000000000000000000000000000000, to: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], value: 255941228294672687874 [2.559e20])
+    │   └─ ← [Stop]
+    └─ ← [Return]
+
+  [307525] GuardHandler::trade(14107891906087178512104784 [1.41e25], false, false)
+    ├─ [0] VM::warp(1800000061 [1.8e9])
+    │   └─ ← [Return]
+    ├─ [26832] MockRouter::configure(1906088 [1.906e6], 0, false)
+    │   └─ ← [Return]
+    ├─ [2734] TradingSessionGuard::sessionId() [staticcall]
+    │   └─ ← [Return] 1
+    ├─ [502] TradingSessionGuard::policyVersion() [staticcall]
+    │   └─ ← [Return] 1
+    ├─ [2864] TradingSessionGuard::intentNonce() [staticcall]
+    │   └─ ← [Return] 0
+    ├─ [1812] TradingSessionGuard::hashIntent(TradeIntent({ sessionId: 1, policyVersion: 1, strategyPolicyHash: 0xb2590ce26adfc7f2814ca4b72880660e2369b23d16ffb446362696d8186d6348, intentNonce: 0, direction: 1, amountInRaw: 1906087178512104785 [1.906e18], referenceAmountOutRaw: 1906088 [1.906e6], amountOutMinimumRaw: 1906088 [1.906e6], quoteObservedAt: 1800000061 [1.8e9], quoteBlockNumber: 100, quoteBlockHash: 0x0585219c89ff69a57011fdb3ce5d31ef1cb567de5e556b6adad371214163d4ef, deadline: 1800000091 [1.8e9], evidenceHash: 0xa35bb791cca35a96b14f5f74b6df1344134bb51c29abde414c1adb496f076b21 })) [staticcall]
+    │   └─ ← [Return] 0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1
+    ├─ [0] VM::sign("<pk>", 0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1)
+    │   └─ ← [Return] 28, 0xe02290a4bb17aab262a3d34369d667addfbe1a6971c917f9fa319fbc81b2c1eb, 0x6083517aee48d6d985705d8a05f4d3c501bc269ad1c9103c92561e6d42ebf9b8
+    ├─ [0] VM::sign("<pk>", 0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1)
+    │   └─ ← [Return] 27, 0x411abfa8fa99a20b2b79f17a0f2e010495c43dd93efb705336b26e6d1b1af47d, 0x423d41be17119c6686c8bf51ecfa06390373c1b98058529cbe3eda4a1314a9e0
+    ├─ [2908] TradingSessionGuard::allocatedRiskRaw() [staticcall]
+    │   └─ ← [Return] 10000000000000000000 [1e19]
+    ├─ [2696] TradingSessionGuard::status() [staticcall]
+    │   └─ ← [Return] 1
+    ├─ [696] TradingSessionGuard::status() [staticcall]
+    │   └─ ← [Return] 1
+    ├─ [199606] TradingSessionGuard::execute(TradeIntent({ sessionId: 1, policyVersion: 1, strategyPolicyHash: 0xb2590ce26adfc7f2814ca4b72880660e2369b23d16ffb446362696d8186d6348, intentNonce: 0, direction: 1, amountInRaw: 1906087178512104785 [1.906e18], referenceAmountOutRaw: 1906088 [1.906e6], amountOutMinimumRaw: 1906088 [1.906e6], quoteObservedAt: 1800000061 [1.8e9], quoteBlockNumber: 100, quoteBlockHash: 0x0585219c89ff69a57011fdb3ce5d31ef1cb567de5e556b6adad371214163d4ef, deadline: 1800000091 [1.8e9], evidenceHash: 0xa35bb791cca35a96b14f5f74b6df1344134bb51c29abde414c1adb496f076b21 }), 0xe02290a4bb17aab262a3d34369d667addfbe1a6971c917f9fa319fbc81b2c1eb6083517aee48d6d985705d8a05f4d3c501bc269ad1c9103c92561e6d42ebf9b81c, 0x411abfa8fa99a20b2b79f17a0f2e010495c43dd93efb705336b26e6d1b1af47d423d41be17119c6686c8bf51ecfa06390373c1b98058529cbe3eda4a1314a9e01b)
+    │   ├─ [3000] PRECOMPILES::ecrecover(0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1, 28, 101379149175462461809155829051688463272019878484739120254312488972489357181419, 43654052785141414808352221638048829614069071335221908319094402984043833194936) [staticcall]
+    │   │   └─ ← [Return] 0xae0478140036d14e93A7B7482512e1d91745B650
+    │   ├─ [3000] PRECOMPILES::ecrecover(0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1, 27, 29447595970811104176360280317918177333455742204776764267165824736938740610173, 29960879415778898650661330012813157955328555065798376319765288063072342419936) [staticcall]
+    │   │   └─ ← [Return] 0x873ca4e9cCE193E6D76ddaCCefA5aD74aE854Df1
+    │   ├─ [2537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 100000000 [1e8]
+    │   ├─ [2537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 265941228294672687874 [2.659e20]
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 265941228294672687874 [2.659e20]
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 100000000 [1e8]
+    │   ├─ [24325] MockToken::approve(MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a], 1906087178512104785 [1.906e18])
+    │   │   ├─ emit Approval(owner: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], spender: MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a], value: 1906087178512104785 [1.906e18])
+    │   │   └─ ← [Return] true
+    │   ├─ [56051] MockRouter::exactInputSingle(ExactInputSingleParams({ tokenIn: 0x104fBc016F4bb334D775a19E8A6510109AC63E00, tokenOut: 0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3, fee: 3000, recipient: 0xD76ffbd1eFF76C510C3a509fE22864688aC3A588, amountIn: 1906087178512104785 [1.906e18], amountOutMinimum: 1906088 [1.906e6], sqrtPriceLimitX96: 0 }))
+    │   │   ├─ [2265] MockPool::token0() [staticcall]
+    │   │   │   └─ ← [Return] MockToken: [0x104fBc016F4bb334D775a19E8A6510109AC63E00]
+    │   │   ├─ [2324] MockPool::token1() [staticcall]
+    │   │   │   └─ ← [Return] MockToken: [0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3]
+    │   │   ├─ [790] MockToken::allowance(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a]) [staticcall]
+    │   │   │   └─ ← [Return] 1906087178512104785 [1.906e18]
+    │   │   ├─ [11123] MockToken::transferFrom(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], 1906087178512104785 [1.906e18])
+    │   │   │   ├─ emit Transfer(from: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], to: MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], value: 1906087178512104785 [1.906e18])
+    │   │   │   └─ ← [Return] true
+    │   │   ├─ [11238] MockPool::pay(MockToken: [0x037eDa3aDB1198021A9b2e88C22B464fD38db3f3], TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], 1906088 [1.906e6])
+    │   │   │   ├─ [10552] MockToken::transfer(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], 1906088 [1.906e6])
+    │   │   │   │   ├─ emit Transfer(from: MockPool: [0xDDc10602782af652bB913f7bdE1fD82981Db7dd9], to: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], value: 1906088 [1.906e6])
+    │   │   │   │   └─ ← [Return] true
+    │   │   │   └─ ← [Stop]
+    │   │   └─ ← [Return] 115792089237316195423570985008687907853269984665640564039457584007913129639935 [1.157e77]
+    │   ├─ [2325] MockToken::approve(MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a], 0)
+    │   │   ├─ emit Approval(owner: TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], spender: MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a], value: 0)
+    │   │   └─ ← [Return] true
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 264035141116160583089 [2.64e20]
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 101906088 [1.019e8]
+    │   ├─ [790] MockToken::allowance(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588], MockRouter: [0xfD07C974e33dd1626640bA3a5acF0418FaacCA7a]) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 101906088 [1.019e8]
+    │   ├─ [537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 264035141116160583089 [2.64e20]
+    │   ├─ emit TradeExecuted(intentHash: 0xb5cbb801f2eab29b7de86f961c72c87a23f722cb59c738ed84298632c8865cb1, sessionId: 1, policyVersion: 1, direction: 1, amountInRaw: 1906087178512104785 [1.906e18], actualOutRaw: 1906088 [1.906e6], evidenceHash: 0xa35bb791cca35a96b14f5f74b6df1344134bb51c29abde414c1adb496f076b21, strategySigner: 0xae0478140036d14e93A7B7482512e1d91745B650, riskSigner: 0x873ca4e9cCE193E6D76ddaCCefA5aD74aE854Df1)
+    │   └─ ← [Return] 1906088 [1.906e6]
+    └─ ← [Return]
+
+  [42282] GuardInvariantTest::invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly()
+    ├─ [37174] GuardHandler::check() [staticcall]
+    │   ├─ [2537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 101906088 [1.019e8]
+    │   ├─ [2842] TradingSessionGuard::allocatedQuoteRaw() [staticcall]
+    │   │   └─ ← [Return] 101906088 [1.019e8]
+    │   ├─ [2537] MockToken::balanceOf(TradingSessionGuard: [0xD76ffbd1eFF76C510C3a509fE22864688aC3A588]) [staticcall]
+    │   │   └─ ← [Return] 264035141116160583089 [2.64e20]
+    │   ├─ [2908] TradingSessionGuard::allocatedRiskRaw() [staticcall]
+    │   │   └─ ← [Return] 8093912821487895215 [8.093e18]
+    │   ├─ [2578] TradingSessionGuard::sessionGrossBuyQuoteRaw() [staticcall]
+    │   │   └─ ← [Return] 0
+    │   ├─ [2841] TradingSessionGuard::utcDayGrossBuyQuoteRaw(20833 [2.083e4]) [staticcall]
+    │   │   └─ ← [Return] 0
+    │   └─ ← [Revert] day accounting reset
+    └─ ← [Revert] day accounting reset
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 44.37ms (42.77ms CPU time)
+
+Ran 1 test suite in 46.56ms (44.37ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/GuardInvariant.t.sol:GuardInvariantTest
+[FAIL: day accounting reset]
+	[Sequence] (original: 22, shrunk: 2)
+		sender=0x0000000000000000000000000000000000001883 addr=[test/GuardInvariant.t.sol:GuardHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=donate(uint96,bool) args=[255941228294672687874 [2.559e20], true]
+		sender=0x83Aa752159254DD7Df635ac4162cE08163035636 addr=[test/GuardInvariant.t.sol:GuardHandler]0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f calldata=trade(uint96,bool,bool) args=[14107891906087178512104784 [1.41e25], false, false]
+ invariantAllocatedCoverageGrossBudgetAllowanceAndReduceOnly() (runs: 0, calls: 0, reverts: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
