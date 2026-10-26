@@ -1,3 +1,6 @@
+## Current browser status — 2026-10-26 09:05 UTC
+Actual core desktop UI now passes through the built-in cloud desktop runtime; see ../../evidence/browser-cua/REPORT.md and ../../docs/BROWSER_RUNTIME.md. Earlier environment-blocked descriptions below are historical build-stage notes, not current absence of browser capability. Glyph fix is built and regression-tested; post-fix visual check, frame-width/restart checks and video remain in progress.
+
 # Web implementation and acceptance boundary
 
 React + Vite, primary language English, narrow deterministic English/Chinese policy commands. No image-generated concept or browser visual-fidelity claim. Core delivery was not blocked on concept art. Design is code-native neutral surfaces, navy text, one lime accent, legible table-oriented facts, semantic headings and dialog focus trap. Fonts are system-local; no asset or font network calls.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-26T08:18:18Z",
+  "updatedAt": "2026-10-26T09:00:30Z",
   "timezone": "Asia/Shanghai",
   "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
   "currentGate": "G3",
@@ -40,8 +40,11 @@
       "evidence": []
     },
     "G5": {
-      "status": "BLOCKED_BROWSER_PARTIAL_RELIABILITY",
-      "evidence": []
+      "status": "PASS_CORE_DESKTOP_REMAINDER_IN_PROGRESS",
+      "evidence": [
+        "evidence/browser-cua/REPORT.md",
+        "docs/BROWSER_RUNTIME.md"
+      ]
     },
     "G6": {
       "status": "DRAFTS_READY_NOT_SUBMITTED",
@@ -49,8 +52,7 @@
     }
   },
   "nextActions": [
-    "Persist post-review correction and verify remote SHA",
-    "Actual browser acceptance in functioning environment",
+    "Finish actual browser responsive/recovery checks and capture video using available supported tools",
     "Resolve access and dedicated product model configuration",
     "Finish production integration before owner-operated mainnet handoff"
   ],
@@ -60,7 +62,6 @@
     "external submission"
   ],
   "activeBlockers": [
-    "browser execution environment",
     "dedicated product model configuration",
     "production end-to-end wiring",
     "service access restrictions unresolved",

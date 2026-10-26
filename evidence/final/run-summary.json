@@ -19,7 +19,7 @@
   "build": "PASS",
   "doctor": "PASS",
   "compiledHttp": "PASS",
-  "browser": "NOT_RUN_ENVIRONMENT_BLOCKED",
+  "browser": "PASS_CORE_DESKTOP_REMAINDER_IN_PROGRESS",
   "mainnetDeployment": null,
   "mainnetTransactions": [],
   "argon": "COMPLETED_ONCE_INDEPENDENTLY_ADJUDICATED",
@@ -52,8 +52,9 @@
   "limitations": [
     "Web sandbox remains in memory",
     "No real product model call",
-    "No browser acceptance",
     "No mainnet/public deployment/submission",
-    "External Argon review predates composition/cost/keeper changes"
-  ]
+    "External Argon review predates composition/cost/keeper changes",
+    "Full responsive/recovery/video matrix not yet complete"
+  ],
+  "browserEvidence": "evidence/browser-cua/REPORT.md"
 }

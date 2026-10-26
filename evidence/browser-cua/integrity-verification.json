@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "schema": true,
+    "simulation": true,
+    "integrity": true,
+    "noRealHashes": true,
+    "version": true,
+    "limits": true,
+    "closed": true,
+    "zeroBalances": true,
+    "budgetNotReplenished": true,
+    "pnl": true,
+    "reduceBeforeSell": true
+  },
+  "allPass": true,
+  "appOriginErrors": [],
+  "extensionErrorCount": 53
+}

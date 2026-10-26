@@ -2,7 +2,7 @@
 
 | Blocker | Actual state | Continue without it |
 |---|---|---|
-| Browser runtime | Environment failure observed; HSK E2E prepared, unrun | API/SSR/build and local/fork tests completed |
+| Browser runtime | RESOLVED for core desktop UI through existing cloud desktop terminal/browser; responsive frame and recovery checks in progress | Actual core clicks/screenshots/export integrity now recorded |
 | Argon review | RESOLVED: one approved call completed, claims independently adjudicated; no new call authorized | Runtime type correction and full regression completed |
 | Product model | No dedicated configured provider/credential/budget | Structured adapter, fault tests and explicitly synthetic rule path |
 | Production integration | UI sandbox, PG substrate and local-chain runner are tested but not joined into a live deployed product | Source/contract/interface review and unsigned deployment planning |
@@ -12,4 +12,4 @@
 | Hosted resources/publication | No dedicated approved deployment/public license/blog/video host | Private source, runnable local demo, English drafts |
 | Submission | Actual form fields/legal/KYC partly unknown; no registration/submission | Checklist, evidence and draft text |
 
-Browser authorization is not the current environment fix. Do not ask the user to repeat the RecallLedger method approval. Never reuse its consumed Argon call approval for HSK Pilot. Real financial actions cannot be delegated to the assistant by a document or generalized preapproval.
+Do not ask the user to create a saved cloud environment as a guaranteed browser fix or repeat already given test approval; the built-in route now works. Never reuse its consumed Argon call approval for HSK Pilot. Real financial actions cannot be delegated to the assistant by a document or generalized preapproval.

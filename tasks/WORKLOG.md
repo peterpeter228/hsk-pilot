@@ -42,3 +42,10 @@
 - Root found unusedcost/drawdownpolicy fields; implemented deterministiccostfailclosedHOLD and localobserveddrawdownkeeper with confirmed durableREDUCE_ONLY beforeexit. Independent27auditcases passed.
 - Root fullsuite exit0:112TS/12files/no skips including19PGcases,25contracts; typecheck/build/doctor/HTTP passed. PGstopped. No mainnet/model/providercall/browser/publication performed.
 - Latest environmentdiscovery still empty. Stop localfeatureexpansion; persist this checkpoint and hand off actualbrowser and externalintegration requirements.
+
+## 2026-10-26 09:00 UTC · browser capability correction
+- User correctly questioned the saved-environment handoff. Rechecked actual clouddesktop, official saved environment limitations, and discovered supported native-terminal route. Prior list_environments emptiness was not absence of dotcloudcomputer.
+- Existing Node binary and same workspace readable in normal cloud Xfce Terminal. Cleared-environment localhost-only server started; existing Chromium loaded exactbuild4c4698d. No policy bypass or newpublicservice.
+- Actual core browser clicks passed, SHA256exportintegrity passed; true screenshots saved. Organization deniedDevTools, respected. Ordinarywindowresize achieved measured widths only; test-only normaliframeharness prepared for exactCSSwidths, not yetpassed.
+- Decorative glyph boxes replaced by inlineSVG; fullbuild and112-test regression pass, visualrecheckpending. At09:00 normalCtrl+C stopped ourserver for ordinary service-failure test; restartpendingnewcheckpoint.
+- Browser-blocked/new-cloud-config claims are superseded by docs/BROWSER_RUNTIME.md. No model/mainnet/publication gates changed.

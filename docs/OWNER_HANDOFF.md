@@ -42,3 +42,6 @@ Inspect current Git HEAD/status, `tasks/STATE.json`, evidence timestamps and run
 
 ## Latest local integration delta
 The core LocalCoordinator now has an exercised PostgreSQL+Anvil31337 integration, including durable pre-signing quarantine and actual signature/receipt verification. See contracts/evidence/durable-local/verification.json and evidence/G3/pg/SIGNING_RESULTS.md. The web sandbox itself remains in memory. Production UI/identity/model/provider wiring and external deployment are still distinct unfinished work; do not mistake a local runner for a hosted financial service. Browser environment discovery was repeated at08:18UTC and still returned no configured computer or coding environment.
+
+## Browser handoff correction
+No new coding environment is currently required from the owner for desktop browser acceptance. The built-in cloud terminal/browser path now works and core actual clicks passed. The earlier suggestion to create a saved cloud environment as a browser fix is withdrawn. Responsive/recovery/video checks continue within available supported tools; other model/access/mainnet/publication needs remain separate.

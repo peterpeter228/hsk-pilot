@@ -7,9 +7,9 @@
 | G2 | PASS_LOCAL_AND_FORK / REVIEW_LIMITED |25contract tests/fuzz/invariant plus fixed-block realrouter fork; independent review, bounded independent+Argon review adjudication, no formal audit |
 | G3 | PASS_LOCAL_CORE / PARTIAL_PRODUCT |112TS tests with realPG, local-chain vertical slice, synthetic HTTP/UI; no realproductLLM or production end-to-end wiring |
 | G4 | BLOCKED |No mainnet deployment/trade; financial actions owner-operated after exact gates |
-| G5 | BLOCKED_BROWSER / PARTIAL_RELIABILITY |PG restart/concurrency tested; no actual browser/video or measuredAIbaseline |
+| G5 | PASS_CORE_DESKTOP / PARTIAL_MATRIX |Actual core clicks/screenshots/export integrity; PG restart/concurrency tested; frame widths, recovery and video in progress, AI baseline unmeasured |
 | G6 | DRAFTS_READY / NOT_SUBMITTED |English draft/storyboard/evidence; no hostedpublicdemo, publication or entryconfirmation |
 
-Next action: finish private source checkpoint, then resume actual browser verification in a functioning environment and production integration after the completed review has been independently adjudicated.
+Next action: finish private source checkpoint, then finish actual browser verification in the working built-in cloud desktop and production integration after the completed review has been independently adjudicated.
 
 Latest local core: durable PostgreSQL signing barrier→real local dual signatures→signed simulation→Anvil buy→canonical confirmation→restart no duplicate. Cost/stop-keeper checks implemented;112TS/25Solidity finalrootchecks pass. UI/model/live deployment remain separate blocked gates.

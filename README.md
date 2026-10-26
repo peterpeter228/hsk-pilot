@@ -11,7 +11,7 @@ A bounded WHSK/USDT rebalancing assistant being developed for HSK Chain Horizon 
 - TypeScript candidate/risk, accounting, indexer and recovery modules; structured-model adapter exists but no real product model has been configured or exercised.
 - PostgreSQL durable job-store substrate has real local database concurrency and restart evidence. **The web demo does not use it:** demo sessions and tokens live in process memory and disappear on restart. No live broadcaster or wallet route exists.
 
-No public hosted demo, mainnet deployment/trade, real-browser click acceptance, finished video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit**; see the completed external review and independent adjudication in review/ARGON_VERIFICATION_2026-10-26.md.
+Actual core desktop browser clicks are now verified, with exact remaining scope in [the browser report](evidence/browser-cua/REPORT.md). No public hosted demo, mainnet deployment/trade, finished video or competition submission is claimed. No investment-performance/alpha evidence exists. Independent code review found and fixed six logic issues; this is **not a certified security audit**; see the completed external review and independent adjudication in review/ARGON_VERIFICATION_2026-10-26.md.
 
 ## Run locally
 
@@ -60,7 +60,7 @@ Replace the illustrative connection parameters; do not point tests at shared/pro
 | [Fixed-block HSKSwap fork](contracts/evidence/fork-test.log) | One passing real-router sell/buy/minOut/reduce/withdrawal test against public read-only state at block29,326,419; local FORK, no external broadcast or jurisdiction clearance |
 | [Read-only preflight](evidence/preflight/2026-10-26T07-33-14-667Z.json) | Timestamped HSK network reads/quotes, not fills or authorization |
 | [Official-source recheck](evidence/G0/official-recheck.md) | Event facts, deadline conflict, unverified form fields and access restriction |
-| [Web acceptance boundary](apps/web/IMPLEMENTATION.md) | Implemented UI checks and still-unverified real-browser interactions |
+| [Web acceptance boundary](apps/web/IMPLEMENTATION.md) | Implemented UI checks; current actual core-browser results are in evidence/browser-cua/REPORT.md |
 
 Each evidence record describes its own tested source/time. Earlier records may correctly predate repository creation and use source hashes. They must not be relabeled as tests of a later commit without rerunning. Final delivery identity belongs in [release manifest](submission/release-manifest.json); `null` means not established.
 
@@ -77,7 +77,7 @@ Private repository: https://github.com/peterpeter228/hsk-pilot . Access is not a
 The official body deadline is **November 1, 2026, 16:00 UTC / November 2, 00:00 Beijing**; a later header-widget deadline conflicts. Plan against the earlier time. Mainnet contract deployment is required for demo selection, so this local prototype has **not** met that eligibility gate. See [owner hand-off](docs/OWNER_HANDOFF.md), [English draft](submission/SUBMISSION_DRAFT_EN.md), [three-minute storyboard](submission/VIDEO_STORYBOARD.md), and [unsigned action plan](templates/MAINNET_ACTION_PLAN.md). Nothing in this repository constitutes submission, registration or a claim of selection.
 
 ## External review checkpoint
-One user-approved Argon request reviewed source commit `8f064dab87d0275d1ff0768c2c57f3fd981217ef`. See [original final answer](review/ARGON_ORIGINAL_2026-10-26.md), [receipt](review/ARGON_RECEIPT_2026-10-26.json), and [independent verification](review/ARGON_VERIFICATION_2026-10-26.md). Its alleged integer overflow was not reproduced, but adversarial follow-up exposed unsafe runtime Number acceptance in bigint-declared fields; explicit type validation now rejects it. The post-review root run passed 112 TypeScript tests across twelve files, no skips, plus25contract tests. Browser/live gates remain blocked.
+One user-approved Argon request reviewed source commit `8f064dab87d0275d1ff0768c2c57f3fd981217ef`. See [original final answer](review/ARGON_ORIGINAL_2026-10-26.md), [receipt](review/ARGON_RECEIPT_2026-10-26.json), and [independent verification](review/ARGON_VERIFICATION_2026-10-26.md). Its alleged integer overflow was not reproduced, but adversarial follow-up exposed unsafe runtime Number acceptance in bigint-declared fields; explicit type validation now rejects it. The post-review root run passed 112 TypeScript tests across twelve files, no skips, plus25contract tests. The browser gate is partially verified; live gates remain blocked.
 
 ## Composed local execution checkpoint
 The separate [durable local runner](contracts/script/durable-local-integration.mjs) now connects LocalCoordinator, actual PostgreSQL and an owned Anvil chain31337. It verifies write-ahead SIGNING, both actual EIP-712 signature recoveries, full signed-call simulation, one actual local buy, sender/EOA nonce persistence, canonical receipt confirmation and restart without another signer/send call. [Machine evidence](contracts/evidence/durable-local/verification.json). Source-chain metadata177 is not the execution chain.
@@ -86,4 +86,4 @@ The separate [durable local runner](contracts/script/durable-local-integration.m
 
 [Signing integration](evidence/G3/pg/SIGNING_RESULTS.md) includes19actual PostgreSQL tests and process-crash/restart probes. The final root suite passes112tests/twelve files, including27independent audit tests, plus25native contract tests. Cost limits now HOLD on unknown/stale/over-cap estimates; the local stop keeper persists confirmed REDUCE_ONLY before attempting an exit. Synthetic zero cost estimates are assumptions, not measured free trades. The actual local gas fee is recorded separately.
 
-This does not change the UI's process-memory sandbox into a deployed production trading service. Browser interaction, product LLM, lawful service access, owner-operated mainnet work and publication/submission remain incomplete. New local-composition/cost/keeper work received independent tests and review, not an additional Argon call.
+This does not change the UI's process-memory sandbox into a deployed production trading service. The full responsive/recovery/video matrix, product LLM, lawful service access, owner-operated mainnet work and publication/submission remain incomplete. New local-composition/cost/keeper work received independent tests and review, not an additional Argon call.

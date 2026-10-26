@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "hsk-evidence-envelope/1",
+  "algorithm": "RFC8785-SHA256",
+  "claim": "Integrity commitment only; does not prove factual truth or reasoning correctness.",
+  "sha256": "dac17fd98d3ca4b688320bf4c19897b462b1165fc94dccc05dd1f168049aa2cf",
+  "data": {
+    "schemaVersion": "hsk-local-evidence/1",
+    "dataMode": "SIMULATION",
+    "realTransactionHashes": [],
+    "buildSha": "4c4698d0e82aae225295d1db00d6625e99c7201d",
+    "exportedAt": "2026-10-26T08:45:50.461Z",
+    "state": {
+      "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83",
+      "sessionId": "47bbab7e-9fc5-46cb-adb4-8e81b850da83",
+      "dataMode": "SIMULATION",
+      "source": "synthetic",
+      "chainId": 177,
+      "policyVersion": "2",
+      "status": "CLOSED",
+      "policy": {
+        "version": "2",
+        "mode": "BOUNDED_EXECUTION",
+        "status": "CLOSED",
+        "maxBuyPerTradeQuoteRaw": "1000000",
+        "maxSessionGrossBuyQuoteRaw": "10000000",
+        "maxUtcDayGrossBuyQuoteRaw": "5000000",
+        "maxRiskInventoryRaw": "100000000000000000000",
+        "maxSellPerTradeRiskRaw": "10000000000000000000",
+        "exitMaxPerTradeRiskRaw": "10000000000000000000",
+        "minTradeIntervalSec": 300,
+        "exitMinIntervalSec": 10,
+        "maxQuoteSlippageBps": 30,
+        "maxQuoteAgeSec": 30,
+        "maxIntentTtlSec": 30,
+        "validAfter": 0,
+        "validUntil": 4102444800,
+        "exitValidUntil": 4102444860
+      },
+      "strategy": {
+        "targetRiskWeightBps": 2000,
+        "rebalanceBandBps": 500,
+        "stopDrawdownBps": 1000,
+        "minimumTradeQuoteRaw": "100000",
+        "maxExecutionCostQuoteRaw": "100000",
+        "riskEnabled": true
+      },
+      "balances": {
+        "quoteRaw": "0",
+        "riskRaw": "0"
+      },
+      "budgets": {
+        "sessionGrossBuyQuoteRaw": "1000000",
+        "utcDayGrossBuyQuoteRaw": "1000000"
+      },
+      "accounting": {
+        "accountingVersion": "ACCOUNTING_V1_WAC",
+        "riskRaw": "0",
+        "costBasisQuoteRaw": "0",
+        "realizedTradingPnl": "0",
+        "unrealizedTradingPnl": "0",
+        "tradingPnl": "0",
+        "estimatedNetPnl": null,
+        "quality": "partial",
+        "costs": [
+          {
+            "kind": "EXECUTION",
+            "nativeUnit": "HSK",
+            "nativeRaw": null,
+            "quoteRaw": null,
+            "complete": false
+          }
+        ]
+      },
+      "model": {
+        "status": "BLOCKED",
+        "reason": "MODEL_CREDENTIALS_UNAVAILABLE",
+        "execution": "MANUAL_RULE_SIMULATION"
+      },
+      "oracle": {
+        "status": "BLOCKED",
+        "reason": "INDEPENDENT_FRESH_ORACLE_NOT_VERIFIED"
+      },
+      "pending": null,
+      "decisions": [
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:1",
+          "at": "2026-10-26T08:43:47.392Z",
+          "type": "CREATED",
+          "reason": "SYNTHETIC_MANUAL_SIMULATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:2",
+          "at": "2026-10-26T08:44:28.634Z",
+          "type": "POLICY_DRAFT",
+          "reason": "NEEDS_CLARIFICATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:1"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:3",
+          "at": "2026-10-26T08:44:35.385Z",
+          "type": "POLICY_DRAFT",
+          "reason": "READY",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:2"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:4",
+          "at": "2026-10-26T08:44:44.225Z",
+          "type": "POLICY_DRAFT",
+          "reason": "READY",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:3"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:5",
+          "at": "2026-10-26T08:44:44.859Z",
+          "type": "POLICY_CONFIRMED",
+          "reason": "SIMULATION_ONLY_NOT_CHAIN_CONFIRMATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:6",
+          "at": "2026-10-26T08:44:51.343Z",
+          "type": "SIMULATED_FILL",
+          "reason": "MANUAL_RULE_SIMULATION_NOT_AI",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "candidate": {
+              "id": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:5:2:BUY:1000000",
+              "direction": "BUY",
+              "amountInRaw": "1000000",
+              "referenceAmountOutRaw": "1000000000000000000",
+              "snapshotHash": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:5",
+              "policyVersion": "2",
+              "kind": "NORMAL_REBALANCE"
+            },
+            "risk": {
+              "allowed": true,
+              "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+              "minOutRaw": "997000000000000000"
+            }
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:7",
+          "at": "2026-10-26T08:44:59.931Z",
+          "type": "HOLD",
+          "reason": "NO_LEGAL_CANDIDATE",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:8",
+          "at": "2026-10-26T08:45:00.198Z",
+          "type": "REDUCE_ONLY",
+          "reason": "SIMULATION_STATE_PERSISTED_BEFORE_EXIT",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:9",
+          "at": "2026-10-26T08:45:09.933Z",
+          "type": "SIMULATED_FILL",
+          "reason": "MANUAL_RULE_SIMULATION_NOT_AI",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "candidate": {
+              "id": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:8:2:SELL:1000000000000000000",
+              "direction": "SELL",
+              "amountInRaw": "1000000000000000000",
+              "referenceAmountOutRaw": "1000000",
+              "snapshotHash": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:8",
+              "policyVersion": "2",
+              "kind": "DETERMINISTIC_EXIT"
+            },
+            "risk": {
+              "allowed": true,
+              "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+              "minOutRaw": "997000"
+            }
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:10",
+          "at": "2026-10-26T08:45:18.069Z",
+          "type": "PAUSED",
+          "reason": "SIMULATION_OWNER_CONTROL",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:11",
+          "at": "2026-10-26T08:45:38.446Z",
+          "type": "WITHDRAWN",
+          "reason": "SIMULATION_CAPITAL_FLOW_NOT_PNL",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "quoteRaw": "20000000",
+            "riskRaw": "0"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:1",
+          "at": "2026-10-26T08:43:47.392Z",
+          "type": "CREATED",
+          "reason": "SYNTHETIC_MANUAL_SIMULATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:2",
+          "at": "2026-10-26T08:44:28.634Z",
+          "type": "POLICY_DRAFT",
+          "reason": "NEEDS_CLARIFICATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:1"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:3",
+          "at": "2026-10-26T08:44:35.385Z",
+          "type": "POLICY_DRAFT",
+          "reason": "READY",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:2"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:4",
+          "at": "2026-10-26T08:44:44.225Z",
+          "type": "POLICY_DRAFT",
+          "reason": "READY",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "proposalId": "proposal:47bbab7e-9fc5-46cb-adb4-8e81b850da83:3"
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:5",
+          "at": "2026-10-26T08:44:44.859Z",
+          "type": "POLICY_CONFIRMED",
+          "reason": "SIMULATION_ONLY_NOT_CHAIN_CONFIRMATION",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:6",
+          "at": "2026-10-26T08:44:51.343Z",
+          "type": "SIMULATED_FILL",
+          "reason": "MANUAL_RULE_SIMULATION_NOT_AI",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "candidate": {
+              "id": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:5:2:BUY:1000000",
+              "direction": "BUY",
+              "amountInRaw": "1000000",
+              "referenceAmountOutRaw": "1000000000000000000",
+              "snapshotHash": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:5",
+              "policyVersion": "2",
+              "kind": "NORMAL_REBALANCE"
+            },
+            "risk": {
+              "allowed": true,
+              "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+              "minOutRaw": "997000000000000000"
+            }
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:7",
+          "at": "2026-10-26T08:44:59.931Z",
+          "type": "HOLD",
+          "reason": "NO_LEGAL_CANDIDATE",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:8",
+          "at": "2026-10-26T08:45:00.198Z",
+          "type": "REDUCE_ONLY",
+          "reason": "SIMULATION_STATE_PERSISTED_BEFORE_EXIT",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:9",
+          "at": "2026-10-26T08:45:09.933Z",
+          "type": "SIMULATED_FILL",
+          "reason": "MANUAL_RULE_SIMULATION_NOT_AI",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "candidate": {
+              "id": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:8:2:SELL:1000000000000000000",
+              "direction": "SELL",
+              "amountInRaw": "1000000000000000000",
+              "referenceAmountOutRaw": "1000000",
+              "snapshotHash": "synthetic:47bbab7e-9fc5-46cb-adb4-8e81b850da83:8",
+              "policyVersion": "2",
+              "kind": "DETERMINISTIC_EXIT"
+            },
+            "risk": {
+              "allowed": true,
+              "reason": "BOUNDED_EXECUTION_NO_FAIR_PRICE",
+              "minOutRaw": "997000"
+            }
+          }
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:10",
+          "at": "2026-10-26T08:45:18.069Z",
+          "type": "PAUSED",
+          "reason": "SIMULATION_OWNER_CONTROL",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {}
+        },
+        {
+          "id": "47bbab7e-9fc5-46cb-adb4-8e81b850da83:11",
+          "at": "2026-10-26T08:45:38.446Z",
+          "type": "WITHDRAWN",
+          "reason": "SIMULATION_CAPITAL_FLOW_NOT_PNL",
+          "dataMode": "SIMULATION",
+          "txHash": null,
+          "details": {
+            "quoteRaw": "20000000",
+            "riskRaw": "0"
+          }
+        }
+      ],
+      "limitations": [
+        "Synthetic price fixed at 1 USDT per WHSK; not HSKSwap execution.",
+        "No wallet, signing, broadcast, live returns or AI execution.",
+        "B1 disabled; B0 has no independent fair-price protection."
+      ],
+      "running": false,
+      "buildSha": "4c4698d0e82aae225295d1db00d6625e99c7201d"
+    }
+  }
+}
