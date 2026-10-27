@@ -102,3 +102,8 @@ The state/docs worker ran **no commands, tests, builds, lint, formatters or new 
 | Independent PacketReview | Received timestamp in [review receipt](../evidence/HO-hsk-mainnet-1/packet-review.json); not a command | No concrete defects found for exact unsigned/HOLD preparation. Owner/ceiling/expiry/complete fees and final signable release review remain blockers; no signing approval. |
 
 JSON/link/claim verification and actual Git delivery/checkpoint details are recorded in the root verification ledger and receipts, rather than inventing a containing commit's own hash. No TypeScript/UI code changed; no unrelated full suite or new browser claim.
+
+### Checkpoint and packet consistency
+
+- Integrated packet smoke (`node --input-type=module -e` exact program in [packet-docs-smoke.json](../evidence/HO-hsk-mainnet-1/packet-docs-smoke.json)):2026-10-27 09:31:12.523629–09:31:12.731053 UTC, exit0. Parsed JSON, checked statuses/nulls/zero financial scope and source/initcode identity, verified13Markdown files/202local links; external contacts remain external-only.
+- Implementation checkpoint `b01147322f995d393ed6970589d185f230aad132` saved on working branch `ho-hsk-mainnet-1`; contract-source SHA remains `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`. Only named preparation paths were staged; original user untracked preflight was not included. A subsequent receipt-only commit records this actual checkpoint without pretending to embed its own hash. Push outcome/final head are in external IMPLEMENTATION_RECEIPT.json; no merge/visibility mutation/submission is implied.

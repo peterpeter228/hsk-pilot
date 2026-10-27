@@ -1,6 +1,6 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-27T09:30:31.273990Z",
+  "updatedAt": "2026-10-27T09:32:32.679609Z",
   "timezone": "Asia/Shanghai",
   "phase": "HO_PREPARATION_WP4_WAITING_GAS_NOT_BROADCAST",
   "currentGate": "G3",
@@ -8,7 +8,7 @@
   "implementationCompleted": false,
   "repositoryUrl": "https://github.com/peterpeter228/hsk-pilot",
   "branch": "ho-hsk-mainnet-1",
-  "headSha": null,
+  "headSha": "b01147322f995d393ed6970589d185f230aad132",
   "repositoryVisibility": "PUBLIC",
   "visibilityAuthorization": {
     "id": "AUTH-20261027-HSK-PUBLIC",
@@ -18,7 +18,7 @@
   "versionIdentity": {
     "deploymentSourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
     "implementationBaselineHeadSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
-    "implementationCheckpointSha": null,
+    "implementationCheckpointSha": "b01147322f995d393ed6970589d185f230aad132",
     "checkpointRecord": "evidence/HO-hsk-mainnet-1/RECEIPT.json",
     "checkpointNote": "Receipt records an actual implementation checkpoint; its containing evidence commit is identified by Git without self-reference. External receipt records final pushed head.",
     "browserVideoSourceSha": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",

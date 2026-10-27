@@ -1,8 +1,8 @@
 {
   "schemaVersion": "hsk-preparation-verification/1",
-  "updatedAt": "2026-10-27T09:31:55.563777+00:00",
+  "updatedAt": "2026-10-27T09:33:07.816035+00:00",
   "sourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
-  "implementationCheckpointSha": null,
+  "implementationCheckpointSha": "b01147322f995d393ed6970589d185f230aad132",
   "dataModes": [
     "MAINNET_READONLY",
     "FORK",
@@ -102,6 +102,18 @@
       "commandEvidence": "packet-docs-smoke.json",
       "startedAt": "2026-10-27T09:31:12.523629+00:00",
       "finishedAt": "2026-10-27T09:31:12.731053+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e"
+      ],
+      "commandEvidence": "checkpoint-metadata-check.json",
+      "startedAt": "2026-10-27T09:33:07.774111+00:00",
+      "finishedAt": "2026-10-27T09:33:07.815527+00:00",
       "exitCode": 0,
       "status": "PASS"
     }
