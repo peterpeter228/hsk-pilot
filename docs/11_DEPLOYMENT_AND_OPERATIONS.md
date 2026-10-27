@@ -6,17 +6,29 @@
 
 禁止把“合约能deploy”放在合约资金测试之前。部署hash、构造参数、编译metadata与源码SHA须一致，secret不得进部署日志或仓库。
 
+### HO-hsk-mainnet-1 当前例外（2026-10-27）
+
+以上是完整产品顺序，不是本轮执行授权。本轮只完成WP1–WP3/WP5的**文档/证据准备**；WP4为 **WAITING_GAS / NOT_BROADCAST**。复用固定源 `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`、现有artifact/只读预检/unsigned preview，保持solc `0.8.30+commit.73712a01`、Cancun、optimizer200、viaIR、metadata bytecodeHash=none不变；本轮root记录Node24.22.1/pnpm11.25.0。项目doctor使用 `pnpm run doctor`；pnpm11的 `pnpm doctor` 是包管理器内置命令，不能替代项目检查。
+
+仓库已PUBLIC，`AUTH-20261027-HSK-PUBLIC` 已消耗；不得再次改变可见性。`AUTH-20261027-HSK-MAINNET` 与 `AUTH-20261027-HSK-DEPLOYER-TEST` 仅包含全门禁满足后的**一次零value、paused Guard创建**及相应只读/授权源码验证，不是交易或完整G4放行。指定deployer为TEST `0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E`；PAYOUT `0x54145b97d5CeCf72b9900C702a02774171574171` 仍禁作deployer。现有preview把initialOwner设为TEST仅是**提案**，不是最终owner角色授权。
+
+零余额为用户已观察且历史双RPC已记录的事实，本轮不为确认而重读；无主网广播、无私钥访问、无gas采购/转账、无Guard/session funding、allowance、`startSession`、worker激活、交易、ownership transfer、Submit Build、X或联系。评审原文 **“fund ≥~2.5 HSK to deployer on 177”** 仅为**外部前提建议**，不是转账授权、批准的花费上限或完整费用界限。没有余额watcher，也不得到账自动广播。
+
+未来任何签名前须重新核对chain177及实际TEST账户余额充足、EOA/nonce/未知旧交易、最终owner映射、有效专项授权、数值gas上限/expiry、完整链费、当前预检、固定artifact/initcode及确切packet独立复审。`maxGasHskRaw=null`、`authorizationExpiresAt=null` 与额外链费未知仍分别阻断READY。root已记录[pristine paused固定块fork smoke](../evidence/HO-hsk-mainnet-1/paused-fork-smoke.json)：source177/block29372120、execution31337、合成解锁sender，本地一次创建和零会话/余额/allowance断言；这不是实际TEST就绪或主网receipt。资金转入、一般旧审查或该fork成功均不能替代剩余门禁。单笔创建结果未知时只对账同一sender/nonce/hash，不盲目重部署。
+
+当前事实见[unsigned行动计划](../templates/MAINNET_ACTION_PLAN.md)、[只读创建证据](../evidence/HO-hsk-mainnet-1/creation-readonly.json)、root的[HO回执](../evidence/HO-hsk-mainnet-1/RECEIPT.json)和[verification.json](../evidence/HO-hsk-mainnet-1/verification.json)；实际检查/实现checkpoint与外部[IMPLEMENTATION_RECEIPT.json](/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/IMPLEMENTATION_RECEIPT.json)分开记录。[独立packet审查](../evidence/HO-hsk-mainnet-1/packet-review.json)无unsigned HOLD准备缺陷，不是签名放行。HO接受不改写旧 `coordination/handoff.json` 的build/watch/state所有权。后续文档checkpoint、固定部署源与历史浏览器/视频source `ccdbed53c4e57d8817e0d4e82fd22023c996b713` 分开；准备或paused部署均不代表G3–G6、AI自主闭环或提交完成。
+
 ## 2. 版本与工具链
 
 G0锁定pnpm/Node/Next/Viem/Wagmi/OpenZeppelin/Foundry/solc及EVM target的确切版本。锁文件进入Git，CI使用frozen lockfile。编译器 target 不一定追最新协议，必须明确支持与测试；记录optimizer/viaIR以保证Blockscout复现。
 
-只读研究证明SwapRouter02 ABI字段，但项目自己的部署仍需重新生成artifact与constructor参数。Blockscout部分验证与完全匹配不能混同；对本项目合约争取完整源码匹配，未完成时据实显示。使用官方Blockscout Foundry验证说明，不借用另一条链的配置作为真值。
+只读研究证明SwapRouter02 ABI字段，但项目部署仍须核对固定源artifact与constructor参数的可复现性；已有产物provenance充分时复用，不为文档重复构建。Blockscout部分验证与完全匹配不能混同；对本项目合约争取完整源码匹配，未完成时据实显示。使用官方Blockscout Foundry验证说明，不借用另一条链的配置作为真值。
 
 ## 3. secrets与签名
 
-owner主钱包始终由用户钱包持有；部署使用已授权专用账户/keystore。strategy/risk密钥分别配置在worker签名边界，只能签固定typedData；relayer账户只保留授权gas额度。不要在聊天中粘贴私钥、将私钥放命令行参数/浏览器本地存储/截图，或把NEXT_PUBLIC用于任何secret。
+owner主钱包始终由用户钱包持有；部署使用当轮明确授权的专用账户与签名边界。HO-hsk-mainnet-1唯一secret引用为环境变量名 `DREAMSHIELD_G1_PRIVATE_KEY`，准备阶段不读取；不要求与该授权矛盾的新keystore约定。strategy/risk密钥只用于另行授权的worker签名边界，只能签固定typedData；relayer账户只保留授权gas额度。不要在聊天中粘贴私钥、将私钥放命令行参数/浏览器本地存储/截图，或把NEXT_PUBLIC用于任何secret。
 
-部署脚本默认dry-run，广播需要显式选项和当前授权状态。env存在private key不等于无限交易许可。用户已有授权足够则不重复询问，优先复用具体批准的预算/资产/有效期。
+当前仓库没有生产Guard部署broadcaster；本轮不新增可执行广播路径，不把Anvil/local脚本改指向177。未来签名实现必须受全部释放门禁、显式当轮授权与批准签名边界约束，不能由env存在private key推导无限许可。用户已有专项授权不重复索取；仅追踪仍未解决的owner/数值预算/期限/费用等输入。
 
 ## 4. 托管
 

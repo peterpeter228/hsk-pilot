@@ -72,9 +72,11 @@ The HSKSwap website returned a jurisdictional HTTP403 to the research service. S
 
 ## Delivery and event status
 
-Private repository: https://github.com/peterpeter228/hsk-pilot . Access is not automatically granted to judges. No open-source license has been selected; private delivery, licensing and public publication are separate decisions. Dependency notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+PUBLIC repository: https://github.com/peterpeter228/hsk-pilot . No open-source project license has been selected; repository visibility, licensing, hosted demo/video publication, private draft/contact disclosure and formal submission are separate decisions. Dependency notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 The official body deadline is **November 1, 2026, 16:00 UTC / November 2, 00:00 Beijing**; a later header-widget deadline conflicts. Plan against the earlier time. Mainnet contract deployment is required for demo selection, so this local prototype has **not** met that eligibility gate. See [owner hand-off](docs/OWNER_HANDOFF.md), [English draft](submission/SUBMISSION_DRAFT_EN.md), [three-minute storyboard](submission/VIDEO_STORYBOARD.md), and [unsigned action plan](templates/MAINNET_ACTION_PLAN.md). Nothing in this repository constitutes submission, registration or a claim of selection.
+
+HO-hsk-mainnet-1 prepares a paused chain-177 Guard from fixed source `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`; [unsigned packet and release gates](templates/MAINNET_ACTION_PLAN.md), [receipt](evidence/HO-hsk-mainnet-1/RECEIPT.json). TEST deployer is designated; WP4 is **WAITING_GAS / NOT_BROADCAST**, not a missing-EOA blocker. No mainnet deployment, funding, session or trade is claimed. A later documentation commit is not the Guard's source identity.
 
 ## External review checkpoint
 One user-approved Argon request reviewed source commit `8f064dab87d0275d1ff0768c2c57f3fd981217ef`. See [original final answer](review/ARGON_ORIGINAL_2026-10-26.md), [receipt](review/ARGON_RECEIPT_2026-10-26.json), and [independent verification](review/ARGON_VERIFICATION_2026-10-26.md). Its alleged integer overflow was not reproduced, but adversarial follow-up exposed unsafe runtime Number acceptance in bigint-declared fields; explicit type validation now rejects it. The post-review root run passed 112 TypeScript tests across twelve files, no skips, plus25contract tests. The browser gate is partially verified; live gates remain blocked.
@@ -86,7 +88,7 @@ The separate [durable local runner](contracts/script/durable-local-integration.m
 
 [Signing integration](evidence/G3/pg/SIGNING_RESULTS.md) includes19actual PostgreSQL tests and process-crash/restart probes. The final root suite passes112tests/twelve files, including27independent audit tests, plus25native contract tests. Cost limits now HOLD on unknown/stale/over-cap estimates; the local stop keeper persists confirmed REDUCE_ONLY before attempting an exit. Synthetic zero cost estimates are assumptions, not measured free trades. The actual local gas fee is recorded separately.
 
-This does not change the UI's process-memory sandbox into a deployed production trading service. The full responsive/recovery/video matrix, product LLM, lawful service access, owner-operated mainnet work and publication/submission remain incomplete. New local-composition/cost/keeper work received independent tests and review, not an additional Argon call.
+This does not change the UI's process-memory sandbox into a deployed production trading service. Scoped responsive/recovery checks and an actual two-minute synthetic UI recording exist; the full live-browser acceptance matrix, product LLM, lawful service access, hosted demo, mainnet deployment and submission remain incomplete. New local-composition/cost/keeper work received independent tests and review, not an additional Argon call.
 
 ## Actual browser walkthrough
 [Browser report and real screenshots](evidence/browser-cua/REPORT.md) now cover the desktop core, service-interruption handling, fresh-session recovery and375/768/1440 ordinary iframe viewport policy flows. Frame tests are not phone-hardware tests or a claim that all proposed39checks ran.

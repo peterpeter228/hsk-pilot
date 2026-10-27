@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "ho-hsk-mainnet-receipt/1",
+  "handoff_id": "HO-hsk-mainnet-1",
+  "status": "PREPARATION_DELIVERED_WP4_WAITING_GAS",
+  "updatedAt": "2026-10-27T09:31:55.577766+00:00",
+  "timezone": "Asia/Shanghai",
+  "base_sha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+  "fixed_contract_source_sha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+  "implementation_checkpoint_sha": null,
+  "head_sha": null,
+  "sha_note": "Implementation checkpoint/head will be recorded after commit; Guard source identity remains the fixed base. Receipt-containing commit is identified by Git, not self-reference.",
+  "branch": "ho-hsk-mainnet-1",
+  "repository": "https://github.com/peterpeter228/hsk-pilot",
+  "repository_visibility": "PUBLIC",
+  "chainId": 177,
+  "reviewed_plan_sha256": "994af0790f4b31950f530f4737f6264a89f7b7ad6afaf085263d82b8d1e91b88",
+  "reviewed_plan_external_path": "/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/omp-plan-merged-reviewed.md",
+  "work_packages": {
+    "WP1": {
+      "status": "PREPARED_FIXED_SOURCE_PROVENANCE_VERIFIED",
+      "evidence": [
+        "provenance.json",
+        "provenance-check.json"
+      ],
+      "merged_plan": "omp-plan-merged-reviewed.md; external local-only"
+    },
+    "WP2": {
+      "status": "HISTORICAL_PREFLIGHT_REUSED_SUPPLEMENTAL_READS_PASS",
+      "dataMode": "MAINNET_READONLY",
+      "preflightObservedAt": "2026-10-27T08:56:22.032Z",
+      "preflightBlock": "29372120",
+      "preflightBlockHash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73",
+      "preflightCommandExitCode": null,
+      "historicalExitNote": "Historical command exit log not provided; report has errors=[] and READS_VERIFIED_NOT_EXECUTION_APPROVAL",
+      "evidence": [
+        "preflight-177-20261027.json",
+        "creation-readonly.json"
+      ]
+    },
+    "WP3": {
+      "status": "UNSIGNED_OWNER_HANDOFF_ONLY",
+      "action_plan": "../../templates/MAINNET_ACTION_PLAN.md",
+      "evidence": [
+        "deploy-preview-unsigned-20261027.json",
+        "initcode.hex"
+      ],
+      "ownerMappingStatus": "PROPOSED_TEST_NOT_AUTHORIZED_FINAL_OWNER"
+    },
+    "WP4": {
+      "status": "WAITING_GAS",
+      "broadcastStatus": "NOT_BROADCAST",
+      "deployerAddress": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+      "deployerAuth": "AUTH-20261027-HSK-DEPLOYER-TEST",
+      "deploymentAuth": "AUTH-20261027-HSK-MAINNET",
+      "deployerBalanceWeiObserved": "0",
+      "balanceObservedAt": null,
+      "balanceObservedBlock": "29372060",
+      "balanceBlockEvidence": "preflight-177-20261027.md; not the full preflight block 29372120",
+      "balanceEvidence": "Reused reviewed/user zero balance and historical deploy-preview-unsigned-20261027.json dual RPC; no confirming re-read",
+      "balanceEndpoints": [
+        "https://mainnet.hsk.xyz",
+        "https://hashkey.drpc.org"
+      ],
+      "funding_prerequisite": {
+        "instruction": "fund ≥~2.5 HSK to deployer on 177",
+        "chainId": 177,
+        "deployerAddress": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+        "status": "EXTERNAL_PREREQUISITE_NOT_EXECUTED",
+        "limit": "Recommendation only; no authorized transfer, approved spend ceiling or complete fee bound. Positive balance does not trigger broadcast."
+      },
+      "guardAddress": null,
+      "transactionHash": null,
+      "receipt": null,
+      "sourceVerificationStatus": "NOT_RUN_NO_DEPLOYMENT"
+    },
+    "WP5": {
+      "status": "DRAFT_NOT_SUBMITTED",
+      "repositoryDraft": "../../submission/SUBMISSION_DRAFT_EN.md",
+      "manifest": "../../submission/release-manifest.json",
+      "externalFieldDraft": "wp5-submit-drafts/DORAHACKS_SUBMIT_FIELDS_DRAFT.md",
+      "submissionId": null,
+      "submissionSha": null,
+      "realTradeTransactionHashes": []
+    }
+  },
+  "protectionMode": "BOUNDED_EXECUTION",
+  "oracleGuardedStatus": "BLOCKED_INDEPENDENT_FRESH_FEEDS_NOT_VALIDATED",
+  "liveFundsEnabled": false,
+  "maxFundedUsdtRaw": "0",
+  "maxFundedWhskRaw": "0",
+  "maxTradeCount": 0,
+  "maxGasHskRaw": null,
+  "authorizationExpiresAt": null,
+  "verification": "verification.json",
+  "pausedSmoke": "paused-fork-smoke.json",
+  "liveSigningBlockers": [
+    "Zero HSK balance (WAITING_GAS); no automatic broadcast or gas sourcing",
+    "Final initialOwner role authorization not established",
+    "Approved maximum native HSK spend and authorization expiry absent",
+    "Complete chain-specific fee bound/reviewed gas limit absent",
+    "Fresh release-time chain/account/nonce/fee checks and action-specific release review required; unsigned preparation review is not signing approval",
+    "Lawful service-access/dependency risks unresolved as applicable"
+  ],
+  "productBlockers": [
+    "Dedicated product model and production integration incomplete",
+    "Hosted judge demo/video access absent; historical browser/video are local SIMULATION",
+    "Actual submission form/legal/KYC/payout/licensing conditions not fully verified"
+  ],
+  "not_run": [
+    "mainnet_signing",
+    "mainnet_broadcast_while_waiting_gas",
+    "Blockscout_source_verification_without_deployment",
+    "private_key_access",
+    "Submit_Build",
+    "formal_submission",
+    "remote_draft_save",
+    "X_publication",
+    "live_trades",
+    "Guard_funding",
+    "session_funding",
+    "ERC20_approvals",
+    "startSession",
+    "worker_activation",
+    "gas_procurement_or_topup",
+    "ownership_transfer",
+    "recovery_transfer",
+    "repository_visibility_changes",
+    "organizer_contact",
+    "new_paid_resources"
+  ],
+  "unchanged": [
+    "Guard_source",
+    "compiler_settings",
+    "ABI",
+    "schemas",
+    "migrations",
+    "dependencies_and_lockfile",
+    "worker_permissions",
+    "runtime_security_controls",
+    "coordination/handoff.json"
+  ],
+  "claims_not_made": [
+    "No LIVE_MAINNET deployment or trade",
+    "No complete AI autonomous loop or G3/G4/G5/G6 acceptance",
+    "No professional audit, profit, fair-price guarantee, qualification, selection or prize approval",
+    "No broad build/watch/state ownership transfer",
+    "No publication of external private contact/draft artifacts"
+  ],
+  "independent_unsigned_review": "packet-review.json",
+  "relativePathsBase": "repository/evidence/HO-hsk-mainnet-1 (even for external mirror)",
+  "verificationSummary": {
+    "nativeContractTests": {
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0
+    },
+    "collaborationProtocolTests": {
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0
+    },
+    "offlineCollaborationValidation": "PASS",
+    "integratedDocsSmoke": {
+      "status": "PASS",
+      "markdownFiles": 13,
+      "existingLocalLinks": 202
+    },
+    "unsignedReview": "NO_FINDINGS_HOLD_ONLY_NOT_SIGNING_APPROVAL"
+  }
+}

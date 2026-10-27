@@ -1,19 +1,37 @@
 {
   "schemaVersion": "dot-project-state/1.0",
-  "updatedAt": "2026-10-26T11:21:00Z",
+  "updatedAt": "2026-10-27T09:30:31.273990Z",
   "timezone": "Asia/Shanghai",
-  "phase": "LOCAL_CANDIDATE_EXTERNAL_GATES_BLOCKED",
+  "phase": "HO_PREPARATION_WP4_WAITING_GAS_NOT_BROADCAST",
   "currentGate": "G3",
   "researchCompleted": true,
   "implementationCompleted": false,
   "repositoryUrl": "https://github.com/peterpeter228/hsk-pilot",
-  "branch": "main",
+  "branch": "ho-hsk-mainnet-1",
   "headSha": null,
+  "repositoryVisibility": "PUBLIC",
+  "visibilityAuthorization": {
+    "id": "AUTH-20261027-HSK-PUBLIC",
+    "status": "CONSUMED_NO_FURTHER_VISIBILITY_CHANGE",
+    "evidence": "/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/PUBLIC-FLIP-20261027.md"
+  },
+  "versionIdentity": {
+    "deploymentSourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+    "implementationBaselineHeadSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+    "implementationCheckpointSha": null,
+    "checkpointRecord": "evidence/HO-hsk-mainnet-1/RECEIPT.json",
+    "checkpointNote": "Receipt records an actual implementation checkpoint; its containing evidence commit is identified by Git without self-reference. External receipt records final pushed head.",
+    "browserVideoSourceSha": "ccdbed53c4e57d8817e0d4e82fd22023c996b713",
+    "browserVideoEvidenceCheckpointSha": "cc2b93a84fd0e258c0e781eb3f5ced266a47c563",
+    "deployCommit": null,
+    "submissionSha": null
+  },
   "webUrl": null,
   "guardAddress": null,
   "pendingTransactions": [],
   "protectionMode": "BOUNDED_EXECUTION",
-  "oracleGuardedStatus": "BLOCKED_STALE_HSK_FEED_AT_29326419",
+  "oracleGuardedStatus": "BLOCKED_INDEPENDENT_FRESH_FEEDS_NOT_VALIDATED",
+  "liveFundsEnabled": false,
   "gates": {
     "G0": {
       "status": "PASS_LOCAL",
@@ -21,14 +39,17 @@
     },
     "G1": {
       "status": "PASS_READONLY_LIVE_BLOCKED",
-      "evidence": []
+      "evidence": [
+        "evidence/HO-hsk-mainnet-1/preflight-177-20261027.json",
+        "evidence/HO-hsk-mainnet-1/preflight-177-20261027.md"
+      ]
     },
     "G2": {
       "status": "PASS_LOCAL_AND_FORK_REVIEW_LIMITED",
       "evidence": []
     },
     "G3": {
-      "status": "PASS_LOCAL_CORE_PARTIAL_PRODUCT",
+      "status": "PARTIAL_PRODUCT_LOCAL_CORE_ONLY_NOT_FULL_PASS",
       "evidence": [
         "evidence/final/tests.log",
         "contracts/evidence/durable-local/verification.json",
@@ -36,36 +57,48 @@
       ]
     },
     "G4": {
-      "status": "BLOCKED",
-      "evidence": []
+      "status": "BLOCKED_WP4_WAITING_GAS_NOT_BROADCAST",
+      "evidence": [
+        "templates/MAINNET_ACTION_PLAN.md",
+        "evidence/HO-hsk-mainnet-1/RECEIPT.json"
+      ]
     },
     "G5": {
-      "status": "PASS_LOCAL_DESKTOP_AND_IFRAME_SCOPE_NOT_FULL_LIVE_MATRIX",
+      "status": "PARTIAL_LOCAL_DESKTOP_AND_IFRAME_SCOPE_NOT_FULL_PASS",
       "evidence": [
         "evidence/browser-cua/REPORT.md",
         "evidence/video/verification.json"
       ]
     },
     "G6": {
-      "status": "PRIVATE_MATERIALS_LOCAL_VIDEO_READY_NOT_SUBMITTED",
-      "evidence": []
+      "status": "DRAFT_NOT_SUBMITTED_NOT_FULL_PASS",
+      "evidence": [
+        "submission/SUBMISSION_DRAFT_EN.md",
+        "submission/release-manifest.json",
+        "evidence/video/verification.json"
+      ]
     }
   },
   "nextActions": [
-    "Review fixed private checkpoint and prepared Grok engineering handoff without transferring ownership",
-    "Resolve dedicated product model/access and production integration before owner-operated mainnet handoff"
+    "Preparation delivered; preserve WP4 WAITING_GAS / NOT_BROADCAST and review the receipt's actual checkpoint/verification before any later release",
+    "Resolve gas, final owner mapping, numeric spend ceiling/expiry, complete fees and exact-packet release review before any later signing; preserve fresh paused fixed-block fork proof and never auto-broadcast if funded",
+    "Resolve lawful service access, dedicated product model, production integration, hosting/license and actual submission-form requirements separately"
   ],
   "unknownAuthorizations": [
-    "mainnet capital/gas envelope",
-    "hosted resource charges",
+    "final initialOwner mapping (TEST is proposed, not final authorization)",
+    "numeric maxGasHskRaw and authorizationExpiresAt (both null)",
+    "hosted resource charges and project license/disclosure scope",
     "external submission"
   ],
   "activeBlockers": [
     "dedicated product model configuration",
     "production end-to-end wiring",
     "service access restrictions unresolved",
-    "owner-operated mainnet actions",
-    "public deployment/publication/submission"
+    "deployer gas absent: WP4 WAITING_GAS / NOT_BROADCAST",
+    "final owner role and numeric gas ceiling/authorization expiry unresolved",
+    "complete chain-fee bound unresolved",
+    "exact-packet independent release review and release-time account/fee checks still required; pristine fixed-source fork smoke now recorded",
+    "hosted demo, project license/disclosure scope and actual submission-form/legal requirements"
   ],
   "initialRemoteSha": "43753387eb278e97943b5f40f9af694d0abf54d8",
   "preArgonCheckpointSha": "8f064dab87d0275d1ff0768c2c57f3fd981217ef",
@@ -84,5 +117,77 @@
     "evidence": "contracts/evidence/durable-local/verification.json",
     "webSandboxPersistence": "MEMORY_ONLY"
   },
-  "collaborationProposal": "coordination/handoff.json"
+  "mainnetHandoff": {
+    "id": "HO-hsk-mainnet-1",
+    "recordDate": "2026-10-27",
+    "chainId": 177,
+    "authority": "AUTH-20261027-HSK-MAINNET",
+    "acceptedReceipt": "/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/ACCEPTED.md",
+    "acceptanceScope": "HO-specific receipt only; not acceptance or ownership transfer of coordination/handoff.json",
+    "currentRunScope": "DOCUMENTATION_AND_EVIDENCE_PREPARATION_ONLY",
+    "conditionalAuthority": "ONE_ZERO_VALUE_PAUSED_GUARD_CREATION_ONLY_AFTER_ALL_RELEASE_GATES; NOT_EXECUTED",
+    "workPackages": {
+      "WP1": "PREPARED_FIXED_SOURCE_PROVENANCE_VERIFIED",
+      "WP2": "HISTORICAL_PREFLIGHT_REUSED_SUPPLEMENTAL_READS_PASS_NOT_EXECUTION_APPROVAL",
+      "WP3": "UNSIGNED_PREPARATION_NOT_SIGNABLE",
+      "WP4": "WAITING_GAS",
+      "WP5": "DRAFT_NOT_SUBMITTED"
+    },
+    "executionStatus": "NOT_BROADCAST",
+    "deployerAddress": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+    "deployerAuthorization": "AUTH-20261027-HSK-DEPLOYER-TEST",
+    "deployerKeyEnvNameOnly": "DREAMSHIELD_G1_PRIVATE_KEY",
+    "payoutBannedAsDeployer": "0x54145b97d5CeCf72b9900C702a02774171574171",
+    "proposedInitialOwner": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+    "finalOwnerAddress": null,
+    "ownerAuthorizationStatus": "PROPOSED_NOT_FINAL",
+    "deployerBalanceRawObserved": "0",
+    "balanceEvidence": "evidence/HO-hsk-mainnet-1/preflight-177-20261027.md",
+    "balanceObservationNote": "User-observed zero and historical mainnet.hsk.xyz/hashkey.drpc.org zero at block29372060 reused; exact balance timestamp unknown, distinct from full preflight block29372120. No confirming balance query.",
+    "maxGasHskRaw": null,
+    "authorizationExpiresAt": null,
+    "feeCompleteness": "UNRESOLVED_SEPARATE_FROM_GAS_BALANCE_AND_SPEND_AUTHORIZATION",
+    "exactPacketReview": "PASS_UNSIGNED_HOLD_PREPARATION_ONLY_NOT_SIGNING_APPROVAL",
+    "signablePacketReleaseReview": "NOT_ESTABLISHED",
+    "unsignedPacketReviewEvidence": "evidence/HO-hsk-mainnet-1/packet-review.json",
+    "pristineFixedSourceLocalForkGate": "PASS_PRISTINE_PAUSED_FIXED_BLOCK_FORK_NOT_MAINNET_READY",
+    "pristineSmokeEvidence": "evidence/HO-hsk-mainnet-1/paused-fork-smoke.json",
+    "pristineSmokeScope": "Source177/block29372120; execution31337; exact proposed-owner initcode; one local creation from an unlocked synthetic sender, not actual TEST readiness or chain177 deployment.",
+    "preparationEvidence": [
+      "evidence/HO-hsk-mainnet-1/project-doctor.json",
+      "evidence/HO-hsk-mainnet-1/provenance.json",
+      "evidence/HO-hsk-mainnet-1/creation-readonly.json",
+      "evidence/HO-hsk-mainnet-1/paused-fork-smoke.json"
+    ],
+    "reviewerFundingRecommendation": "fund ≥~2.5 HSK to deployer on 177",
+    "fundingRecommendationScope": "EXTERNAL_PREREQUISITE_ONLY_NOT_AUTHORIZED_TRANSFER_NOT_SUFFICIENT_FEE_BOUND",
+    "maxFundedUsdtRaw": "0",
+    "maxFundedWhskRaw": "0",
+    "maxTradeCount": 0,
+    "deploymentTransactionHash": null,
+    "deploymentReceipt": null,
+    "guardAddress": null,
+    "receipt": "evidence/HO-hsk-mainnet-1/RECEIPT.json",
+    "externalImplementationReceipt": "/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/IMPLEMENTATION_RECEIPT.json",
+    "verificationRecord": "evidence/HO-hsk-mainnet-1/verification.json",
+    "integrationRecordStatus": "PREPARATION_VERIFIED_GIT_CHECKPOINT_IN_RECEIPT",
+    "notRun": [
+      "private-key access or signing",
+      "mainnet broadcast or Blockscout deployment verification",
+      "gas sourcing, funding or asset transfers",
+      "Guard/session funding, token approvals, startSession or live trades",
+      "ownership transfer or worker activation",
+      "Submit Build, formal submission or remote draft save",
+      "X/social publication or organizer contact",
+      "repository visibility changes or new paid resources"
+    ]
+  },
+  "collaborationProposal": "coordination/handoff.json",
+  "collaborationOwnership": {
+    "buildOwner": "dot",
+    "watchOwner": null,
+    "stateWriter": null,
+    "proposalStatus": "PREPARED_UNSENT_UNCHANGED",
+    "note": "HO-hsk-mainnet-1 acceptance does not accept or mutate the older engineering proposal; no watcher or automatic broadcast is added."
+  }
 }

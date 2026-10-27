@@ -1,0 +1,24 @@
+{
+  "sourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+  "artifactPath": "contracts/out/TradingSessionGuard.sol/TradingSessionGuard.json",
+  "artifactSha256": "cd9590bebecf062fab977d17eb8ffd83112638a8208c122d2a0bf68f182733d2",
+  "creationBytecodeBytes": 15014,
+  "creationBytecodeKeccak256": "0x7a404100df84af7b350b2e44f0f8e9fa68ca59cfb28387b2842e0fb714b48f8d",
+  "deployedBytecodeBytes": 12265,
+  "deployedBytecodeKeccak256": "0x167d10fef56d015de524cabf06ced001d6458fdc42c6904c6ff4ed8e58136622",
+  "compiler": {
+    "version": "0.8.30+commit.73712a01"
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "cancun",
+    "viaIR": true,
+    "metadata": {
+      "bytecodeHash": "none"
+    }
+  },
+  "computedAt": "2026-10-27T16:58:00+08:00"
+}

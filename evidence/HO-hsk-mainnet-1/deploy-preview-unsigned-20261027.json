@@ -1,0 +1,41 @@
+{
+  "constructorPreview": {
+    "initialOwner": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+    "risk": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+    "quote": "0xf1b50ed67a9e2cc94ad3c477779e2d4cbfff9029",
+    "fixedRouter": "0x2c16f75b95Cf1390c328aB70e2CEE7f4b80bD8F3",
+    "fixedFactory": "0x972cA9D1662F5e029cD18327D29026532E84c742",
+    "fixedPool": "0x4ff515761864e7838b0adb8b5b2b8b7a068905dc",
+    "fee": 3000
+  },
+  "constructorArgsAbiEncoded": "0x00000000000000000000000004b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e000000000000000000000000b210d2120d57b758ee163cffb43e73728c471cf1000000000000000000000000f1b50ed67a9e2cc94ad3c477779e2d4cbfff90290000000000000000000000002c16f75b95cf1390c328ab70e2cee7f4b80bd8f3000000000000000000000000972ca9d1662f5e029cd18327d29026532e84c7420000000000000000000000004ff515761864e7838b0adb8b5b2b8b7a068905dc0000000000000000000000000000000000000000000000000000000000000bb8",
+  "deployDataKeccak256": "0x11604e40d163c47036755dc1c96ed54b456808698072555981e17b4f4f21bd3d",
+  "deployDataBytes": 15238,
+  "estimates": {
+    "https://mainnet.hsk.xyz": {
+      "gasEstimate": "0x2b467f",
+      "gasEstimateDec": "2836095",
+      "gasPrice": "0x746a61ca40",
+      "gasPriceDec": "500001000000",
+      "costWei": "0x13aded447c90d5c0",
+      "costHSKApprox": 1.418050336095,
+      "deployerBalance": "0x0",
+      "deployerBalanceDec": "0"
+    },
+    "https://hashkey.drpc.org": {
+      "gasEstimate": "0x2b467f",
+      "gasEstimateDec": "2836095",
+      "gasPrice": "0x746a61ca40",
+      "gasPriceDec": "500001000000",
+      "costWei": "0x13aded447c90d5c0",
+      "costHSKApprox": 1.418050336095,
+      "deployerBalance": "0x0",
+      "deployerBalanceDec": "0"
+    }
+  },
+  "notes": [
+    "initialOwner temporarily = deployer EOA per AUTH-20261027-HSK-DEPLOYER-TEST; ownerAddress may be remapped by owner before broadcast",
+    "UNSIGNED eth_call/estimate only",
+    "WP4 WAITING_GAS"
+  ]
+}

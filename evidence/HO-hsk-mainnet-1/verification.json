@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "hsk-preparation-verification/1",
+  "updatedAt": "2026-10-27T09:31:55.563777+00:00",
+  "sourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+  "implementationCheckpointSha": null,
+  "dataModes": [
+    "MAINNET_READONLY",
+    "FORK",
+    "SIMULATION"
+  ],
+  "results": [
+    {
+      "command": [
+        "pnpm",
+        "run",
+        "doctor"
+      ],
+      "commandEvidence": "project-doctor.json",
+      "startedAt": "2026-10-27T09:19:45.680920+00:00",
+      "finishedAt": "2026-10-27T09:19:46.722130+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e"
+      ],
+      "commandEvidence": "provenance-check.json",
+      "startedAt": "2026-10-27T09:20:33.692140+00:00",
+      "finishedAt": "2026-10-27T09:20:33.985354+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e"
+      ],
+      "commandEvidence": "creation-readonly-command.json",
+      "startedAt": "2026-10-27T09:21:05.288650+00:00",
+      "finishedAt": "2026-10-27T09:21:10.464172+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e"
+      ],
+      "commandEvidence": "paused-fork-smoke-command.json",
+      "startedAt": "2026-10-27T09:23:27.512073+00:00",
+      "finishedAt": "2026-10-27T09:23:37.315462+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "pnpm",
+        "run",
+        "test:contracts"
+      ],
+      "commandEvidence": "contracts-regression.json",
+      "startedAt": "2026-10-27T09:28:53.087142+00:00",
+      "finishedAt": "2026-10-27T09:28:54.023033+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/validate-collaboration.mjs",
+        "coordination/handoff.json"
+      ],
+      "commandEvidence": "collaboration-validation.json",
+      "startedAt": "2026-10-27T09:28:54.023995+00:00",
+      "finishedAt": "2026-10-27T09:28:54.057927+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/collaboration-protocol.test.mjs"
+      ],
+      "commandEvidence": "collaboration-tests.json",
+      "startedAt": "2026-10-27T09:28:54.058294+00:00",
+      "finishedAt": "2026-10-27T09:28:54.174014+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e"
+      ],
+      "commandEvidence": "packet-docs-smoke.json",
+      "startedAt": "2026-10-27T09:31:12.523629+00:00",
+      "finishedAt": "2026-10-27T09:31:12.731053+00:00",
+      "exitCode": 0,
+      "status": "PASS"
+    }
+  ],
+  "reuse": {
+    "preflight": "preflight-177-20261027.json",
+    "historicalReportSha256": "02bd3324b8a153e2b12ca8ee5b1dc2365daee2095a17c7dfbfea3fd59a2d2085",
+    "historicalExitCode": null,
+    "artifact": "guard-artifact-hashes-20261027.json",
+    "noRebuild": "Every metadata source and fixed source/compiler/lock input verified; preserved artifact reused"
+  },
+  "notRun": [
+    "mainnet_broadcast",
+    "TypeScript_suite_no_code_change",
+    "UI_browser_no_UI_change",
+    "fresh_preflight_full_report_reused",
+    "old_fork_route_suite_historical_valid_proof_reused"
+  ],
+  "limitations": [
+    "Fork smoke deploys exact initcode on local31337, not HSK mainnet",
+    "Standalone unsigned preparation and independent review are not release approval",
+    "pnpm doctor invoked package-manager built-in; actual project doctor executed explicitly with pnpm run doctor"
+  ],
+  "keyAssertions": [
+    "23 compiler-metadata dependency/source hashes and four fixed tracked inputs match",
+    "Exact constructor ABI encode/decode and initcode digest verified",
+    "Dual public RPC chain177 and fixed block/hash match; TEST nonce latest/pending0/0; no send methods",
+    "Actual TEST zero-value constructor eth_call succeeds on both endpoints; runtime structure compared with immutable masking",
+    "One local fork CREATE on execution31337/source177 block29372120: PAUSED, zero session/policy/signers/allocations/counters/allowances/balances, execute InvalidState",
+    "Native contract suite:25 passed/0 failed/0 skipped; two256-run fuzz cases and64x32 invariant calls",
+    "Offline collaboration structure validation passes;32 protocol tests pass; no ownership/delivery mutation",
+    "Integrated packet smoke parses JSON and matches financial exclusions/identities/statuses; 13 Markdown files and202local links checked successfully"
+  ],
+  "independentUnsignedReview": "packet-review.json"
+}

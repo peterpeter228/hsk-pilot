@@ -1,17 +1,49 @@
-# 证据索引模板
+# HO-hsk-mainnet-1 — evidence index
 
-所有条目在执行前为NOT_RUN；本模板不是证据。
+**Preparation only: DRAFT_NOT_SUBMITTED · UNSIGNED_OWNER_HANDOFF_ONLY · WP4 WAITING_GAS / NOT_BROADCAST.** The repository is already PUBLIC; no visibility change is needed or performed. Contract deployment, submission and real-trade facts remain null/empty in the [release manifest](../submission/release-manifest.json). This index does not grant wallet, funding, publication or submission authority.
 
-| Gate | SHA | 时间 | 环境/模式 | 命令/动作 | 状态 | 证据 |
-|---|---|---|---|---|---|---|
-| G0 | TODO | TODO | 本地 | doctor/权限核对 | NOT_RUN | TODO |
-| G1 | TODO | TODO | MAINNET_READONLY | 预检/双向quote | NOT_RUN | TODO |
-| G2 | TODO | TODO | SIMULATION/FORK | forge/type digest | NOT_RUN | TODO |
-| G3 | TODO | TODO | FORK | 自主闭环/政策/退出 | NOT_RUN | TODO |
-| G4 | TODO | TODO | LIVE_MAINNET | 真实部署/买卖/回收 | NOT_RUN | TODO |
-| G5 | TODO | TODO | 真实浏览器 | 375/768/1440点击 | NOT_RUN | TODO |
-| G6 | TODO | TODO | 发布/提交 | 外部链接及正式确认 | NOT_RUN | TODO |
+## Evidence and command provenance
 
-版本矩阵另列：Git HEAD、测试SHA、Web build SHA、worker build SHA、Guard deployment artifact SHA、提交材料SHA。不同步就解释差异并重新验证受影响部分。
+Historical commands/results below are reused with their original timestamps, not rerun or retimestamped by the draft reconciler. Root integration checks and their actual command/time/exit/assertions are recorded in [verification.json](../evidence/HO-hsk-mainnet-1/verification.json) and [RECEIPT.json](../evidence/HO-hsk-mainnet-1/RECEIPT.json). Only the actual root-owned records establish new results and checkpoint identities; a link alone does not establish PASS. Historical missing exit/source bindings stay unknown.
 
-公开artifact排除密钥与未过期可执行签名。研究snapshot单列READ_ONLY_RESEARCH；不混成G4项目验收。
+| Scope | Identity / time | Mode | Evidence-supported result / limit | Evidence |
+|---|---|---|---|---|
+| WP1 fixed artifact provenance | Contract source `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`; root implementation record | Unsigned local artifact | Root reports artifact SHA-256 and all 23 compiler-metadata sources matched fixed source; independent constructor encode/decode matches 15238-byte initcode. Not a deployment or new contract-test run. | [Provenance](../evidence/HO-hsk-mainnet-1/provenance.json), [hash manifest](../evidence/HO-hsk-mainnet-1/guard-artifact-hashes-20261027.json) |
+| WP2 historical `pnpm chain:preflight` | `2026-10-27T08:56:22.032Z`; chain 177, block `29372120`, hash `0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73` | MAINNET_READONLY | `READS_VERIFIED_NOT_EXECUTION_APPROVAL`, `errors=[]`, `liveFundsEnabled=false`; quote probes are `eth_call`, not orders. B1 remains `BLOCKED_INDEPENDENT_FRESH_FEEDS_NOT_VALIDATED`. Original user evidence preserved separately. | [Byte-identical report copy](../evidence/HO-hsk-mainnet-1/preflight-177-20261027.json), [historical source attribution](../evidence/HO-hsk-mainnet-1/preflight-177-20261027.md) |
+| WP2 root supplemental public reads | `2026-10-27T09:21:05.526Z`–`09:21:10.449Z`; primary/dRPC; fixed block `29372120` distinct from latest/pending samples | MAINNET_READONLY | Root reports chain/hash agreement, TEST fixed-block code `0x`, latest/pending nonce `0/0` on both providers and successful zero-value constructor `eth_call` returning 12265 runtime bytes. Immutable-masked structure matches artifact, but all immutable values were not independently proven. No balance re-read; historical/user-observed zero retained. | [Creation/read-only results](../evidence/HO-hsk-mainnet-1/creation-readonly.json) |
+| WP3 constructor and unsigned packet | Fixed source and hashes below; proposed owner TEST, not final owner-role authorization | Unsigned preview, not LIVE_MAINNET | ABI encoding/initcode are retrievable. No signing readiness: native-HSK ceiling, expiry, complete fee bound and other release gates remain unresolved. | [Unsigned action plan](MAINNET_ACTION_PLAN.md), [preview](../evidence/HO-hsk-mainnet-1/deploy-preview-unsigned-20261027.json), [full initcode](../evidence/HO-hsk-mainnet-1/initcode.hex) |
+| WP3 pristine paused fork smoke | Root `2026-10-27T09:23:27.720Z`–`09:23:34.150Z`; fixed block `29372120`; exact proposed initcode/owner | FORK; source chain 177, execution chain 31337 | PASS reported for one LOCAL creation from synthetic unlocked Anvil sender, not TEST mainnet readiness. Owner/dependencies/18/6 decimals/fee3000, PAUSED0, unset signers/zero policy/session/version/nonce/counters/balances/allowances, masked runtime/local EIP-712 and `execute` InvalidState checked. Anvil stopped; no mainnet write, funding, session or trade. | [Actual command](../evidence/HO-hsk-mainnet-1/paused-fork-smoke-command.json), [smoke report](../evidence/HO-hsk-mainnet-1/paused-fork-smoke.json) |
+| Integrated root verification / unsigned packet review | Actual UTC/time/exit in verification ledger; fixed source unchanged | Local regression / offline review |25native contract tests and32collaboration protocol tests passed; offline validation passed. Independent review found no defects for unsigned/HOLD preparation only, never approval to sign. | [Verification](../evidence/HO-hsk-mainnet-1/verification.json), [packet review](../evidence/HO-hsk-mainnet-1/packet-review.json) |
+| WP4 / G4 deployment | Designated TEST `0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E`, chain 177; historical balance appendix block `29372060`, exact balance timestamp unknown | No LIVE_MAINNET write | **WAITING_GAS / NOT_BROADCAST** using recorded/user-observed zero balance, not a new balance read. This sample is separate from full preflight block `29372120`. Guard address/hash/receipt null; real trade hashes `[]`. A predicted address is not deployed; positive balance alone is insufficient. | [Historical narrative/balance appendix](../evidence/HO-hsk-mainnet-1/preflight-177-20261027.md), [action plan](MAINNET_ACTION_PLAN.md), [manifest](../submission/release-manifest.json), [root receipt](../evidence/HO-hsk-mainnet-1/RECEIPT.json) |
+| Historical G2/G3 local checks | 2026-10-26; original run summary has `codeCommit=null`, not silently rebound to fixed deployment source | SIMULATION / FORK; execution chain 31337, fork source 177/block 29326419 | Historical summary records 25 contract tests, 112 TypeScript tests and 19 local receipts; actual PostgreSQL/Anvil composition is separate from memory-only UI. Not a fresh fixed-packet paused-deployment gate or a complete live product. | [Run summary](../evidence/final/run-summary.json), [durable local composition](../contracts/evidence/durable-local/verification.json), [bounded review](../evidence/review/independent-safety-review.md) |
+| Historical G5 browser and video | 2026-10-26; final rendered/captured source `ccdbed53c4e57d8817e0d4e82fd22023c996b713` | SIMULATION / synthetic data | Actual desktop core flows/export integrity, ordinary iframe policy flows at 375/768/1440 and limited service recovery; actual 120-second clip. Not full live/mobile/wallet acceptance or real-model/mainnet footage. Export/capabilities were not established on film. | [Browser report](../evidence/browser-cua/REPORT.md), [video verification](../evidence/video/verification.json), [actual clip](../evidence/video/HSK_Pilot_Local_UI_Demo_120s.mp4) |
+| WP5 / G6 materials | Current editorial draft; submission identity null | DRAFT_NOT_SUBMITTED | Expected/typical form fields unverified. No hosted demo/video URL, formal submission or Track 1 acceptance. Local clip exists; URL null does not mean no video. Private contact remains external-only. | [English draft](../submission/SUBMISSION_DRAFT_EN.md), [manifest](../submission/release-manifest.json), [storyboard](../submission/VIDEO_STORYBOARD.md) |
+
+## Version and artifact matrix
+
+- PUBLIC fixed contract/source candidate: [`1f1a48d56df96fc6f838d0696f1b5e3500bcf004`](https://github.com/peterpeter228/hsk-pilot/tree/1f1a48d56df96fc6f838d0696f1b5e3500bcf004). It is neither a deployed revision nor `submissionSha`.
+- Recorded compiler: `0.8.30+commit.73712a01`, Cancun, optimizer enabled/200 runs, viaIR, metadata `bytecodeHash=none`.
+- Artifact SHA-256: `cd9590bebecf062fab977d17eb8ffd83112638a8208c122d2a0bf68f182733d2`.
+- Creation bytecode: 15014 bytes; Keccak-256 `0x7a404100df84af7b350b2e44f0f8e9fa68ca59cfb28387b2842e0fb714b48f8d`.
+- Runtime **template**: 12265 bytes; Keccak-256 `0x167d10fef56d015de524cabf06ced001d6458fdc42c6904c6ff4ed8e58136622`. This is not immutable-patched deployed mainnet code.
+- Proposed constructor initcode: 15238 bytes; Keccak-256 `0x11604e40d163c47036755dc1c96ed54b456808698072555981e17b4f4f21bd3d`. Owner-role mapping remains proposed; changing owner invalidates this preview/digest.
+- Historical final browser/video source: `ccdbed53c4e57d8817e0d4e82fd22023c996b713`; the browser report separately identifies its earlier pre-fix build. Video SHA-256: `c8a5e718117bbab5ed123f817ced0a3f4c293f004cf77225f99d4dac37c10a60`.
+- Implementation/docs/checkpoint identity: read the actual root [receipt](../evidence/HO-hsk-mainnet-1/RECEIPT.json), not a guessed self-referential commit. Historical test/build identities remain as recorded. Deployment address/hash, `submissionSha` and `submissionId` remain null; `realTradeTransactionHashes=[]`.
+
+## External handoff references — local-only, not judge-accessible
+
+These workstation paths are **not public URLs, submission attachments or proof of judge access**. The private field draft/contact and full external plans are not copied into the public repository. Public chain/artifact/unsigned facts are separately exposed through the repository packet above.
+
+External evidence root: `/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/`.
+
+| Local-only artifact | Local-only path / status |
+|---|---|
+| Authoritative reviewed fused plan | [omp-plan-merged-reviewed.md](/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/omp-plan-merged-reviewed.md); root-supplied SHA-256 `994af0790f4b31950f530f4737f6264a89f7b7ad6afaf085263d82b8d1e91b88`. Preserve the older `omp-plan-merged.md` as historical, not an interchangeable copy. |
+| External expected-field draft (private disclosure scope) | [DORAHACKS_SUBMIT_FIELDS_DRAFT.md](/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/wp5-submit-drafts/DORAHACKS_SUBMIT_FIELDS_DRAFT.md) |
+| External bundle index | [ARTIFACT_BUNDLE_INDEX.md](/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/wp5-submit-drafts/ARTIFACT_BUNDLE_INDEX.md) |
+| External implementation receipt | [IMPLEMENTATION_RECEIPT.json](/workspace/web3-bounty/v3-reconcile/evidence/hsk-mainnet-20261027/IMPLEMENTATION_RECEIPT.json); root-owned record of actual checkpoints, delivery and WP4 HOLD, not a submission. |
+
+## Remaining boundaries
+
+No private-key access, mainnet signing/broadcast, gas sourcing/funding, Guard/session funding, token approvals, session activation, live trades, Submit Build/remote draft save, X publication, organizer contact or visibility mutation is performed by this draft work. The external “fund ≥~2.5 HSK to deployer on 177” recommendation is an external prerequisite only: not approval, an instruction to fund, a native-HSK spending ceiling or a complete fee bound. Product-model/production wiring, lawful access, hosted judge demo/video access, actual form fields, licensing and legal/KYC/tax/payout questions remain distinct gaps. A paused creation or unsigned packet would not complete G3/G4/G5/G6 or prove profit, audit status or Track 1 qualification.
+
