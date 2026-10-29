@@ -1,0 +1,61 @@
+{
+  "checked_at_shanghai": "2026-10-29T12:56:49+0800",
+  "txHash": "0xa462e5d7465ba224af8271af26be027eab49a8d5447c99d61fb19342e812efad",
+  "status": "0x1",
+  "blockNumber": 29451318,
+  "gasUsed": 2812605,
+  "effectiveGasPrice_wei": "501000000000",
+  "l2_execution_fee_wei": "1409115105000000000",
+  "l1Fee_wei": "183101778016016",
+  "actual_fee_wei": "1409298206778016016",
+  "actual_fee_HSK": 1.409298206778016,
+  "receipt_extra_fee_fields": {
+    "l1GasPrice": "0x264f471",
+    "l1GasUsed": "0x1ff78",
+    "l1Fee": "0xa687b46fb710",
+    "l1BaseFeeScalar": "0x1312d00",
+    "l1BlobBaseFee": "0x21d22c",
+    "l1BlobBaseFeeScalar": "0xffffffff"
+  },
+  "contractAddress": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+  "contractAddress_eq_predicted": true,
+  "abi_has_paused_owner": [
+    false,
+    true
+  ],
+  "rpcs": {
+    "https://mainnet.hsk.xyz": {
+      "code_bytes": 12265,
+      "code_keccak": "0x008d819eb3323bfa315c8f768d4c6d80997ebe56703a6bfd69baa87a2f9aa2da",
+      "paused_fn": "paused() not in ABI; reverts (expected) - using status()",
+      "status_raw": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "status_enum": 0,
+      "paused": true,
+      "pendingOwner": "0x0000000000000000000000000000000000000000",
+      "owner_raw": "0x00000000000000000000000004b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e",
+      "owner": "0x04b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e",
+      "owner_eq_TEST": true,
+      "nonce_latest": 1,
+      "balance_wei": "7042701793221983984",
+      "balance_HSK": 7.042701793221984
+    },
+    "https://hashkey.drpc.org": {
+      "code_bytes": 12265,
+      "code_keccak": "0x008d819eb3323bfa315c8f768d4c6d80997ebe56703a6bfd69baa87a2f9aa2da",
+      "paused_fn": "paused() not in ABI; reverts (expected) - using status()",
+      "status_raw": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "status_enum": 0,
+      "paused": true,
+      "pendingOwner": "0x0000000000000000000000000000000000000000",
+      "owner_raw": "0x00000000000000000000000004b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e",
+      "owner": "0x04b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e",
+      "owner_eq_TEST": true,
+      "nonce_latest": 1,
+      "balance_wei": "7042701793221983984",
+      "balance_HSK": 7.042701793221984
+    }
+  },
+  "paused_semantics": "Status enum {PAUSED=0,...}; status()==0 means paused",
+  "balance_delta_wei": "1409298206778016016",
+  "ALL_PASS": true
+}

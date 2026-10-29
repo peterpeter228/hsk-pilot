@@ -8,7 +8,7 @@
 
 ### HO-hsk-mainnet-1 当前例外（2026-10-27）
 
-以上是完整产品顺序，不是本轮执行授权。本轮只完成WP1–WP3/WP5的**文档/证据准备**；WP4为 **WAITING_GAS / NOT_BROADCAST**。复用固定源 `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`、现有artifact/只读预检/unsigned preview，保持solc `0.8.30+commit.73712a01`、Cancun、optimizer200、viaIR、metadata bytecodeHash=none不变；本轮root记录Node24.22.1/pnpm11.25.0。项目doctor使用 `pnpm run doctor`；pnpm11的 `pnpm doctor` 是包管理器内置命令，不能替代项目检查。
+以上是完整产品顺序，不是本轮执行授权。本轮只完成WP1–WP3/WP5的**文档/证据准备**；WP4已于2026-10-29 12:56 (UTC+8) **DEPLOYED_PAUSED**：Guard `0xe2172A17223BDa552e0CC101591C8893c4B65c81`，tx `0xa462e5d7465ba224af8271af26be027eab49a8d5447c99d61fb19342e812efad`（[Blockscout](https://hsk.blockscout.com/tx/0xa462e5d7465ba224af8271af26be027eab49a8d5447c99d61fb19342e812efad)），status()=PAUSED、owner=TEST，费用1.4093 HSK，源码已在Blockscout验证（partial）。证据：evidence/HO-hsk-mainnet-1/wp4-deploy-20261029/。复用固定源 `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`、现有artifact/只读预检/unsigned preview，保持solc `0.8.30+commit.73712a01`、Cancun、optimizer200、viaIR、metadata bytecodeHash=none不变；本轮root记录Node24.22.1/pnpm11.25.0。项目doctor使用 `pnpm run doctor`；pnpm11的 `pnpm doctor` 是包管理器内置命令，不能替代项目检查。
 
 仓库已PUBLIC，`AUTH-20261027-HSK-PUBLIC` 已消耗；不得再次改变可见性。`AUTH-20261027-HSK-MAINNET` 与 `AUTH-20261027-HSK-DEPLOYER-TEST` 仅包含全门禁满足后的**一次零value、paused Guard创建**及相应只读/授权源码验证，不是交易或完整G4放行。指定deployer为TEST `0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E`；PAYOUT `0x54145b97d5CeCf72b9900C702a02774171574171` 仍禁作deployer。现有preview把initialOwner设为TEST仅是**提案**，不是最终owner角色授权。
 

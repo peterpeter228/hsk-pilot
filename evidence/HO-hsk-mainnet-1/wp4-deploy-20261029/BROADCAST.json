@@ -1,0 +1,20 @@
+{
+  "sent_at_shanghai": "2026-10-29T12:56:09+0800",
+  "txHash": "0xa462e5d7465ba224af8271af26be027eab49a8d5447c99d61fb19342e812efad",
+  "from": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+  "nonce": 0,
+  "to": null,
+  "value": "0",
+  "type": 2,
+  "chainId": 177,
+  "gasLimit": 4254143,
+  "maxFeePerGas": "1001000000000",
+  "maxPriorityFeePerGas": "1000000000",
+  "worst_case_wei": "4258397143000000000",
+  "initcode_keccak": "0x11604e40d163c47036755dc1c96ed54b456808698072555981e17b4f4f21bd3d",
+  "broadcast": {
+    "https://mainnet.hsk.xyz": "0xa462e5d7465ba224af8271af26be027eab49a8d5447c99d61fb19342e812efad",
+    "https://hashkey.drpc.org": "ERR https://hashkey.drpc.org eth_sendRawTransaction: {'code': -32000, 'message': 'already known'}"
+  },
+  "note": "no private key or raw signed tx recorded"
+}

@@ -1,0 +1,62 @@
+{
+  "observed_at_shanghai": "2026-10-29T12:55:47+0800",
+  "initcode_bytes": 15238,
+  "initcode_keccak": "0x11604e40d163c47036755dc1c96ed54b456808698072555981e17b4f4f21bd3d",
+  "initcode_ends_with_preview_args": true,
+  "initcode_initialOwner": "0x04b0a7afd4ab71c5d49c4bd578c2d9b8ea7df36e",
+  "initialOwner_eq_TEST": true,
+  "initialOwner_ne_PAYOUT": true,
+  "derived_address": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+  "derived_eq_TEST": true,
+  "local_create_prediction_nonce0": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+  "prediction_eq_PREP": true,
+  "rpcs": {
+    "https://mainnet.hsk.xyz": {
+      "chainId": "0xb1",
+      "block": 29451306,
+      "nonce_latest": 0,
+      "nonce_pending": 0,
+      "code_at_predicted": "0x",
+      "balance_wei": "8452000000000000000",
+      "gasPrice_wei": "500001000000",
+      "maxPriorityFeePerGas_wei": "1000000",
+      "baseFeePerGas_wei": "500000000000",
+      "estimateGas": 2836095
+    },
+    "https://hashkey.drpc.org": {
+      "chainId": "0xb1",
+      "block": 29451307,
+      "nonce_latest": 0,
+      "nonce_pending": 0,
+      "code_at_predicted": "0x",
+      "balance_wei": "8452000000000000000",
+      "gasPrice_wei": "500001000000",
+      "maxPriorityFeePerGas_wei": "1000000",
+      "baseFeePerGas_wei": "500000000000",
+      "estimateGas": 2836095
+    }
+  },
+  "plan": {
+    "gasEstimate": 2836095,
+    "gasLimit": 4254143,
+    "maxFeePerGas": "1001000000000",
+    "maxPriorityFeePerGas": "1000000000",
+    "type": 2,
+    "worst_case_wei": "4258397143000000000",
+    "worst_case_HSK": 4.258397143,
+    "cap_wei": "8000000000000000000",
+    "within_cap": true
+  },
+  "gates": {
+    "chainId_0xb1_both": true,
+    "nonce_0_both": true,
+    "code_empty_both": true,
+    "balance_ge_worst_case": true,
+    "initialOwner_eq_TEST": true,
+    "derived_eq_TEST": true,
+    "prediction_eq_PREP": true,
+    "initcode_matches_preview": true,
+    "within_cap": true
+  },
+  "ALL_PASS": true
+}
