@@ -4,6 +4,7 @@
 
 - **Contract:** `TradingSessionGuard` at [`0xe2172A17223BDa552e0CC101591C8893c4B65c81`](https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81) on HashKey Chain mainnet (chainId 177). The source is verified on HashKey Blockscout as a partial match (see [Contract verification](#contract-verification)).
 - **Live demo:** http://43.172.183.51:3901/. It runs in **SIMULATION** mode with synthetic data and `liveFundsEnabled: false`. The **AI decision engine is live** there: model `gpt-6-luna` via Sub2API, advisory only. See `/api/health` and `/api/demo/decision`.
+- **Demo video:** [evidence/video/HSK_Pilot_Narrated_Demo.mp4](evidence/video/HSK_Pilot_Narrated_Demo.mp4) (161 s, narrated: live demo, AI decision, Guard controls, mainnet txs).
 - **License:** [MIT](LICENSE).
 - **Mainnet proof:** a real 1 WHSK → USDT SELL ran through the Guard on 2026-11-01. See [Mainnet transactions](#mainnet-transactions).
 
