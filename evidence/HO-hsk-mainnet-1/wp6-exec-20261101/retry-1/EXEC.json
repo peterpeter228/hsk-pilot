@@ -1,0 +1,221 @@
+{
+ "schema": "hsk-wp6-exec-retry/1",
+ "mode": "MAINNET_BROADCAST_RETRY_1",
+ "chainId": 177,
+ "primaryRpc": "https://mainnet.hsk.xyz",
+ "secondaryRpc": "https://hashkey.drpc.org",
+ "startedAt": "2026-11-01T07:10:07.436Z",
+ "sender": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+ "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+ "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+ "retryGasCapHSK": "0.5285",
+ "priorWp6FeeHSK": "0.271463942412427928",
+ "principal": "1 WHSK (already held by TEST; wrap skipped)",
+ "txs": [
+  {
+   "step": 2,
+   "label": "WHSK.transfer(Guard, 1e18)",
+   "to": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+   "nonce": 5,
+   "estimateGas": "51595",
+   "estimateAtBlock": "29584941",
+   "gasLimit": "64493",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "35476979543759264",
+   "hash": "0x9137e48068f4733776f2c6642c600b50dbeb7dec4673972b87776d3bbd62992f",
+   "sentAt": "2026-11-01T07:10:18.722Z",
+   "blockNumber": "29584942",
+   "blockHash": "0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08",
+   "gasUsed": "46626",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "2306912993790",
+   "feeWei": "23315353538993790",
+   "feeHSK": "0.02331535353899379",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584942",
+    "status": "success",
+    "blockHashMatch": false
+   }
+  },
+  {
+   "step": 6,
+   "label": "Guard.withdrawAll() [anomaly recovery]",
+   "to": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+   "nonce": 6,
+   "estimateGas": "86025",
+   "estimateAtBlock": "29584964",
+   "gasLimit": "111063",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "61088962101113629",
+   "hash": "0xcc869f0bfa13b1294c4f47e835577fa0215e99ac1e4a70a638cc8b989598ef8d",
+   "sentAt": "2026-11-01T07:11:05.385Z",
+   "blockNumber": "29584966",
+   "blockHash": "0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611",
+   "gasUsed": "76168",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "2165112635751",
+   "feeWei": "38086241280635751",
+   "feeHSK": "0.038086241280635751",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584966",
+    "status": "success",
+    "blockHashMatch": true
+   }
+  }
+ ],
+ "checks": {
+  "preStart": {
+   "pinnedBlock": "29584936",
+   "blockHash": "0x3c3fa9a23b5deb90f459c461ca9886fe333beb2f4ca5d5a73a75fcebc01057dd",
+   "primary": {
+    "ok": true,
+    "tries": 1,
+    "state": {
+     "status": 0,
+     "owner": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "pendingOwner": "0x0000000000000000000000000000000000000000",
+     "sessionId": "1",
+     "policyVersion": 2,
+     "intentNonce": "0",
+     "allocatedQuoteRaw": "0",
+     "allocatedRiskRaw": "0",
+     "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+     "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+     "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+     "guardHSK": "0",
+     "guardWHSK": "0",
+     "guardUSDT": "0",
+     "testHSK": "5771237850809556056",
+     "testWHSK": "1000000000000000000",
+     "testUSDT": "0",
+     "allow_WHSK_Guard_router": "0",
+     "allow_USDT_Guard_router": "0",
+     "allow_WHSK_TEST_router": "0",
+     "allow_USDT_TEST_router": "0",
+     "allow_WHSK_TEST_Guard": "0",
+     "allow_USDT_TEST_Guard": "0"
+    }
+   },
+   "secondary": {
+    "ok": true,
+    "tries": 1,
+    "state": {
+     "status": 0,
+     "owner": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "pendingOwner": "0x0000000000000000000000000000000000000000",
+     "sessionId": "1",
+     "policyVersion": 2,
+     "intentNonce": "0",
+     "allocatedQuoteRaw": "0",
+     "allocatedRiskRaw": "0",
+     "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+     "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+     "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+     "guardHSK": "0",
+     "guardWHSK": "0",
+     "guardUSDT": "0",
+     "testHSK": "5771237850809556056",
+     "testWHSK": "1000000000000000000",
+     "testUSDT": "0",
+     "allow_WHSK_Guard_router": "0",
+     "allow_USDT_Guard_router": "0",
+     "allow_WHSK_TEST_router": "0",
+     "allow_USDT_TEST_router": "0",
+     "allow_WHSK_TEST_Guard": "0",
+     "allow_USDT_TEST_Guard": "0"
+    }
+   }
+  },
+  "afterTransfer": {
+   "pinnedBlock": "29584942",
+   "blockHash": "0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08",
+   "primary": {
+    "ok": false,
+    "tries": 10,
+    "lastReason": "blockHash at 29584942 = 0xb2cee0ecaf70317b6645b72bd81b9ade8414e56474014874f9195f5cbcb7ce43 != 0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08"
+   },
+   "secondary": {
+    "ok": false,
+    "tries": 10,
+    "lastReason": "blockHash at 29584942 = 0xb2cee0ecaf70317b6645b72bd81b9ade8414e56474014874f9195f5cbcb7ce43 != 0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08"
+   }
+  },
+  "recoveryFinal": {
+   "pinnedBlock": "29584966",
+   "blockHash": "0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611",
+   "primary": {
+    "ok": false,
+    "tries": 10,
+    "lastReason": "blockHash at 29584966 = 0x6072de16b217ade36813defdc156a5b795f011b591c93c9553205fa590aa33b8 != 0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611"
+   },
+   "secondary": {
+    "ok": false,
+    "tries": 10,
+    "lastReason": "blockHash at 29584966 = 0x6072de16b217ade36813defdc156a5b795f011b591c93c9553205fa590aa33b8 != 0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611"
+   }
+  }
+ },
+ "warnings": [],
+ "anomaly": "afterTransfer: state wrong at pinned block 29584942 on all RPCs (blockHash at 29584942 = 0xb2cee0ecaf70317b6645b72bd81b9ade8414e56474014874f9195f5cbcb7ce43 != 0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08 | blockHash at 29584942 = 0xb2cee0ecaf70317b6645b72bd81b9ade8414e56474014874f9195f5cbcb7ce43 != 0x4b338c3a33358b5a4c93f67777c384a236fee36507aa626e2be9c5f650466b08)",
+ "result": "STOPPED_ON_ANOMALY",
+ "retryFeeWei": "61401594819629541",
+ "retryFeeHSK": "0.061401594819629541",
+ "cumulativeWp6FeeHSK": "0.332865537232057469",
+ "stoppedAt": "2026-11-01T07:11:03.711Z",
+ "recovery": {
+  "finalCheck": "recoveryFinal: state wrong at pinned block 29584966 on all RPCs (blockHash at 29584966 = 0x6072de16b217ade36813defdc156a5b795f011b591c93c9553205fa590aa33b8 != 0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611 | blockHash at 29584966 = 0x6072de16b217ade36813defdc156a5b795f011b591c93c9553205fa590aa33b8 != 0x79871561b42fd6181e50c49842d53c4afb6f08ba32b9e8a062767ce53ffdf611)",
+  "withdrawn": true
+ },
+ "finishedAt": "2026-11-01T07:11:50.363Z",
+ "summary": {
+  "result": "STOPPED_ON_ANOMALY (false positive, executor-side)",
+  "rootCause": "mainnet.hsk.xyz eth_getTransactionReceipt returned a provisional blockHash (pre-seal/preconfirmation) that differs from the canonical block hash at the same height; the new pinned-read check compared the canonical block hash to the receipt hash and failed on both RPCs without ever reading state. Pinned reads later confirm the transfer landed (Guard 1 WHSK at 29584942) on both RPCs.",
+  "txs": [
+   {
+    "step": 2,
+    "hash": "0x9137e48068f4733776f2c6642c600b50dbeb7dec4673972b87776d3bbd62992f",
+    "block": 29584942,
+    "canonicalHash": "0xb2cee0ecaf70317b6645b72bd81b9ade8414e56474014874f9195f5cbcb7ce43",
+    "gasUsed": 46626,
+    "feeHSK": "0.02331535353899379"
+   },
+   {
+    "step": "6 recovery",
+    "hash": "0xcc869f0bfa13b1294c4f47e835577fa0215e99ac1e4a70a638cc8b989598ef8d",
+    "block": 29584966,
+    "canonicalHash": "0x6072de16b217ade36813defdc156a5b795f011b591c93c9553205fa590aa33b8",
+    "gasUsed": 76168,
+    "feeHSK": "0.038086241280635751"
+   }
+  ],
+  "retryFeeHSK": "0.061401594819629541",
+  "cumulativeWp6FeeHSK": "0.332865537232057469",
+  "noTrade": true,
+  "finalState": {
+   "block": {
+    "primary": 29585002,
+    "secondary": 29585006
+   },
+   "TEST": {
+    "HSK": "5.709836255989926515",
+    "WHSK": "1",
+    "USDT": "0",
+    "nonce": 7
+   },
+   "guard": {
+    "status": "PAUSED",
+    "sessionId": 1,
+    "policyVersion": 3,
+    "balances": "0/0/0",
+    "alloc": "0/0",
+    "owner": "TEST"
+   },
+   "allowances": "all 6 = 0 on both RPCs"
+  },
+  "nextFix": "Do not compare receipt.blockHash; pin by number (or wait until receipt on canonical getBlock matches), and re-fetch receipt until its hash equals canonical."
+ }
+}
