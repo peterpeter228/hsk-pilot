@@ -9,3 +9,17 @@ Actual captured sequence: sandbox, versioned policy preview and explicit confirm
 verification.json records exact hashes, duration and scope. ffprobe metadata and complete decode check are retained; root visually inspected final frames38,60,95. An initial X11 image warning was recorded, followed by normal frame capture; complete decoded output had no reported errors. No audio or microphone was recorded.
 
 The2second capture-probe files are diagnostics, not the deliverable.
+
+## Narrated demo video (2026-11-01)
+
+[`HSK_Pilot_Narrated_Demo.mp4`](HSK_Pilot_Narrated_Demo.mp4): 161 s, 1280×720, H.264 + AAC, English TTS narration with burned-in captions ([SRT](HSK_Pilot_Narrated_Demo.srt), [narration script](HSK_Pilot_Narrated_Demo.narration.json)).
+
+Recorded 2026-11-01 ~18:50 UTC+8 with headless Chrome (Playwright) screenshots, assembled with ffmpeg; narration is synthetic (edge-tts voice en-US-AndrewNeural). Content:
+
+1. Live public demo http://43.172.183.51:3901/ (SIMULATION banner) and `/api/health` (SIMULATION, liveFundsEnabled false, model CONFIGURED: sub2api / gpt-6-luna).
+2. One real AI decision from the UI panel (`AI · gpt-6-luna`, action HOLD, latency ~3.9 s), advisory only.
+3. Guard risk controls: Guard-bounded size clamp, dual strategy/risk EIP-712 signatures, owner pause / withdrawAll.
+4. `TradingSessionGuard` on Blockscout (source verified, partial match), the mainnet `execute` tx 0xf2b70347…fd1b1 (1 WHSK → 0.087152 USDT), and the Guard's transaction and token-transfer lists.
+5. The GitHub repository README.
+
+No keys or secrets appear on screen; only public addresses and transaction hashes.

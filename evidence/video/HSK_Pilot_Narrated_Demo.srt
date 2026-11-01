@@ -1,0 +1,167 @@
+1
+00:00:00,150 --> 00:00:05,126
+HSK Pilot is a bounded WHSK to USDT trading assistant for HashKey Chain.
+
+2
+00:00:05,176 --> 00:00:07,639
+You approve the trading limits once.
+
+3
+00:00:07,689 --> 00:00:12,735
+An on-chain Guard contract then enforces every trade inside those limits,
+
+4
+00:00:12,785 --> 00:00:16,924
+and every decision and fill leaves evidence you can inspect.
+
+5
+00:00:17,774 --> 00:00:19,385
+This is the public demo.
+
+6
+00:00:19,435 --> 00:00:24,647
+It runs in simulation mode, with synthetic balances and live funds disabled.
+
+7
+00:00:24,697 --> 00:00:26,862
+The health endpoint confirms it:
+
+8
+00:00:26,912 --> 00:00:33,300
+data mode simulation, live funds false, chain one seventy seven, and the AI model configured.
+
+9
+00:00:34,150 --> 00:00:36,218
+Here is the AI decision engine.
+
+10
+00:00:36,268 --> 00:00:42,095
+When I ask for a decision, the server calls the model, GPT-6 Luna through Sub2API.
+
+11
+00:00:42,145 --> 00:00:44,282
+The key never leaves the server.
+
+12
+00:00:44,332 --> 00:00:48,450
+The model only chooses hold or rebalance and a size fraction,
+
+13
+00:00:48,500 --> 00:00:50,979
+and the panel shows the source as AI.
+
+14
+00:00:51,029 --> 00:00:56,650
+If the model is unavailable or rate limited, a rule-based fallback answers instead,
+
+15
+00:00:56,700 --> 00:00:57,812
+clearly labelled.
+
+16
+00:00:58,662 --> 00:01:00,664
+The size is clamped by the Guard.
+
+17
+00:01:00,714 --> 00:01:04,332
+The server first builds the trade the Guard's limits allow:
+
+18
+00:01:04,382 --> 00:01:08,559
+the single buy limit, budgets, inventory cap, cooldown and slippage.
+
+19
+00:01:08,609 --> 00:01:11,481
+The AI can only take a fraction of that amount,
+
+20
+00:01:11,531 --> 00:01:15,025
+so it can never suggest more than the Guard would accept.
+
+21
+00:01:15,075 --> 00:01:17,014
+The decisions are advisory only.
+
+22
+00:01:17,064 --> 00:01:19,252
+There is no signer path from the AI.
+
+23
+00:01:20,102 --> 00:01:24,582
+On mainnet, the Trading Session Guard is deployed on HashKey Chain,
+
+24
+00:01:24,632 --> 00:01:27,354
+and its source is verified on Blockscout.
+
+25
+00:01:27,404 --> 00:01:30,599
+Every execute call needs two EIP-712 signatures,
+
+26
+00:01:30,649 --> 00:01:36,820
+one from a strategy signer and one from a risk signer, bound to the session, policy version,
+
+27
+00:01:36,870 --> 00:01:39,254
+nonce, quote age and minimum output.
+
+28
+00:01:39,304 --> 00:01:43,716
+The owner can pause the Guard and withdraw everything at any time.
+
+29
+00:01:44,566 --> 00:01:46,754
+Here is the real mainnet trade.
+
+30
+00:01:46,804 --> 00:01:52,674
+This execute transaction sold one WHSK for USDT through HSKSwap, inside the Guard.
+
+31
+00:01:52,724 --> 00:01:57,944
+The quote was eighty seven thousand one hundred fifty two raw USDT units,
+
+32
+00:01:57,994 --> 00:02:02,636
+and the fill matched it exactly, above the signed minimum output.
+
+33
+00:02:03,486 --> 00:02:07,881
+The Guard's transaction list on Blockscout shows the full sequence:
+
+34
+00:02:07,931 --> 00:02:11,397
+deployment, start session, execute, and withdraw all,
+
+35
+00:02:11,447 --> 00:02:14,317
+with the WHSK funding under token transfers.
+
+36
+00:02:14,367 --> 00:02:19,226
+Two earlier attempts stopped on false alarms in our own monitoring script,
+
+37
+00:02:19,276 --> 00:02:21,747
+and the funds were returned each time.
+
+38
+00:02:21,797 --> 00:02:27,652
+After the final run, the Guard was emptied and paused, with all allowances reset to zero.
+
+39
+00:02:28,502 --> 00:02:31,793
+Everything is open source under the MIT license,
+
+40
+00:02:31,843 --> 00:02:36,247
+with the evidence files and transaction links in the repository.
+
+41
+00:02:36,297 --> 00:02:36,943
+HSK Pilot:
+
+42
+00:02:36,993 --> 00:02:40,284
+your limits, every decision, checkable on chain.

@@ -1,0 +1,34 @@
+[
+[
+"intro",
+"HSK Pilot is a bounded WHSK to USDT trading assistant for HashKey Chain. You approve the trading limits once. An on-chain Guard contract then enforces every trade inside those limits, and every decision and fill leaves evidence you can inspect."
+],
+[
+"demo",
+"This is the public demo. It runs in simulation mode, with synthetic balances and live funds disabled. The health endpoint confirms it: data mode simulation, live funds false, chain one seventy seven, and the AI model configured."
+],
+[
+"ai",
+"Here is the AI decision engine. When I ask for a decision, the server calls the model, G P T six Luna through Sub2API. The key never leaves the server. The model only chooses hold or rebalance and a size fraction, and the panel shows the source as AI. If the model is unavailable or rate limited, a rule-based fallback answers instead, clearly labelled."
+],
+[
+"clamp",
+"The size is clamped by the Guard. The server first builds the trade the Guard's limits allow: the single buy limit, budgets, inventory cap, cooldown and slippage. The AI can only take a fraction of that amount, so it can never suggest more than the Guard would accept. The decisions are advisory only. There is no signer path from the AI."
+],
+[
+"guard",
+"On mainnet, the Trading Session Guard is deployed on HashKey Chain, and its source is verified on Blockscout. Every execute call needs two EIP-712 signatures, one from a strategy signer and one from a risk signer, bound to the session, policy version, nonce, quote age and minimum output. The owner can pause the Guard and withdraw everything at any time."
+],
+[
+"exec",
+"Here is the real mainnet trade. This execute transaction sold one WHSK for USDT through HSKSwap, inside the Guard. The quote was eighty seven thousand one hundred fifty two raw USDT units, and the fill matched it exactly, above the signed minimum output."
+],
+[
+"txs",
+"The Guard's transaction list on Blockscout shows the full sequence: deployment, start session, execute, and withdraw all, with the WHSK funding under token transfers. Two earlier attempts stopped on false alarms in our own monitoring script, and the funds were returned each time. After the final run, the Guard was emptied and paused, with all allowances reset to zero."
+],
+[
+"outro",
+"Everything is open source under the MIT license, with the evidence files and transaction links in the repository. HSK Pilot: your limits, every decision, checkable on chain."
+]
+]
