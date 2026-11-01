@@ -1,0 +1,14 @@
+{
+  "name": "checkpoint-metadata-check",
+  "command": [
+    "node",
+    "--input-type=module",
+    "-e",
+    "\nimport fs from 'node:fs';import assert from 'node:assert/strict';\nconst load=p=>JSON.parse(fs.readFileSync(p));const checkpoint='b01147322f995d393ed6970589d185f230aad132';const fixed='1f1a48d56df96fc6f838d0696f1b5e3500bcf004';const s=load('tasks/STATE.json'),m=load('submission/release-manifest.json'),r=load('evidence/HO-hsk-mainnet-1/RECEIPT.json'),v=load('evidence/HO-hsk-mainnet-1/verification.json');\nassert.equal(s.headSha,checkpoint);assert.equal(s.versionIdentity.implementationCheckpointSha,checkpoint);assert.equal(m.finalDeliverySha,checkpoint);assert.equal(r.implementation_checkpoint_sha,checkpoint);assert.equal(r.head_sha,checkpoint);assert.equal(v.implementationCheckpointSha,checkpoint);\nassert.equal(s.versionIdentity.deploymentSourceSha,fixed);assert.equal(m.sourceSha,fixed);assert.equal(r.fixed_contract_source_sha,fixed);assert.equal(s.mainnetHandoff.workPackages.WP4,'WAITING_GAS');assert.equal(r.work_packages.WP4.receipt,null);assert.equal(m.submissionSha,null);assert.equal(m.deploymentTransactionHash,null);assert.equal(m.guardAddress,null);assert.equal(r.maxGasHskRaw,null);\nconsole.log(JSON.stringify({status:'PASS_CHECKPOINT_METADATA_AND_UNCHANGED_HOLD',checkpoint,fixedSourceSha:fixed,wp4Status:'WAITING_GAS',broadcastStatus:'NOT_BROADCAST',submissionSha:null,guardAddress:null},null,2));\n"
+  ],
+  "startedAt": "2026-10-27T09:33:07.774111+00:00",
+  "finishedAt": "2026-10-27T09:33:07.815527+00:00",
+  "exitCode": 0,
+  "stdout": "{\n  \"status\": \"PASS_CHECKPOINT_METADATA_AND_UNCHANGED_HOLD\",\n  \"checkpoint\": \"b01147322f995d393ed6970589d185f230aad132\",\n  \"fixedSourceSha\": \"1f1a48d56df96fc6f838d0696f1b5e3500bcf004\",\n  \"wp4Status\": \"WAITING_GAS\",\n  \"broadcastStatus\": \"NOT_BROADCAST\",\n  \"submissionSha\": null,\n  \"guardAddress\": null\n}\n",
+  "stderr": ""
+}

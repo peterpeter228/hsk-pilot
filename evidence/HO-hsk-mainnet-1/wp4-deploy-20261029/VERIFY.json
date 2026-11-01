@@ -1,0 +1,31 @@
+{
+  "checked_at_shanghai": "2026-10-29T12:58:55+0800",
+  "explorer": "https://hsk.blockscout.com",
+  "method": "Blockscout API v2 POST /api/v2/smart-contracts/{addr}/verification/via/standard-input (solc-js 0.8.30 standard JSON, local recompile creation bytecode keccak 0x7a404100df84af7b350b2e44f0f8e9fa68ca59cfb28387b2842e0fb714b48f8d == artifact)",
+  "settings": {
+    "compiler": "v0.8.30+commit.73712a01",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "cancun",
+    "viaIR": true,
+    "bytecodeHash": "none",
+    "OZ": "5.4.0"
+  },
+  "result": {
+    "is_verified": true,
+    "is_fully_verified": false,
+    "is_partially_verified": true,
+    "name": "TradingSessionGuard",
+    "compiler_version": "v0.8.30+commit.73712a01",
+    "optimization_enabled": true,
+    "optimization_runs": 200,
+    "evm_version": "cancun",
+    "verified_at": "2026-10-29T04:57:58.867959Z",
+    "license_type": "mit",
+    "file_path": "src/TradingSessionGuard.sol"
+  },
+  "note": "is_fully_verified=false is expected with metadata.bytecodeHash=none (no metadata hash to match => partial/bytecode match)",
+  "url": "https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81?tab=contract"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "collaboration-tests",
+  "command": [
+    "node",
+    "--test",
+    "tests/collaboration-protocol.test.mjs"
+  ],
+  "startedAt": "2026-10-27T09:28:54.058294+00:00",
+  "finishedAt": "2026-10-27T09:28:54.174014+00:00",
+  "exitCode": 0,
+  "stdout": "✔ valid PREPARED record stays offline and owned by dot (2.329103ms)\n✔ missing required next_step (0.304742ms)\n✔ short SHA (0.15532ms)\n✔ unknown scores cannot retain old 87 (0.129103ms)\n✔ altered scoring weights (0.145661ms)\n✔ expiry before preparation (0.162251ms)\n✔ non UTC timestamp (0.130328ms)\n✔ premature owner transfer (0.155985ms)\n✔ unverified acceptance (1.484361ms)\n✔ fake Notion sync (0.245429ms)\n✔ false sync_state OK (0.157615ms)\n✔ missing deploy version (0.098136ms)\n✔ fake monitor (0.084609ms)\n✔ duplicate idempotency key (0.062243ms)\n✔ duplicate event ID (0.050154ms)\n✔ unverified fast cash (0.05461ms)\n✔ verified boolean without cash facts (0.07226ms)\n✔ missing sync_state (0.075372ms)\n✔ false offered projection (0.046145ms)\n✔ weakened formal threshold (0.037485ms)\n✔ formal qualification cannot be granted by proposal (0.035322ms)\n✔ sent event without evidence (0.036795ms)\n✔ unknown delivery status (0.034377ms)\n✔ missing versions field (0.038118ms)\n✔ malformed levels fail without crashing (0.035454ms)\n✔ structurally complete acceptance is allowed but not authenticated by validator (0.078037ms)\n✔ malformed/null input fails without exception (0.055542ms)\n✔ evidenced fast cash fields are structurally valid, not independently verified (0.386452ms)\n✔ Notion UNSYNCED and PENDING can retain unknown page (0.107182ms)\n✔ Notion readback must bind project, source and current owner (0.271867ms)\n✔ outbox source reference is not mislabeled as a content digest (0.074168ms)\n✔ accepted acknowledgement cannot cross project/repo or violate ordering and expiry (0.185863ms)\nℹ tests 32\nℹ suites 0\nℹ pass 32\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 77.151762\n",
+  "stderr": ""
+}

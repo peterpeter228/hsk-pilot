@@ -1,0 +1,13 @@
+{
+  "name": "project-doctor",
+  "command": [
+    "pnpm",
+    "run",
+    "doctor"
+  ],
+  "startedAt": "2026-10-27T09:19:45.680920+00:00",
+  "finishedAt": "2026-10-27T09:19:46.722130+00:00",
+  "exitCode": 0,
+  "stdout": "{\n  \"executedAt\": \"2026-10-27T09:19:46.693Z\",\n  \"node\": \"v24.22.1\",\n  \"sourceMode\": \"SIMULATION\",\n  \"liveFundsEnabled\": false,\n  \"files\": {\n    \"handoff\": true,\n    \"lockfile\": true,\n    \"guard\": true\n  },\n  \"credentials\": {\n    \"applicationModel\": false,\n    \"ownerKeyLoaded\": false,\n    \"strategyKeyLoaded\": false,\n    \"riskKeyLoaded\": false\n  },\n  \"limitations\": [\n    \"No real-chain broadcaster in local server\",\n    \"Browser requires working execution environment\",\n    \"RPC preflight is separate from trade execution\"\n  ]\n}\n",
+  "stderr": "! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-11.25.0.tgz\n$ node --import tsx scripts/doctor.ts\n"
+}

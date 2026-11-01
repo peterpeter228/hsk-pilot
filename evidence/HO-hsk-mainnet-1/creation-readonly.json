@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "hsk-creation-readonly/1",
+  "startedAt": "2026-10-27T09:21:05.526Z",
+  "dataMode": "MAINNET_READONLY",
+  "sourceSha": "1f1a48d56df96fc6f838d0696f1b5e3500bcf004",
+  "chainId": 177,
+  "from": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+  "to": null,
+  "value": "0",
+  "initcodeKeccak256": "0x11604e40d163c47036755dc1c96ed54b456808698072555981e17b4f4f21bd3d",
+  "balance": {
+    "raw": "0",
+    "provenance": "User-reviewed zero-balance observation and reused deploy-preview-unsigned-20261027.json; not re-read to confirm",
+    "observedAt": null,
+    "endpointScope": [
+      "https://mainnet.hsk.xyz",
+      "https://hashkey.drpc.org"
+    ]
+  },
+  "providers": [
+    {
+      "endpoint": "https://mainnet.hsk.xyz",
+      "observedAt": "2026-10-27T09:21:05.529Z",
+      "rpcMethods": [
+        "eth_chainId",
+        "eth_getBlockByNumber",
+        "eth_getBlockByNumber",
+        "eth_getCode",
+        "eth_getTransactionCount",
+        "eth_getTransactionCount",
+        "eth_getCode",
+        "eth_gasPrice",
+        "eth_getCode",
+        "eth_call"
+      ],
+      "reads": {
+        "chainId": 177,
+        "fixedBlock": {
+          "number": "29372120",
+          "hash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73",
+          "timestamp": "1793091375",
+          "gasLimit": "30000000"
+        },
+        "latestBlock": {
+          "number": "29372865",
+          "hash": "0x33afe5c70910dd25e117611fbeece251bce2adf24d218ea35f0f40b98f384da1",
+          "timestamp": "1793092865",
+          "baseFeePerGas": "500000000000"
+        },
+        "deployerCodeFixed": "0x",
+        "latestNonce": "0",
+        "pendingNonce": "0",
+        "nonceConflict": false,
+        "predictedCreateAddress": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+        "predictedAddressCodeLatest": "0x",
+        "gasPriceWei": "500001000000",
+        "poolCodeFixed": {
+          "bytes": 22142,
+          "keccak256": "0x1f4659cea30dfee0fd8e3753066bd93136067e4df75e9b995db7ca8f5d673692"
+        },
+        "constructorCall": {
+          "status": "SUCCESS_RUNTIME_RETURNED",
+          "bytes": 12265,
+          "keccak256": "0x008d819eb3323bfa315c8f768d4c6d80997ebe56703a6bfd69baa87a2f9aa2da",
+          "immutableMaskedStructureMatches": true,
+          "immutableValues": "NOT_ALL_INDEPENDENTLY_VERIFIED_BY_THIS_ETH_CALL",
+          "transactionHash": null
+        }
+      },
+      "errors": []
+    },
+    {
+      "endpoint": "https://hashkey.drpc.org",
+      "observedAt": "2026-10-27T09:21:07.721Z",
+      "rpcMethods": [
+        "eth_chainId",
+        "eth_getBlockByNumber",
+        "eth_getBlockByNumber",
+        "eth_getCode",
+        "eth_getTransactionCount",
+        "eth_getTransactionCount",
+        "eth_getCode",
+        "eth_gasPrice",
+        "eth_getCode",
+        "eth_call"
+      ],
+      "reads": {
+        "chainId": 177,
+        "fixedBlock": {
+          "number": "29372120",
+          "hash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73",
+          "timestamp": "1793091375",
+          "gasLimit": "30000000"
+        },
+        "latestBlock": {
+          "number": "29372866",
+          "hash": "0x6a91be8123350691767a4b1c3d3d747a1942dc1d738c7b4a7b329afb447ac0f3",
+          "timestamp": "1793092867",
+          "baseFeePerGas": "500000000000"
+        },
+        "deployerCodeFixed": "0x",
+        "latestNonce": "0",
+        "pendingNonce": "0",
+        "nonceConflict": false,
+        "predictedCreateAddress": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+        "predictedAddressCodeLatest": "0x",
+        "gasPriceWei": "500001000000",
+        "poolCodeFixed": {
+          "bytes": 22142,
+          "keccak256": "0x1f4659cea30dfee0fd8e3753066bd93136067e4df75e9b995db7ca8f5d673692"
+        },
+        "constructorCall": {
+          "status": "SUCCESS_RUNTIME_RETURNED",
+          "bytes": 12265,
+          "keccak256": "0x008d819eb3323bfa315c8f768d4c6d80997ebe56703a6bfd69baa87a2f9aa2da",
+          "immutableMaskedStructureMatches": true,
+          "immutableValues": "NOT_ALL_INDEPENDENTLY_VERIFIED_BY_THIS_ETH_CALL",
+          "transactionHash": null
+        }
+      },
+      "errors": []
+    }
+  ],
+  "errors": [],
+  "liveFundsEnabled": false,
+  "broadcastStatus": "NOT_BROADCAST",
+  "wp4Status": "WAITING_GAS",
+  "feeCompleteness": "UNKNOWN_CHAIN_SPECIFIC_EXTRA_COMPONENTS",
+  "proxyImplementationAdmin": "UNKNOWN_NOT_VERIFIED",
+  "finishedAt": "2026-10-27T09:21:10.449Z",
+  "status": "READS_VERIFIED_WAITING_GAS_NOT_APPROVAL"
+}

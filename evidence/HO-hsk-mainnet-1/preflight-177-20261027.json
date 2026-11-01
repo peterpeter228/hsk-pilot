@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "preflight/1.0",
+  "dataMode": "MAINNET_READONLY",
+  "observedAt": "2026-10-27T08:56:22.032Z",
+  "chainId": 177,
+  "blockNumber": "29372120",
+  "blockHash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73",
+  "blockTimestamp": "1793091375",
+  "status": "READS_VERIFIED_NOT_EXECUTION_APPROVAL",
+  "reads": {
+    "code.WHSK": {
+      "keccak256": "0x968d189152325d9e84cbda0dcd6140f0bc8f182dd67e9c226a1089089a6ecdc5",
+      "bytes": 3143
+    },
+    "code.USDT": {
+      "keccak256": "0x2be4a1fc2e2fbdc80b125875edcd697cbbbe2af8bfe53d36c399977742b4af6e",
+      "bytes": 5076
+    },
+    "code.router": {
+      "keccak256": "0xb32766db5ba45ffc2818eb39423d2bf5da85f0c949d04793662a9d70b99d6ef0",
+      "bytes": 24497
+    },
+    "code.factory": {
+      "keccak256": "0x659f298c4df9b1a38912ed5e5d528aefe979e0288b6db7da86319a0a7ffd003f",
+      "bytes": 24535
+    },
+    "code.quoter": {
+      "keccak256": "0x28f6ac7b926677a39eb128607911affc4cfe450b1d2d001ee123aa59f7b158f5",
+      "bytes": 8273
+    },
+    "code.HSK_USD": {
+      "keccak256": "0xce950da8c483957bb9598e6f17071379c410952ea82857e3de75663bbc463154",
+      "bytes": 7061
+    },
+    "code.USDT_USD": {
+      "keccak256": "0xce950da8c483957bb9598e6f17071379c410952ea82857e3de75663bbc463154",
+      "bytes": 7061
+    },
+    "code.EAS": {
+      "keccak256": "0xfa8c9db6c6cab7108dea276f4cd09d575674eb0852c0fa3187e59e98ef977998",
+      "bytes": 2059
+    },
+    "code.SchemaRegistry": {
+      "keccak256": "0xfa8c9db6c6cab7108dea276f4cd09d575674eb0852c0fa3187e59e98ef977998",
+      "bytes": 2059
+    },
+    "decimals.WHSK": 18,
+    "decimals.USDT": 6,
+    "factory.pool": "0x4ff515761864e7838B0AdB8b5b2B8B7A068905dC",
+    "pool.token0": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+    "pool.token1": "0xF1B50eD67A9e2CC94Ad3c477779E2d4cBfFf9029",
+    "pool.fee": 3000,
+    "pool.liquidity": "747542660217805375",
+    "router.factory": "0x972cA9D1662F5e029cD18327D29026532E84c742",
+    "router.WETH9": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+    "quote.BUY.100000": {
+      "amountInRaw": "100000",
+      "amountOutRaw": "1122681480108795745",
+      "sqrtPriceX96After": "23610162752246749690824",
+      "initializedTicksCrossed": 0,
+      "gasEstimate": "73974",
+      "executionKind": "ETH_CALL",
+      "transactionHash": null
+    },
+    "quote.BUY.1000000": {
+      "amountInRaw": "1000000",
+      "amountOutRaw": "11226769580406969903",
+      "sqrtPriceX96After": "23610257852411606283842",
+      "initializedTicksCrossed": 0,
+      "gasEstimate": "73974",
+      "executionKind": "ETH_CALL",
+      "transactionHash": null
+    },
+    "quote.SELL.1000000000000000000": {
+      "amountInRaw": "1000000000000000000",
+      "amountOutRaw": "88538",
+      "sqrtPriceX96After": "23610142801799573259262",
+      "initializedTicksCrossed": 0,
+      "gasEstimate": "74226",
+      "executionKind": "ETH_CALL",
+      "transactionHash": null
+    },
+    "quote.SELL.10000000000000000000": {
+      "amountInRaw": "10000000000000000000",
+      "amountOutRaw": "885384",
+      "sqrtPriceX96After": "23610058348275499313808",
+      "initializedTicksCrossed": 0,
+      "gasEstimate": "74226",
+      "executionKind": "ETH_CALL",
+      "transactionHash": null
+    },
+    "pool.observe1800": [
+      [
+        "-6943421967632",
+        "-6943962937832"
+      ],
+      [
+        "101447734734684954404352516056439",
+        "101447735554047237058867142686111"
+      ]
+    ],
+    "oracle.HSK_USD": {
+      "decimals": 8,
+      "roundId": "18446744073709573189",
+      "answer": "8868231",
+      "updatedAt": "1793011891",
+      "answeredInRound": "18446744073709573189",
+      "ageSeconds": "79484",
+      "maxAgeSeconds": 3600,
+      "fresh": false,
+      "independentSourceValidated": false
+    },
+    "oracle.USDT_USD": {
+      "decimals": 8,
+      "roundId": "18446744073709552343",
+      "answer": "99860000",
+      "updatedAt": "1793068129",
+      "answeredInRound": "18446744073709552343",
+      "ageSeconds": "23246",
+      "maxAgeSeconds": 86400,
+      "fresh": true,
+      "independentSourceValidated": false
+    },
+    "secondary.hashkey.drpc.org": {
+      "blockHash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73"
+    },
+    "secondary.177.rpc.thirdweb.com": {
+      "blockHash": "0x6a111c40dbe323e24bd193cf32411f6ea648e0356d6cffca0b7dad56295c3e73"
+    }
+  },
+  "errors": [],
+  "liveFundsEnabled": false,
+  "oracleGuardedStatus": "BLOCKED_INDEPENDENT_FRESH_FEEDS_NOT_VALIDATED",
+  "limitations": [
+    "Quoted amounts are bounded read-only probes, not approved target orders. No fork execution or proxy implementation verification.",
+    "Runtime hashes are observations, not approved deployment code hashes.",
+    "HSKSwap jurisdiction restriction is not bypassed; no wallet/signing/broadcast."
+  ]
+}

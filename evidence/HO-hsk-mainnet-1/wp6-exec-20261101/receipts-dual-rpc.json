@@ -1,0 +1,74 @@
+{
+ "https://mainnet.hsk.xyz": {
+  "0x0d5453e8717c17b08c662f177569bd51df4b27582b6db8e663b5d79cbb328759": {
+   "block": "29584245",
+   "rBlockHash": "0x10087338c9eeca6c9b804a30591f3bb035b499f45c46d2d6c97c9ed32ff328f6",
+   "canonicalHash": "0x10087338c9eeca6c9b804a30591f3bb035b499f45c46d2d6c97c9ed32ff328f6",
+   "status": "0x1",
+   "gasUsed": "51856",
+   "l1Fee": "0x1f5613f6dfa"
+  },
+  "0xeeb30123d3b67b80122460b1a12c6f1d6561086f3239eada73d3f20ccc0b459e": {
+   "block": "29584246",
+   "rBlockHash": "0xa2ca4459dcbd6e4083a82c4e3d5e2edffac953933557a8519a992f3be0680fe4",
+   "canonicalHash": "0xa2ca4459dcbd6e4083a82c4e3d5e2edffac953933557a8519a992f3be0680fe4",
+   "status": "0x1",
+   "gasUsed": "46626",
+   "l1Fee": "0x1f5613f6dfa"
+  },
+  "0x37fc6e0ef21b62cd627e71f3ad87352aed6c066a2d93a77527262665d0136e5b": {
+   "block": "29584248",
+   "rBlockHash": "0x77f0247a280f76b5f61a42480349c4726c8f61f5d94324ce0a9e050578f79367",
+   "canonicalHash": "0x77f0247a280f76b5f61a42480349c4726c8f61f5d94324ce0a9e050578f79367",
+   "status": "0x1",
+   "gasUsed": "370255",
+   "l1Fee": "0x4091d42345f"
+  },
+  "0xab6c4ccb0eded1992c6c8119d20ca843cc38783b83029a1e0530e86e6d1ed51f": {
+   "block": "29584249",
+   "rBlockHash": "0xd80408cccd97f6b0ce4125068db3e54a322abd175aacc4efa0da8c129f770bc9",
+   "canonicalHash": "0xd80408cccd97f6b0ce4125068db3e54a322abd175aacc4efa0da8c129f770bc9",
+   "status": "0x1",
+   "gasUsed": "74168",
+   "l1Fee": "0x1f5dd83aa05"
+  },
+  "finalized": "29583590",
+  "safe": "29584130"
+ },
+ "https://hashkey.drpc.org": {
+  "0x0d5453e8717c17b08c662f177569bd51df4b27582b6db8e663b5d79cbb328759": {
+   "block": "29584245",
+   "rBlockHash": "0x10087338c9eeca6c9b804a30591f3bb035b499f45c46d2d6c97c9ed32ff328f6",
+   "canonicalHash": "0x10087338c9eeca6c9b804a30591f3bb035b499f45c46d2d6c97c9ed32ff328f6",
+   "status": "0x1",
+   "gasUsed": "51856",
+   "l1Fee": "0x1f5613f6dfa"
+  },
+  "0xeeb30123d3b67b80122460b1a12c6f1d6561086f3239eada73d3f20ccc0b459e": {
+   "block": "29584246",
+   "rBlockHash": "0xa2ca4459dcbd6e4083a82c4e3d5e2edffac953933557a8519a992f3be0680fe4",
+   "canonicalHash": "0xa2ca4459dcbd6e4083a82c4e3d5e2edffac953933557a8519a992f3be0680fe4",
+   "status": "0x1",
+   "gasUsed": "46626",
+   "l1Fee": "0x1f5613f6dfa"
+  },
+  "0x37fc6e0ef21b62cd627e71f3ad87352aed6c066a2d93a77527262665d0136e5b": {
+   "block": "29584248",
+   "rBlockHash": "0x77f0247a280f76b5f61a42480349c4726c8f61f5d94324ce0a9e050578f79367",
+   "canonicalHash": "0x77f0247a280f76b5f61a42480349c4726c8f61f5d94324ce0a9e050578f79367",
+   "status": "0x1",
+   "gasUsed": "370255",
+   "l1Fee": "0x4091d42345f"
+  },
+  "0xab6c4ccb0eded1992c6c8119d20ca843cc38783b83029a1e0530e86e6d1ed51f": {
+   "block": "29584249",
+   "rBlockHash": "0xd80408cccd97f6b0ce4125068db3e54a322abd175aacc4efa0da8c129f770bc9",
+   "canonicalHash": "0xd80408cccd97f6b0ce4125068db3e54a322abd175aacc4efa0da8c129f770bc9",
+   "status": "0x1",
+   "gasUsed": "74168",
+   "l1Fee": "0x1f5dd83aa05"
+  },
+  "finalized": "29583590",
+  "safe": "29584130"
+ }
+}

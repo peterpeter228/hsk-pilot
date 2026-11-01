@@ -1,0 +1,150 @@
+{
+ "https://mainnet.hsk.xyz": {
+  "startSession.events": [
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "SessionStarted",
+    "args": {
+     "sessionId": "1",
+     "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+     "policyVersion": 1,
+     "allocatedQuoteRaw": "0",
+     "allocatedRiskRaw": "1000000000000000000"
+    }
+   }
+  ],
+  "withdrawAll.events": [
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "SessionClosed",
+    "args": {
+     "sessionId": "1",
+     "policyVersion": 2,
+     "closingQuoteRaw": "0",
+     "closingRiskRaw": "1000000000000000000"
+    }
+   },
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "Withdrawn",
+    "args": {
+     "token": "0xF1B50eD67A9e2CC94Ad3c477779E2d4cBfFf9029",
+     "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "amountRaw": "0"
+    }
+   },
+   {
+    "addr": "0xb210d2120d57b758ee163cffb43e73728c471cf1",
+    "ev": "Transfer",
+    "args": {
+     "from": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+     "to": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "value": "1000000000000000000"
+    }
+   },
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "Withdrawn",
+    "args": {
+     "token": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+     "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "amountRaw": "1000000000000000000"
+    }
+   }
+  ],
+  "stateAtBlock29584248": {
+   "status": 1,
+   "sessionId": "1",
+   "policyVersion": 1,
+   "allocatedRiskRaw": "1000000000000000000",
+   "signers": [
+    "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+    "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+   ]
+  },
+  "stateAtBlock29584249": {
+   "status": 0,
+   "sessionId": "1",
+   "policyVersion": 2,
+   "allocatedRiskRaw": "0",
+   "signers": [
+    "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+    "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+   ]
+  }
+ },
+ "https://hashkey.drpc.org": {
+  "startSession.events": [
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "SessionStarted",
+    "args": {
+     "sessionId": "1",
+     "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+     "policyVersion": 1,
+     "allocatedQuoteRaw": "0",
+     "allocatedRiskRaw": "1000000000000000000"
+    }
+   }
+  ],
+  "withdrawAll.events": [
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "SessionClosed",
+    "args": {
+     "sessionId": "1",
+     "policyVersion": 2,
+     "closingQuoteRaw": "0",
+     "closingRiskRaw": "1000000000000000000"
+    }
+   },
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "Withdrawn",
+    "args": {
+     "token": "0xF1B50eD67A9e2CC94Ad3c477779E2d4cBfFf9029",
+     "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "amountRaw": "0"
+    }
+   },
+   {
+    "addr": "0xb210d2120d57b758ee163cffb43e73728c471cf1",
+    "ev": "Transfer",
+    "args": {
+     "from": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+     "to": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "value": "1000000000000000000"
+    }
+   },
+   {
+    "addr": "0xe2172a17223bda552e0cc101591c8893c4b65c81",
+    "ev": "Withdrawn",
+    "args": {
+     "token": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+     "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+     "amountRaw": "1000000000000000000"
+    }
+   }
+  ],
+  "stateAtBlock29584248": {
+   "status": 1,
+   "sessionId": "1",
+   "policyVersion": 1,
+   "allocatedRiskRaw": "1000000000000000000",
+   "signers": [
+    "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+    "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+   ]
+  },
+  "stateAtBlock29584249": {
+   "status": 0,
+   "sessionId": "1",
+   "policyVersion": 2,
+   "allocatedRiskRaw": "0",
+   "signers": [
+    "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+    "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+   ]
+  }
+ }
+}

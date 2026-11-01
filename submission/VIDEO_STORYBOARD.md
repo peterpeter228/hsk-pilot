@@ -1,6 +1,12 @@
-# Three-minute storyboard — NOT a recorded video
+# Three-minute storyboard — editorial draft, not the recorded clip
 
-Suggested editorial duration only; official event-specific video requirements are unverified. This is a truthful **current local-prototype** cut, not a script pretending that future mainnet work has happened. Record only after actual browser acceptance becomes available. Keep a persistent `SIMULATION • SYNTHETIC DATA • NO REAL FUNDS` label on all app footage. Never show keys, API tokens or personal account details.
+Suggested editorial duration only; official event-specific video requirements are unverified. This is a truthful **current local-prototype** cut, not a script pretending that future mainnet work has happened. Core local browser acceptance and an actual 120-second recording already exist; the timeline below is a suggested new cut, not a description of everything captured in that clip. No new recording or upload is part of HO-hsk-mainnet-1. Keep a persistent `SIMULATION • SYNTHETIC DATA • NO REAL FUNDS` label on any new app footage. Never show keys, API tokens or personal account details.
+
+## Existing recording and browser evidence
+
+The [actual local UI video](../evidence/video/HSK_Pilot_Local_UI_Demo_120s.mp4), [verification](../evidence/video/verification.json) and [browser report](../evidence/browser-cua/REPORT.md) preserve rendered source **`ccdbed53c4e57d8817e0d4e82fd22023c996b713`**, distinct from fixed deployment-source candidate **`1f1a48d56df96fc6f838d0696f1b5e3500bcf004`**. The final clip is 120 seconds from the continuous 2026-10-26 local recording; SHA-256 `c8a5e718117bbab5ed123f817ced0a3f4c293f004cf77225f99d4dac37c10a60`. All business data/fills are **SIMULATION**, with no real-model/mainnet footage or real funds. Synthetic policy confirmation, rebalance/HOLD, reduce-only/exit, pause and withdrawal/CLOSED are recorded. Export/capabilities completion was not established in the recording, although evidence-export integrity was separately checked in the browser. Representative ordinary iframe checks at 375/768/1440 are not mobile hardware or a full live-browser matrix.
+
+## Suggested future cut
 
 | Time | Capture to make | Suggested English narration |
 |---|---|---|
@@ -10,10 +16,10 @@ Suggested editorial duration only; official event-specific video requirements ar
 | 1:20–1:50 | Show local test output for two-role authorization, gross-buy budget and stale policy rejection; readable test environment label | “Local contract and risk tests exercise authorization boundaries. Selling must not replenish buying budget, and stale policy versions must fail. A separate local fixed-block fork tests the real HSKSwap router, but neither result is a live deployment or proof of the complete production loop.” |
 | 1:50–2:15 | Synthetic reduce-only, pause and withdrawal controls; actual state returned by server | “Reduce-only stops new exposure in this simulation. Owner recovery is a design priority, but no stop-loss execution price or capital safety is guaranteed.” |
 | 2:15–2:40 | Export actual synthetic envelope; show `realTransactionHashes: []`; briefly show real local PG evidence separately | “This export identifies synthetic data and contains no real transaction hashes. The durable database substrate passed local concurrency and restart tests, but is not yet wired into this in-memory demo.” |
-| 2:40–3:00 | Limitations card and README | “B0 is bounded authority, not independent fair-price protection. B1 stays off. Live AI, lawful HSKSwap access, full integration, mainnet deployment and real browser acceptance remain open. We do not claim profitability or completed competition submission.” |
+| 2:40–3:00 | Limitations card and README | “B0 is bounded authority, not independent fair-price protection. B1 stays off. Real-model integration, lawful HSKSwap access, full production wiring, mainnet deployment and the full live browser/wallet matrix remain open. Deployment preparation is WAITING_GAS / NOT_BROADCAST. We do not claim profitability or completed competition submission.” |
 
 ## Capture prerequisites and acceptance
 
-Use an actually functioning browser at a legible viewport; check every action and downloaded file. If a step does not work, fix it or show the limitation—never splice a false success. Show terminal test command and environment, not unlabeled log counts. Storyboard text is not proof that actions were captured. No screenshots, audio or video file is delivered by this document.
+For any new capture, use an actually functioning browser at a legible viewport; check every action and downloaded file. If a step does not work, fix it or show the limitation—never splice a false success. Show terminal test command and environment, not unlabeled log counts, and distinguish historical logs from newly executed checks. Storyboard text is not proof that proposed actions were captured. This document itself produces no screenshots, audio or video; the existing artifact and its actual scope are linked above. A hosted video URL remains null in [release-manifest.json](release-manifest.json), separate from availability of that local clip.
 
 If mainnet evidence becomes available later through owner-controlled execution, prepare a **new** version: label recorded mainnet segments with date, chain 177, exact transaction hash and build SHA; preserve live-vs-recorded distinction and verify receipts/balances. Never relabel local Anvil/mock transactions as HSK mainnet. Update submission claims and manifest only after verifying that evidence.

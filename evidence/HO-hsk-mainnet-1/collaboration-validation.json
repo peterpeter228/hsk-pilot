@@ -1,0 +1,13 @@
+{
+  "name": "collaboration-validation",
+  "command": [
+    "node",
+    "scripts/validate-collaboration.mjs",
+    "coordination/handoff.json"
+  ],
+  "startedAt": "2026-10-27T09:28:54.023995+00:00",
+  "finishedAt": "2026-10-27T09:28:54.057927+00:00",
+  "exitCode": 0,
+  "stdout": "PASS: handoff structure is internally consistent; no delivery, acceptance or sync has been verified by this offline check.\n",
+  "stderr": ""
+}
