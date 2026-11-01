@@ -1,0 +1,309 @@
+{
+ "readAt": "2026-11-01T10:26:09.916Z",
+ "rpcs": {
+  "https://mainnet.hsk.xyz": {
+   "receipts": {
+    "transfer": {
+     "hash": "0xa1eb1e04de5f6de5c499790d9a8fbdcf33359b8d742ff91f4f8b9e8f64aa9d70",
+     "block": 29590784,
+     "blockTimestamp": "1793528703",
+     "canonicalHash": "0x9b53c4e7a6acd7791006ef3f405138630ee5fdc23d70349f1e7418e798b4df8d",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 46626,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "2304075951177",
+     "feeWei": "23315350701951177",
+     "guardEvents": []
+    },
+    "startSession": {
+     "hash": "0x66cb96b60500ae3f0562de566cd81f651b94ad2425e71cbdb3b4e7b6058fed49",
+     "block": 29590791,
+     "blockTimestamp": "1793528717",
+     "canonicalHash": "0xc025d1dfa1735e05668e4bf8877c49a58f420ffa3a9e381e02b1f6609484293d",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 119955,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "4745217357753",
+     "feeWei": "59982365172357753",
+     "guardEvents": [
+      {
+       "event": "SessionStarted",
+       "args": {
+        "sessionId": "2",
+        "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+        "policyVersion": 4,
+        "allocatedQuoteRaw": "0",
+        "allocatedRiskRaw": "1000000000000000000"
+       }
+      }
+     ]
+    },
+    "execute": {
+     "hash": "0xf2b703477d4bdfa543156246176f2cf0bd0a6e99858d57f719cefe83741fd1b1",
+     "block": 29590799,
+     "blockTimestamp": "1793528733",
+     "canonicalHash": "0x48c107bd29647616b2090c54075449514d2cd9c50fb7f0b8e53cf81b1fba3372",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 253105,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "8290993794935",
+     "feeWei": "126561044098794935",
+     "guardEvents": [
+      {
+       "event": "TradeExecuted",
+       "args": {
+        "intentHash": "0x5e969c08c340302b2873ffb804a6300efae25aff060a42807b06913e873ea831",
+        "sessionId": "2",
+        "policyVersion": 4,
+        "direction": 1,
+        "amountInRaw": "1000000000000000000",
+        "actualOutRaw": "87152",
+        "evidenceHash": "0xa265c4f3ec812795810c23a2132fb984d60e74bf4f5565a9188413ea24b1fa12",
+        "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+        "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+       }
+      }
+     ]
+    },
+    "withdrawAll": {
+     "hash": "0x66068151d1df06a3f96243c024a01fb1fcb14bba9f6ed2caf9cb75e50bc0935a",
+     "block": 29590801,
+     "blockTimestamp": "1793528737",
+     "canonicalHash": "0xffb0f55a57f2a3349120d14f397323b0cd764049eb25f9dc04fce02296c6cce1",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 74250,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "2387798113530",
+     "feeWei": "37127462048113530",
+     "guardEvents": [
+      {
+       "event": "SessionClosed",
+       "args": {
+        "sessionId": "2",
+        "policyVersion": 5,
+        "closingQuoteRaw": "87152",
+        "closingRiskRaw": "0"
+       }
+      },
+      {
+       "event": "Withdrawn",
+       "args": {
+        "token": "0xF1B50eD67A9e2CC94Ad3c477779E2d4cBfFf9029",
+        "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+        "amountRaw": "87152"
+       }
+      },
+      {
+       "event": "Withdrawn",
+       "args": {
+        "token": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+        "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+        "amountRaw": "0"
+       }
+      }
+     ]
+    }
+   },
+   "state": {
+    "29590799": {
+     "status": 1,
+     "sessionId": "2",
+     "policyVersion": 4,
+     "intentNonce": "1",
+     "allocQ": "87152",
+     "allocR": "0",
+     "gWHSK": "0",
+     "gUSDT": "87152",
+     "tHSK": "5499977496016822650",
+     "tWHSK": "0",
+     "tUSDT": "0",
+     "allow": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ]
+    },
+    "29590801": {
+     "status": 0,
+     "sessionId": "2",
+     "policyVersion": 5,
+     "intentNonce": "1",
+     "allocQ": "0",
+     "allocR": "0",
+     "gWHSK": "0",
+     "gUSDT": "0",
+     "tHSK": "5462850033968709120",
+     "tWHSK": "0",
+     "tUSDT": "87152",
+     "allow": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ]
+    }
+   }
+  },
+  "https://hashkey.drpc.org": {
+   "receipts": {
+    "transfer": {
+     "hash": "0xa1eb1e04de5f6de5c499790d9a8fbdcf33359b8d742ff91f4f8b9e8f64aa9d70",
+     "block": 29590784,
+     "blockTimestamp": "1793528703",
+     "canonicalHash": "0x9b53c4e7a6acd7791006ef3f405138630ee5fdc23d70349f1e7418e798b4df8d",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 46626,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "2304075951177",
+     "feeWei": "23315350701951177",
+     "guardEvents": []
+    },
+    "startSession": {
+     "hash": "0x66cb96b60500ae3f0562de566cd81f651b94ad2425e71cbdb3b4e7b6058fed49",
+     "block": 29590791,
+     "blockTimestamp": "1793528717",
+     "canonicalHash": "0xc025d1dfa1735e05668e4bf8877c49a58f420ffa3a9e381e02b1f6609484293d",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 119955,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "4745217357753",
+     "feeWei": "59982365172357753",
+     "guardEvents": [
+      {
+       "event": "SessionStarted",
+       "args": {
+        "sessionId": "2",
+        "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+        "policyVersion": 4,
+        "allocatedQuoteRaw": "0",
+        "allocatedRiskRaw": "1000000000000000000"
+       }
+      }
+     ]
+    },
+    "execute": {
+     "hash": "0xf2b703477d4bdfa543156246176f2cf0bd0a6e99858d57f719cefe83741fd1b1",
+     "block": 29590799,
+     "blockTimestamp": "1793528733",
+     "canonicalHash": "0x48c107bd29647616b2090c54075449514d2cd9c50fb7f0b8e53cf81b1fba3372",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 253105,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "8290993794935",
+     "feeWei": "126561044098794935",
+     "guardEvents": [
+      {
+       "event": "TradeExecuted",
+       "args": {
+        "intentHash": "0x5e969c08c340302b2873ffb804a6300efae25aff060a42807b06913e873ea831",
+        "sessionId": "2",
+        "policyVersion": 4,
+        "direction": 1,
+        "amountInRaw": "1000000000000000000",
+        "actualOutRaw": "87152",
+        "evidenceHash": "0xa265c4f3ec812795810c23a2132fb984d60e74bf4f5565a9188413ea24b1fa12",
+        "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+        "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED"
+       }
+      }
+     ]
+    },
+    "withdrawAll": {
+     "hash": "0x66068151d1df06a3f96243c024a01fb1fcb14bba9f6ed2caf9cb75e50bc0935a",
+     "block": 29590801,
+     "blockTimestamp": "1793528737",
+     "canonicalHash": "0xffb0f55a57f2a3349120d14f397323b0cd764049eb25f9dc04fce02296c6cce1",
+     "txInBlock": true,
+     "status": "0x1",
+     "gasUsed": 74250,
+     "effectiveGasPrice": "500001000000",
+     "l1Fee": "2387798113530",
+     "feeWei": "37127462048113530",
+     "guardEvents": [
+      {
+       "event": "SessionClosed",
+       "args": {
+        "sessionId": "2",
+        "policyVersion": 5,
+        "closingQuoteRaw": "87152",
+        "closingRiskRaw": "0"
+       }
+      },
+      {
+       "event": "Withdrawn",
+       "args": {
+        "token": "0xF1B50eD67A9e2CC94Ad3c477779E2d4cBfFf9029",
+        "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+        "amountRaw": "87152"
+       }
+      },
+      {
+       "event": "Withdrawn",
+       "args": {
+        "token": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+        "recipient": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+        "amountRaw": "0"
+       }
+      }
+     ]
+    }
+   },
+   "state": {
+    "29590799": {
+     "status": 1,
+     "sessionId": "2",
+     "policyVersion": 4,
+     "intentNonce": "1",
+     "allocQ": "87152",
+     "allocR": "0",
+     "gWHSK": "0",
+     "gUSDT": "87152",
+     "tHSK": "5499977496016822650",
+     "tWHSK": "0",
+     "tUSDT": "0",
+     "allow": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ]
+    },
+    "29590801": {
+     "status": 0,
+     "sessionId": "2",
+     "policyVersion": 5,
+     "intentNonce": "1",
+     "allocQ": "0",
+     "allocR": "0",
+     "gWHSK": "0",
+     "gUSDT": "0",
+     "tHSK": "5462850033968709120",
+     "tWHSK": "0",
+     "tUSDT": "87152",
+     "allow": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+     ]
+    }
+   }
+  }
+ }
+}
