@@ -1,0 +1,220 @@
+{
+ "schema": "hsk-wp6-exec/1",
+ "mode": "MAINNET_BROADCAST",
+ "chainId": 177,
+ "primaryRpc": "https://mainnet.hsk.xyz",
+ "secondaryRpc": "https://hashkey.drpc.org",
+ "startedAt": "2026-11-01T06:47:01.480Z",
+ "sender": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+ "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+ "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+ "gasCapHSK": "0.8",
+ "principalHSK": "1",
+ "txs": [
+  {
+   "step": 1,
+   "label": "WHSK.deposit() value 1 HSK",
+   "to": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+   "valueWei": "1000000000000000000",
+   "nonce": 1,
+   "estimateGas": "52250",
+   "gasLimit": "65312",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "35925888794127874",
+   "hash": "0x0d5453e8717c17b08c662f177569bd51df4b27582b6db8e663b5d79cbb328759",
+   "sentAt": "2026-11-01T06:47:04.145Z",
+   "blockNumber": "29584245",
+   "blockHash": "0xc54fa7413113249f0882eb31bc2c61b4a37e9211a6d1f2f3a33d77b4eede76ea",
+   "gasUsed": "51856",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "2153410162170",
+   "feeWei": "25930205266162170",
+   "feeHSK": "0.02593020526616217",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584245",
+    "status": "success",
+    "match": true
+   }
+  },
+  {
+   "step": 2,
+   "label": "WHSK.transfer(Guard, 1e18)",
+   "to": "0xB210D2120d57b758EE163cFfb43e73728c471Cf1",
+   "valueWei": "0",
+   "nonce": 2,
+   "estimateGas": "51595",
+   "gasLimit": "64493",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "35476591643792294",
+   "hash": "0xeeb30123d3b67b80122460b1a12c6f1d6561086f3239eada73d3f20ccc0b459e",
+   "sentAt": "2026-11-01T06:47:06.593Z",
+   "blockNumber": "29584246",
+   "blockHash": "0x1559706a5090a91160d99814dff6c1155e344ff0c2fda60172f062ff7219cc2b",
+   "gasUsed": "46626",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "2153410162170",
+   "feeWei": "23315200036162170",
+   "feeHSK": "0.02331520003616217",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584246",
+    "status": "success",
+    "match": false
+   }
+  },
+  {
+   "step": 3,
+   "label": "Guard.startSession(policy, 0, 1e18)",
+   "to": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+   "valueWei": "0",
+   "nonce": 3,
+   "estimateGas": "375783",
+   "gasLimit": "469728",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "258366253317324085",
+   "hash": "0x37fc6e0ef21b62cd627e71f3ad87352aed6c066a2d93a77527262665d0136e5b",
+   "sentAt": "2026-11-01T06:47:08.972Z",
+   "blockNumber": "29584248",
+   "blockHash": "0xdf9734a87fae6f08591fef093c0d2d3a711181646db656b369cc0a3ab93161e1",
+   "gasUsed": "370255",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "4437192094815",
+   "feeWei": "185132307447094815",
+   "feeHSK": "0.185132307447094815",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584248",
+    "status": "success",
+    "match": true
+   }
+  },
+  {
+   "step": 6,
+   "label": "Guard.withdrawAll() [anomaly recovery]",
+   "to": "0xe2172A17223BDa552e0CC101591C8893c4B65c81",
+   "valueWei": "0",
+   "nonce": 4,
+   "estimateGas": "89271",
+   "gasLimit": "111588",
+   "maxFeePerGas": "550000000000",
+   "maxPriorityFeePerGas": "1000000",
+   "maxPossibleFeeWei": "61377692946368828",
+   "hash": "0xab6c4ccb0eded1992c6c8119d20ca843cc38783b83029a1e0530e86e6d1ed51f",
+   "sentAt": "2026-11-01T06:47:12.553Z",
+   "blockNumber": "29584249",
+   "blockHash": "0x39933355cdfbef42c53ffb704fc755d8f3f7fc4e03540cd278f207b0f2104b76",
+   "gasUsed": "74168",
+   "effectiveGasPrice": "500001000000",
+   "l1FeeWei": "2155495008773",
+   "feeWei": "37086229663008773",
+   "feeHSK": "0.037086229663008773",
+   "status": "success",
+   "secondaryRpcReceipt": {
+    "blockNumber": "29584249",
+    "status": "success",
+    "match": false
+   }
+  }
+ ],
+ "checks": {
+  "preStart": {
+   "TESTnonce": 1,
+   "TESTwei": "7042701793221983984",
+   "guardStatus": 0,
+   "guardOwner": "0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E",
+   "guardWHSK": "0",
+   "guardUSDT": "0"
+  },
+  "afterStart": {
+   "status": 0,
+   "sessionId": "0",
+   "policyVersion": 0,
+   "strategySigner": "0x0000000000000000000000000000000000000000",
+   "riskSigner": "0x0000000000000000000000000000000000000000",
+   "allocatedRiskRaw": "0"
+  }
+ },
+ "anomaly": "post-startSession state mismatch",
+ "stoppedAt": "2026-11-01T06:47:10.745Z",
+ "result": "STOPPED_ON_ANOMALY",
+ "cumulativeFeeWei": "271463942412427928",
+ "cumulativeFeeHSK": "0.271463942412427928",
+ "policy": {
+  "mode": 0,
+  "validAfter": "1793515627",
+  "validUntil": "1793519227",
+  "strategySigner": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+  "riskSigner": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+  "strategyPolicyHash": "0x4233eff3ba8d58c69df06a7860b2e5e7ecbc02294d340d59c1903da03e9eb14e",
+  "maxBuyPerTradeQuoteRaw": "1",
+  "maxSessionGrossBuyQuoteRaw": "1",
+  "maxUtcDayGrossBuyQuoteRaw": "1",
+  "maxRiskInventoryRaw": "1000000000000000000",
+  "maxSellPerTradeRiskRaw": "1000000000000000000",
+  "minTradeIntervalSec": 60,
+  "maxQuoteSlippageBps": 100,
+  "maxQuoteAgeSec": 120,
+  "maxIntentTtlSec": 300,
+  "exitMaxPerTradeRiskRaw": "1000000000000000000",
+  "exitMinIntervalSec": 60,
+  "exitValidUntil": "1793522827"
+ },
+ "strategyPolicyHashSource": "keccak256(bytes of docs/06_AGENT_STRATEGY_AND_RISK.md @ hsk-pilot 2e3af6c)",
+ "recovery": {
+  "guardWHSKbefore": "1000000000000000000",
+  "guardUSDTbefore": "0",
+  "withdrawn": true,
+  "after": {
+   "status": 0,
+   "guardWHSK": "0",
+   "guardUSDT": "0"
+  }
+ },
+ "finishedAt": "2026-11-01T06:47:13.754Z",
+ "summary": {
+  "result": "STOPPED_ON_ANOMALY_FALSE_POSITIVE_STALE_READ; trade NOT executed; funds returned via withdrawAll",
+  "txOrder": [
+   {
+    "step": 1,
+    "label": "WHSK.deposit() value 1 HSK",
+    "hash": "0x0d5453e8717c17b08c662f177569bd51df4b27582b6db8e663b5d79cbb328759",
+    "block": "29584245",
+    "status": "success",
+    "feeHSK": "0.02593020526616217"
+   },
+   {
+    "step": 2,
+    "label": "WHSK.transfer(Guard, 1e18)",
+    "hash": "0xeeb30123d3b67b80122460b1a12c6f1d6561086f3239eada73d3f20ccc0b459e",
+    "block": "29584246",
+    "status": "success",
+    "feeHSK": "0.02331520003616217"
+   },
+   {
+    "step": 3,
+    "label": "Guard.startSession(policy, 0, 1e18)",
+    "hash": "0x37fc6e0ef21b62cd627e71f3ad87352aed6c066a2d93a77527262665d0136e5b",
+    "block": "29584248",
+    "status": "success",
+    "feeHSK": "0.185132307447094815"
+   },
+   {
+    "step": 6,
+    "label": "Guard.withdrawAll() [anomaly recovery]",
+    "hash": "0xab6c4ccb0eded1992c6c8119d20ca843cc38783b83029a1e0530e86e6d1ed51f",
+    "block": "29584249",
+    "status": "success",
+    "feeHSK": "0.037086229663008773"
+   }
+  ],
+  "totalFeeHSK": "0.271463942412427928",
+  "timesUTC8": "2026-11-01 14:47:04 to 14:47:13 (Asia/Shanghai)",
+  "diagnosis": "After tx3 receipt (block 29584248), unpinned eth_call reads at latest on mainnet.hsk.xyz returned pre-startSession state (status 0, sessionId 0, zero signers). Block-pinned reads at 29584248 on both RPCs show status ACTIVE(1), sessionId 1, policyVersion 1, signers S/R as intended, plus SessionStarted event. The check was a stale-read false positive; the executor followed the STOP rule and withdrew. See anomaly-diagnosis-reads.json.",
+  "secondaryReceiptMatchFalseNote": "secondaryRpcReceipt.match=false for steps 2 and 6 was transient; a later dual-RPC re-read shows identical canonical block hashes for all 4 txs (receipts-dual-rpc.json). No reorg.",
+  "rioSixTxNote": "Rio counted 6 txs; PLAN has 5 required sends (wrap, transfer, startSession, execute, withdrawAll) plus optional pause; verify is read-only. Only 4 were sent: execute never ran, pause was not needed because withdrawAll closes the session."
+ }
+}

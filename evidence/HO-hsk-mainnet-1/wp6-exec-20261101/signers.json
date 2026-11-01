@@ -1,0 +1,7 @@
+{
+ "note": "Addresses only. Private keys are stored on the operator box only (chmod 600), never in this repo or report.",
+ "optionA": true,
+ "strategySigner_S": "0x96c06E98CE98F342aF2E2c7a030cFf15cBC8eC69",
+ "riskSigner_R": "0x92501bA2F20422184b22D176F78f40B1AbB32FED",
+ "checks": {"S_ne_R": true, "neither_is_TEST_0x04b0A7AFD4Ab71C5d49c4bd578C2D9B8eA7DF36E": true, "neither_is_PAYOUT_0x54145b97d5CeCf72b9900C702a02774171574171": true, "S_R_HSK_balance": "0", "S_R_nonce": 0}
+}
