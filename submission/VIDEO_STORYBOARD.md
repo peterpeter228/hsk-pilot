@@ -1,5 +1,7 @@
 # Three-minute storyboard — editorial draft, not the recorded clip
 
+> **Status update 2026-11-01 (supersedes older status lines below):** the repository is **public** under the **MIT** license. `TradingSessionGuard` is **deployed on HashKey Chain mainnet (177)** at [`0xe2172A17223BDa552e0CC101591C8893c4B65c81`](https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81) (Blockscout: verified, partial match), and a real 1 WHSK → USDT SELL executed through it on 2026-11-01 ([tx](https://hsk.blockscout.com/tx/0xf2b703477d4bdfa543156246176f2cf0bd0a6e99858d57f719cefe83741fd1b1)); funds were withdrawn and the Guard is paused. The public SIMULATION demo (http://43.172.183.51:3901/, liveFunds disabled) runs the live server-side Sub2API AI decision engine (advisory only). See the [README](../README.md) for the current state; the text below is kept as dated history.
+
 Suggested editorial duration only; official event-specific video requirements are unverified. This is a truthful **current local-prototype** cut, not a script pretending that future mainnet work has happened. Core local browser acceptance and an actual 120-second recording already exist; the timeline below is a suggested new cut, not a description of everything captured in that clip. No new recording or upload is part of HO-hsk-mainnet-1. Keep a persistent `SIMULATION • SYNTHETIC DATA • NO REAL FUNDS` label on any new app footage. Never show keys, API tokens or personal account details.
 
 ## Existing recording and browser evidence

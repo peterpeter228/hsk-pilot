@@ -3,7 +3,7 @@
 **Approve the trading limits once, then check every decision and every fill.** HSK Pilot is a bounded WHSK/USDT rebalancing assistant for HashKey Chain, built for the HSK Chain Horizon Hackathon (India Track 1). A user sets a session's limits once. An on-chain Guard contract then enforces every trade inside those limits, and each decision and fill leaves evidence you can inspect.
 
 - **Contract:** `TradingSessionGuard` at [`0xe2172A17223BDa552e0CC101591C8893c4B65c81`](https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81) on HashKey Chain mainnet (chainId 177). The source is verified on HashKey Blockscout as a partial match (see [Contract verification](#contract-verification)).
-- **Live demo:** http://43.172.183.51:3901/. It runs in **SIMULATION** mode with synthetic data: `liveFundsEnabled: false` and no model configured. See `/api/health`.
+- **Live demo:** http://43.172.183.51:3901/. It runs in **SIMULATION** mode with synthetic data and `liveFundsEnabled: false`. The **AI decision engine is live** there: model `gpt-6-luna` via Sub2API, advisory only. See `/api/health` and `/api/demo/decision`.
 - **License:** [MIT](LICENSE).
 - **Mainnet proof:** a real 1 WHSK → USDT SELL ran through the Guard on 2026-11-01. See [Mainnet transactions](#mainnet-transactions).
 
@@ -16,8 +16,8 @@
         │  HTTP
  Fastify API server (apps/server) ── session/policy proposals, simulation worker, evidence export
         │                               │
-        │                     AI engine: server-side Sub2API decision engine (rolling out;
-        │                     the public demo reports model NOT_CONFIGURED)
+        │                     AI decision engine (LIVE, advisory): server-side Sub2API,
+        │                     gpt-6-luna → rule fallback → size clamped to Guard-legal limit
         ▼
  TradingSessionGuard (contracts/, chain 177)
    owner-only startSession / pause / withdrawAll
@@ -32,8 +32,31 @@
 - **API** (`apps/server`): Fastify. Serves the built UI and `/api/*`, and runs scheduled synthetic simulation. The demo keeps state in process memory.
 - **Guard** (`contracts/`): Solidity 0.8.30, Cancun, optimizer 200, viaIR. Enforces a fixed route and fixed assets, dual strategy/risk roles, buy and sell budgets, inventory and exit bounds, and owner recovery.
 - **HSKSwap:** the router and QuoterV2 are called directly. The HSKSwap website returned HTTP 403 (jurisdiction) to our research service, and we did not try to get around that.
-- **AI engine:** a server-side Sub2API decision engine, still being rolled out. It is not live in the public demo.
+- **AI decision engine** (`apps/server/ai-decision.ts`): **live** on the public demo. See [AI decision engine](#ai-decision-engine).
 - **Support modules** (`packages/`): TypeScript candidate/risk, accounting, indexer and recovery logic. There is also a PostgreSQL durable job store; the demo does not use it.
+
+## AI decision engine
+
+The engine is live on the public demo (`/api/health` → `model.status: CONFIGURED`, provider `sub2api`, name `gpt-6-luna`, role `ADVISORY_DECISION_ENGINE`).
+
+- **Server-side only.** The browser never talks to the model. The Sub2API key is read from the server environment once at startup and then deleted from `process.env`. It is never sent to the client, logged or committed.
+- **Endpoints:** `GET /api/demo/decision` and `POST /api/simulations/:id/decision` (the second records an `AI_DECISION` event in that simulation's evidence). The UI shows the result in the **AI decision engine** panel: action, size, explanation and `source`.
+- **What the model decides:** the server first builds the deterministic, Guard-legal candidate trade (or none). The model only picks `HOLD` or `REBALANCE` and a size fraction (0–100%) of that candidate, with a reason code and a short explanation, as structured output that is schema-checked.
+- **Safety clamp:** the suggested size is `candidate.amountInRaw × sizeFractionBps / 10000`, so it can never exceed `guardMaxAmountInRaw`, the amount the Guard's session limits allow. The model cannot pick assets, route, minOut or recipient.
+- **Rule fallback:** if the model is not configured, rate-limited, times out or returns invalid output, the deterministic rule decision is used and the response says `source: "fallback"` with `fallbackReason` (`MODEL_NOT_CONFIGURED`, `RATE_LIMITED` or `MODEL_INVALID_OR_UNAVAILABLE`). AI answers say `source: "ai"`.
+- **Limits:** 6 model calls per minute per IP and 30 per minute globally; per-call timeout `HSK_AI_TIMEOUT_MS` (code default 15000 ms; the public demo runs with 10000 ms); identical decisions are cached for 30 s.
+- **Advisory only:** responses carry `dataMode: SIMULATION`, `advisoryOnly: true`, `liveFundsEnabled: false`. There is no signer or transaction path from the engine.
+
+Environment variables (names only; never commit values):
+
+| Variable | Purpose |
+|---|---|
+| `S2A_BASE_URL` | Sub2API base URL (OpenAI-compatible `/v1/chat/completions`) |
+| `S2A_API_KEY` | Sub2API key (server env only) |
+| `HSK_AI_MODEL` | Model name, default `gpt-6-luna` |
+| `HSK_AI_TIMEOUT_MS` | Per-call timeout in ms, default 15000 |
+
+Without `S2A_BASE_URL` and `S2A_API_KEY` the app still runs and every decision is a labelled rule fallback.
 
 ## Run locally
 
@@ -49,14 +72,14 @@ pnpm start         # http://127.0.0.1:3100  (PORT / HOST override), SIMULATION o
 curl http://127.0.0.1:3100/api/health
 ```
 
-These commands were checked on 2026-11-01 against this branch:
+These commands were checked on 2026-11-01 against main after the ai-engine merge:
 - `doctor` passed, with 2 warnings.
 - `typecheck` passed.
-- `test` gave 93 passed and 19 skipped. The skipped tests are the PostgreSQL ones, which need a database.
+- `test` gave 108 passed and 19 skipped (including the AI decision engine tests). The skipped tests are the PostgreSQL ones, which need a database.
 - `build` passed.
-- `start` served `/api/health` with `dataMode: SIMULATION`.
+- `start` served `/api/health` with `dataMode: SIMULATION`, and `/api/demo/decision` returned a labelled rule fallback (`MODEL_NOT_CONFIGURED`) without Sub2API variables.
 
-No credentials are needed. `.env.example` lists settings for later work, and the app does not load it automatically.
+No credentials are needed; without the Sub2API variables the AI panel shows rule fallback. `.env.example` lists settings for later work, and the app does not load it automatically.
 
 Optional commands:
 - `pnpm build:contracts && pnpm test:contracts`: native Foundry tools.
@@ -121,12 +144,12 @@ Retry-2 completed the whole sequence. After the trade, the script raised one mor
 | `contracts/evidence/` | Local Anvil integration, fixed-block HSKSwap fork test, durable local runner |
 | `evidence/final/`, `evidence/G3/` | Logs from tests, typecheck, doctor, contracts and build; HTTP smoke; PostgreSQL results |
 | `evidence/review/`, `review/` | Independent safety review, corrected contract suite, external Argon review and its adjudication |
-| `evidence/browser-cua/`, `evidence/video/` | Real browser walkthrough with screenshots; two-minute synthetic UI recording |
+| `evidence/browser-cua/`, `evidence/video/` | Real browser walkthrough with screenshots; two-minute synthetic UI recording; narrated demo video (live demo, AI decision, Guard, mainnet txs) |
 | `evidence/preflight/`, `evidence/G0/` | Read-only network preflights; official-source checks |
 
 ## Limits and honesty notes
 
-- The public demo runs **simulation only**. It holds no live funds, runs no live broadcaster, and has no product model configured. The only real-money activity is the mainnet runs listed above. The owner approved and sent each one separately, and none are automated.
+- The public demo runs **simulation only**. It holds no live funds and runs no live broadcaster. The AI engine is advisory and only produces simulated decisions. The only real-money activity is the mainnet runs listed above. The owner approved and sent each one separately, and none are automated.
 - DEX quotes and minOut are **not independent fair prices**, and USDT is not guaranteed to equal USD. B1 `ORACLE_GUARDED` mode is disabled. The HSK/USD feed was stale when we checked it.
 - There is no evidence of investment performance or alpha.
 - Third-party dependency notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

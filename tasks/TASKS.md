@@ -1,5 +1,7 @@
 # Task state — HO-hsk-mainnet-1 preparation
 
+> **Status update 2026-11-01 (supersedes older status lines below):** the repository is **public** under the **MIT** license. `TradingSessionGuard` is **deployed on HashKey Chain mainnet (177)** at [`0xe2172A17223BDa552e0CC101591C8893c4B65c81`](https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81) (Blockscout: verified, partial match), and a real 1 WHSK → USDT SELL executed through it on 2026-11-01 ([tx](https://hsk.blockscout.com/tx/0xf2b703477d4bdfa543156246176f2cf0bd0a6e99858d57f719cefe83741fd1b1)); funds were withdrawn and the Guard is paused. The public SIMULATION demo (http://43.172.183.51:3901/, liveFunds disabled) runs the live server-side Sub2API AI decision engine (advisory only). See the [README](../README.md) for the current state; the text below is kept as dated history.
+
 ## Current — 2026-10-27
 
 Repository [peterpeter228/hsk-pilot](https://github.com/peterpeter228/hsk-pilot) is **PUBLIC**; `AUTH-20261027-HSK-PUBLIC` is consumed. No visibility change is needed or permitted by this preparation. Working branch is `ho-hsk-mainnet-1`; baseline HEAD and fixed Guard deployment source are `1f1a48d56df96fc6f838d0696f1b5e3500bcf004`. The actual implementation checkpoint/head belongs in the root-finalized [HO receipt](../evidence/HO-hsk-mainnet-1/RECEIPT.json), not in a self-referencing commit. Browser/video source remains `ccdbed53c4e57d8817e0d4e82fd22023c996b713`, with historical evidence checkpoint `cc2b93a84fd0e258c0e781eb3f5ced266a47c563`.
@@ -36,11 +38,11 @@ The following dated local-delivery snapshot is retained as history; current visi
 
 | Gate | Status | Verified scope / missing evidence |
 |---|---|---|
-| G0 | PASS_LOCAL |41file restoration, actual environment/tool inventory, official rules, private repo creation; final persistence tracked separately |
+| G0 | PASS_LOCAL |41file restoration, actual environment/tool inventory, official rules, repo creation (now public, MIT); final persistence tracked separately |
 | G1 | PASS_READONLY / LIVE_BLOCKED | Fresh block/code/decimals/router/pool and fourquotes; B1stale, jurisdiction/access unknown |
 | G2 | PASS_LOCAL_AND_FORK / REVIEW_LIMITED |25contract tests/fuzz/invariant plus fixed-block realrouter fork; independent review, bounded independent+Argon review adjudication, no formal audit |
 | G3 | PASS_LOCAL_CORE / PARTIAL_PRODUCT |112TS tests with realPG, local-chain vertical slice, synthetic HTTP/UI; no realproductLLM or production end-to-end wiring |
-| G4 | BLOCKED |No mainnet deployment/trade; financial actions owner-operated after exact gates |
+| G4 | PASS_MAINNET (2026-11-01) |Guard deployed 2026-10-29 (tx 0xa462e5d7…); WP6 retry-2 executed a 1 WHSK SELL (tx 0xf2b70347…); funds withdrawn, Guard paused. Earlier runs stopped on script false alarms with funds returned |
 | G5 | PASS_CORE_DESKTOP / PARTIAL_MATRIX |Actual core clicks/screenshots/export integrity; PG restart/concurrency tested; representative ordinary iframe375/768/1440 checks, service recovery and actual120second video completed (see evidence/browser-cua/REPORT.md); full live matrix and AI baseline remain unmeasured |
 | G6 | LOCAL_MATERIALS_READY / NOT_SUBMITTED |English draft, actual120second video and private evidence saved; no hosted public demo, public publication or entry confirmation |
 

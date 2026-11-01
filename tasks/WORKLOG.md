@@ -1,5 +1,7 @@
 # 工作日志
 
+> **Status update 2026-11-01 (supersedes older status lines below):** the repository is **public** under the **MIT** license. `TradingSessionGuard` is **deployed on HashKey Chain mainnet (177)** at [`0xe2172A17223BDa552e0CC101591C8893c4B65c81`](https://hsk.blockscout.com/address/0xe2172A17223BDa552e0CC101591C8893c4B65c81) (Blockscout: verified, partial match), and a real 1 WHSK → USDT SELL executed through it on 2026-11-01 ([tx](https://hsk.blockscout.com/tx/0xf2b703477d4bdfa543156246176f2cf0bd0a6e99858d57f719cefe83741fd1b1)); funds were withdrawn and the Guard is paused. The public SIMULATION demo (http://43.172.183.51:3901/, liveFunds disabled) runs the live server-side Sub2API AI decision engine (advisory only). See the [README](../README.md) for the current state; the text below is kept as dated history.
+
 ## 2026-10-26：交接文档研究
 
 已读原附件并核对赛事、官方文档与只读链上状态；发现脚注污染、编译target、Oracle时效、池/TWAP假设、暂停提款和签名/回撤逻辑等问题。选择B0限额自主执行为主线，B1另设门禁。生成工程规范、测试计划及提交模板。
